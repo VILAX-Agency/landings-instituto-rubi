@@ -1,0 +1,412 @@
+---
+/**
+ * Formulario de captación (Figma: Lead form 20:76).
+ *  - variant "hero":    664px, cabecera con Body/Default.
+ *  - variant "compact": 480px (CTA final), cabecera con Body/Small.
+ * Móvil: sin etiquetas visibles (siguen accesibles), placeholders cortos,
+ * chips con etiqueta corta. `hideHeaderMobile` quita la cabecera en el CTA final.
+ *
+ * FASE 1: NO OPERATIVO. Ver ./formConfig.ts.
+ */
+import Icon from '../ui/Icon.astro';
+import { isLeadFormOperational, leadFormConfig } from './formConfig';
+
+interface Opcion {
+  valor: string;
+  label: string;
+  label_movil?: string;
+}
+
+interface Textos {
+  titulo: string;
+  subtitulo: string;
+  etiqueta_interes: string;
+  consentimiento: string;
+  cta_label: string;
+  nota: string;
+}
+
+interface Props {
+  id: string;
+  variant?: 'hero' | 'compact';
+  textos: Textos;
+  opciones: Opcion[];
+  seleccionado?: string;
+  hideHeaderMobile?: boolean;
+  landingId: string;
+  tratamiento: string;
+  localidad?: string;
+}
+
+const {
+  id,
+  variant = 'hero',
+  textos,
+  opciones,
+  seleccionado = opciones[0]?.valor,
+  hideHeaderMobile = false,
+  landingId,
+  tratamiento,
+  localidad,
+} = Astro.props;
+
+const operativo = isLeadFormOperational();
+const titleId = `${id}-titulo`;
+const avisoId = `${id}-aviso`;
+
+const campos = [
+  { name: 'nombre', label: 'Nombre', placeholder: 'Tu nombre', placeholderMovil: 'Nombre', type: 'text', autocomplete: 'given-name' },
+  { name: 'telefono', label: 'Teléfono', placeholder: '600 000 000', placeholderMovil: 'Teléfono', type: 'tel', autocomplete: 'tel' },
+  { name: 'email', label: 'Email', placeholder: 'tu@email.com', placeholderMovil: 'Email', type: 'email', autocomplete: 'email' },
+] as const;
+---
+
+<form
+  id={id}
+  class:list={['lead-form', `lead-form--${variant}`, { 'lead-form--no-header-mobile': hideHeaderMobile }]}
+  action={operativo ? leadFormConfig.endpoint : undefined}
+  method={operativo ? 'post' : undefined}
+  data-form-status={operativo ? 'enabled' : 'disabled'}
+  data-landing={landingId}
+  data-tratamiento={tratamiento}
+  data-localidad={localidad}
+  aria-labelledby={titleId}
+  aria-describedby={operativo ? undefined : avisoId}
+  novalidate
+>
+  {
+    !operativo && (
+      <p id={avisoId} class="lead-form__aviso t-legal" role="note">
+        <strong>Formulario no operativo</strong> — en desarrollo (Fase 2). No se envían ni se guardan datos.
+      </p>
+    )
+  }
+
+  <div class="lead-form__header">
+    <p id={titleId} class="t-h3 lead-form__title">{textos.titulo}</p>
+    <p class="lead-form__subtitle">{textos.subtitulo}</p>
+  </div>
+
+  <div class="lead-form__row">
+    {
+      campos.slice(0, 2).map((c) => (
+        <div class="field">
+          <label class="field__label t-tag" for={`${id}-${c.name}`}>
+            {c.label}
+          </label>
+          <input
+            class="field__input"
+            id={`${id}-${c.name}`}
+            name={c.name}
+            type={c.type}
+            autocomplete={c.autocomplete}
+            placeholder={c.placeholder}
+            data-placeholder-desktop={c.placeholder}
+            data-placeholder-mobile={c.placeholderMovil}
+            required
+          />
+        </div>
+      ))
+    }
+  </div>
+  {
+    campos.slice(2).map((c) => (
+      <div class="field">
+        <label class="field__label t-tag" for={`${id}-${c.name}`}>
+          {c.label}
+        </label>
+        <input
+          class="field__input"
+          id={`${id}-${c.name}`}
+          name={c.name}
+          type={c.type}
+          autocomplete={c.autocomplete}
+          placeholder={c.placeholder}
+          data-placeholder-desktop={c.placeholder}
+          data-placeholder-mobile={c.placeholderMovil}
+        />
+      </div>
+    ))
+  }
+
+  <fieldset class="lead-form__interest">
+    <legend class="t-tag lead-form__legend">{textos.etiqueta_interes}</legend>
+    <div class="chips">
+      {
+        opciones.map((o) => (
+          <label class="chip">
+            <input
+              class="visually-hidden chip__input"
+              type="radio"
+              name="interes"
+              value={o.valor}
+              checked={o.valor === seleccionado}
+            />
+            <span class="chip__label t-small">
+              {o.label_movil ? (
+                <>
+                  <span class="only-desktop">{o.label}</span>
+                  <span class="only-mobile">{o.label_movil}</span>
+                </>
+              ) : (
+                o.label
+              )}
+            </span>
+          </label>
+        ))
+      }
+    </div>
+  </fieldset>
+
+  <label class="consent">
+    <input class="consent__box" type="checkbox" name="consentimiento" required />
+    <span class="t-legal consent__text">{textos.consentimiento}</span>
+  </label>
+
+  <button
+    class="lead-form__submit"
+    type="submit"
+    disabled={!operativo}
+    aria-disabled={operativo ? undefined : 'true'}
+    title={operativo ? undefined : 'Formulario no operativo (Fase 2)'}
+  >
+    {textos.cta_label}
+  </button>
+
+  <p class="lead-form__note t-legal">
+    <Icon name="lock" />
+    {textos.nota}
+  </p>
+</form>
+
+<script>
+  // Fase 1: ningún formulario no operativo puede enviarse.
+  document.querySelectorAll<HTMLFormElement>('form[data-form-status="disabled"]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    });
+  });
+
+  // Placeholders cortos en móvil (Figma: el input oculta la etiqueta y usa el placeholder).
+  const mq = window.matchMedia('(max-width: 1023.98px)');
+  const applyPlaceholders = () => {
+    document.querySelectorAll<HTMLInputElement>('input[data-placeholder-mobile]').forEach((input) => {
+      const value = mq.matches ? input.dataset.placeholderMobile : input.dataset.placeholderDesktop;
+      if (value) input.placeholder = value;
+    });
+  };
+  applyPlaceholders();
+  mq.addEventListener('change', applyPlaceholders);
+</script>
+
+<style>
+  .lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    width: 100%;
+    padding: var(--space-20);
+    background: var(--color-bg-page);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  .lead-form__aviso {
+    padding: var(--space-8) var(--space-12);
+    border: 1px dashed var(--color-border-accent);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-highlight);
+    color: var(--color-text-primary);
+  }
+
+  .lead-form__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .lead-form__title {
+    color: var(--color-text-primary);
+  }
+  .lead-form__subtitle {
+    color: var(--color-text-body);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .lead-form__row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .field {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: var(--space-12);
+    min-width: 0;
+  }
+  .field__label {
+    color: var(--color-text-body);
+  }
+  .field__input {
+    width: 100%;
+    height: 50px;
+    padding-inline: var(--space-16);
+    border: 1px solid var(--color-border-input);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-input);
+    color: var(--color-text-primary);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .field__input::placeholder {
+    color: var(--color-text-muted);
+    opacity: 1;
+  }
+  .field__input:focus {
+    border-color: var(--color-action-primary);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--color-action-primary);
+  }
+
+  .lead-form__interest {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .lead-form__legend {
+    margin-bottom: var(--space-12);
+    color: var(--color-text-body);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+  .chip {
+    cursor: pointer;
+  }
+  .chip__label {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding-inline: var(--space-16);
+    border: 1px solid var(--color-border-input);
+    border-radius: var(--radius-full);
+    color: var(--color-text-body);
+    white-space: nowrap;
+  }
+  .chip__input:checked + .chip__label {
+    background: var(--color-action-primary);
+    border-color: var(--color-action-primary);
+    color: var(--color-text-on-dark);
+  }
+  .chip__input:focus-visible + .chip__label {
+    outline: 2px solid var(--color-text-accent);
+    outline-offset: 2px;
+  }
+
+  .consent {
+    display: flex;
+    gap: var(--space-12);
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  .consent__box {
+    appearance: none;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    border: 1px solid var(--color-border-input);
+    border-radius: 3px;
+    background: var(--color-bg-page);
+    cursor: pointer;
+  }
+  .consent__box:checked {
+    border-color: var(--color-action-primary);
+    background: var(--color-action-primary)
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.5 9.5l3 3 6-7' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 100% no-repeat;
+  }
+  .consent__text {
+    flex: 1;
+    color: var(--color-text-muted);
+  }
+
+  .lead-form__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 54px;
+    padding-inline: var(--space-24);
+    border: 1px solid var(--color-action-primary);
+    border-radius: var(--radius-sm);
+    background: var(--color-action-primary);
+    color: var(--color-text-on-dark);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+  .lead-form__submit:disabled {
+    cursor: not-allowed;
+  }
+
+  .lead-form__note {
+    display: flex;
+    gap: var(--space-8);
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+  }
+
+  /* Móvil: etiquetas ocultas (accesibles), sin leyenda de interés */
+  @media (max-width: 1023.98px) {
+    .field__label,
+    .lead-form__legend {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+    .lead-form--no-header-mobile .lead-form__header {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lead-form {
+      padding: var(--space-32);
+    }
+    .lead-form__row {
+      flex-direction: row;
+    }
+    .chips {
+      gap: var(--space-8);
+    }
+    .lead-form--hero .lead-form__subtitle {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .lead-form--hero .lead-form__interest {
+      gap: var(--space-12);
+    }
+    .lead-form--hero .lead-form__legend {
+      margin-bottom: var(--space-12);
+    }
+    .lead-form--compact .lead-form__legend {
+      margin-bottom: var(--space-8);
+    }
+  }
+</style>

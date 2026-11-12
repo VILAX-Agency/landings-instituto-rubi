@@ -1,0 +1,85 @@
+---
+/**
+ * Barra fija móvil (Figma 24:599 / Sticky bar 20:163).
+ * Aparece al pasar el formulario del hero y se oculta al llegar al CTA final.
+ */
+import IconButton from '../ui/IconButton.astro';
+import Button from '../ui/Button.astro';
+import type { Contacto } from '../../lib/contacto';
+
+interface Props {
+  contacto: Contacto;
+  ctaHref: string;
+  /** id del formulario del hero */
+  watchStart: string;
+  /** id de la sección CTA final */
+  watchEnd: string;
+}
+
+const { contacto, ctaHref, watchStart, watchEnd } = Astro.props;
+---
+
+<div class="sticky-bar only-mobile" data-sticky-bar data-start={watchStart} data-end={watchEnd} aria-hidden="true" inert>
+  <IconButton icon="chat-20" label="Escribir por WhatsApp" href={contacto.whatsappUrl} size={48} />
+  <IconButton icon="phone-20" label={`Llamar al ${contacto.telefonoDisplay}`} href={contacto.telHref} size={48} />
+  <Button variant="primary" href={ctaHref} class="sticky-bar__cta">Pedir valoración gratuita</Button>
+</div>
+
+<script>
+  const bar = document.querySelector<HTMLElement>('[data-sticky-bar]');
+  const start = bar && document.getElementById(bar.dataset.start ?? '');
+  const end = bar && document.getElementById(bar.dataset.end ?? '');
+
+  if (bar && start && 'IntersectionObserver' in window) {
+    let pastStart = false;
+    let atEnd = false;
+    const render = () => {
+      const visible = pastStart && !atEnd;
+      bar.classList.toggle('is-visible', visible);
+      bar.toggleAttribute('inert', !visible);
+      bar.setAttribute('aria-hidden', String(!visible));
+    };
+    new IntersectionObserver(([entry]) => {
+      pastStart = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      render();
+    }).observe(start);
+    if (end) {
+      new IntersectionObserver(([entry]) => {
+        atEnd = entry.isIntersecting || entry.boundingClientRect.top < 0;
+        render();
+      }).observe(end);
+    }
+  }
+</script>
+
+<style>
+  .sticky-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: 12px 16px calc(24px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--color-border-subtle);
+    background: var(--color-bg-page);
+    box-shadow: var(--shadow-sticky);
+    transform: translateY(110%);
+    transition: transform 0.25s ease;
+  }
+  .sticky-bar.is-visible {
+    transform: translateY(0);
+  }
+  .sticky-bar :global(.sticky-bar__cta) {
+    flex: 1;
+    height: 48px;
+    min-width: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sticky-bar {
+      transition: none;
+    }
+  }
+</style>

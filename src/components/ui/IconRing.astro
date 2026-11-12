@@ -1,0 +1,41 @@
+---
+/** Icono de línea Almond dentro de un círculo (Figma: Icon ring 20:113). */
+import Icon from './Icon.astro';
+
+interface Props {
+  icon: string;
+  /** Sobre fondo oscuro se quita el relleno blanco. */
+  onDark?: boolean;
+  /** Tamaño en móvil (en escritorio siempre 48px). */
+  mobileSize?: 38 | 48;
+}
+
+const { icon, onDark = false, mobileSize = 48 } = Astro.props;
+---
+
+<span class:list={['ring', { 'ring--dark': onDark }]} style={`--ring-mobile:${mobileSize}px`}>
+  <Icon name={icon} />
+</span>
+
+<style>
+  .ring {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--ring-mobile);
+    height: var(--ring-mobile);
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-page);
+  }
+  .ring--dark {
+    background: transparent;
+  }
+  @media (min-width: 1024px) {
+    .ring {
+      width: 48px;
+      height: 48px;
+    }
+  }
+</style>

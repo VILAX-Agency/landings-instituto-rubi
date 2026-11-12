@@ -1,0 +1,74 @@
+---
+/** Barra de confianza sobre azul Prusia (Figma 22:247 / móvil 10:79). */
+import IconRing from '../ui/IconRing.astro';
+import ResponsiveText from '../ui/ResponsiveText.astro';
+import type { TextoResponsive } from '../../lib/content';
+
+interface Props {
+  items: { icono: string; texto: TextoResponsive }[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="trust" aria-label="Garantías de Instituto Rubí">
+  <ul class="container trust__list">
+    {
+      items.map((item) => (
+        <li class="trust__item">
+          <IconRing icon={item.icono} onDark mobileSize={38} />
+          <span class="trust__text">
+            <ResponsiveText value={item.texto} />
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .trust {
+    background: var(--color-bg-dark);
+    padding-block: 28px;
+  }
+  .trust__list {
+    display: grid;
+    /* Columnas al ancho del contenido: en 375px los textos de Figma no caben en 2×161px */
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    gap: 20px 8px;
+  }
+  .trust__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    color: var(--color-text-on-dark);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .trust__list {
+      grid-template-columns: repeat(4, auto);
+    }
+    .trust__item {
+      white-space: nowrap;
+    }
+  }
+  @media (min-width: 1024px) {
+    .trust {
+      padding-block: 36px;
+    }
+    .trust__list {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-16);
+    }
+    .trust__item {
+      gap: var(--space-16);
+      font-size: 16px;
+      line-height: 24px;
+      white-space: nowrap;
+    }
+  }
+</style>

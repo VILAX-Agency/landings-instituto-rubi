@@ -1,0 +1,172 @@
+---
+/**
+ * Hero (Figma 22:150 / móvil 10:8): imagen a la izquierda (solo escritorio),
+ * eyebrow + H1 + entradilla + formulario + prueba social.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import LeadForm from '../forms/LeadForm.astro';
+import StarRating from '../ui/StarRating.astro';
+import type { ComponentProps } from 'astro/types';
+
+interface PruebaSocial {
+  nota_google: string;
+  numero_resenas: string;
+  cirugias: string;
+  financiacion: string;
+}
+
+interface Props {
+  eyebrow: string;
+  h1: string;
+  intro: string;
+  imagen?: ImageMetadata;
+  imagenAlt?: string;
+  form: ComponentProps<typeof LeadForm>;
+  pruebaSocial: PruebaSocial;
+}
+
+const { eyebrow, h1, intro, imagen, imagenAlt = '', form, pruebaSocial: p } = Astro.props;
+---
+
+<section class:list={['hero', { 'hero--no-media': !imagen }]} aria-labelledby="hero-title">
+  {
+    imagen && (
+      <div class="hero__media">
+        <Image
+          src={imagen}
+          alt={imagenAlt}
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 1024px) 42vw, 1px"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    )
+  }
+
+  <div class="hero__content">
+    <div class="hero__inner">
+      <p class="t-eyebrow">{eyebrow}</p>
+      <h1 id="hero-title" class="t-h1 hero__title">{h1}</h1>
+      <p class="hero__intro">{intro}</p>
+
+      <div class="hero__form">
+        <LeadForm {...form} />
+      </div>
+
+      <div class="hero__proof only-desktop">
+        <span class="hero__proof-item">
+          <StarRating />
+          <span class="t-small"><strong>{p.nota_google}</strong> en Google · {p.numero_resenas} reseñas</span>
+        </span>
+        <span class="hero__divider" aria-hidden="true"></span>
+        <span class="t-small"><strong>{p.cirugias}</strong> cirugías</span>
+        <span class="hero__divider" aria-hidden="true"></span>
+        <span class="t-small">Financiación <strong>{p.financiacion}</strong></span>
+      </div>
+
+      <div class="hero__proof hero__proof--mobile only-mobile">
+        <StarRating icon="star-13" />
+        <span class="t-small"><strong>{p.nota_google}</strong> Google · <strong>{p.cirugias}</strong> cirugías</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--color-bg-tint);
+  }
+  .hero__media {
+    display: none;
+  }
+  .hero__content {
+    padding: 24px var(--gutter) 40px;
+  }
+  .hero__inner {
+    max-width: 664px;
+    margin-inline: auto;
+  }
+  .hero__title {
+    padding-top: 12px;
+    color: var(--color-text-primary);
+  }
+  .hero__intro {
+    padding-top: 14px;
+    color: var(--color-text-body);
+  }
+  .hero__form {
+    padding-top: 22px;
+  }
+  .hero__proof {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-top: 28px;
+    color: var(--color-text-primary);
+  }
+  .hero__proof strong {
+    font-weight: 600;
+  }
+  .hero__proof-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero__divider {
+    width: 1px;
+    height: 22px;
+    background: var(--color-divider-default);
+  }
+  .hero__proof--mobile {
+    justify-content: center;
+    gap: var(--space-8);
+    padding-top: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 640fr) minmax(0, 872fr);
+    }
+    .hero--no-media {
+      grid-template-columns: 1fr;
+    }
+    .hero__media {
+      display: block;
+      position: relative;
+      min-height: 100%;
+    }
+    .hero__media :global(img) {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero__content {
+      display: flex;
+      align-items: center;
+      padding: 80px clamp(40px, 7.9vw, 120px) 80px clamp(40px, 5.8vw, 88px);
+    }
+    .hero--no-media .hero__content {
+      justify-content: center;
+    }
+    .hero__inner {
+      width: 100%;
+      margin-inline: 0;
+    }
+    .hero__title {
+      padding-top: var(--space-16);
+    }
+    .hero__intro {
+      padding-top: var(--space-20);
+      font-size: 18px;
+      line-height: 28px;
+    }
+    .hero__form {
+      padding-top: var(--space-32);
+    }
+  }
+</style>

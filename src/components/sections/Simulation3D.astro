@@ -1,0 +1,157 @@
+---
+/** Simulación 3D (Figma 22:545 / móvil 10:267). */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Button from '../ui/Button.astro';
+import MediaPlay from '../ui/MediaPlay.astro';
+import type { TextoResponsive } from '../../lib/content';
+
+interface Props {
+  /** Fondo: lo asigna la plantilla alternando según la posición. */
+  tone?: "light" | "tint";
+  eyebrow: string;
+  titulo: string;
+  intro: TextoResponsive;
+  imagen: ImageMetadata;
+  imagen_alt: string;
+  etiqueta: string;
+  video_url?: string;
+  pasos: { titulo: string; texto: string }[];
+  cta_label: string;
+  ctaHref: string;
+}
+
+const { eyebrow, titulo, intro, imagen, imagen_alt, etiqueta, video_url, pasos, cta_label, ctaHref } = Astro.props;
+const { tone = "light" } = Astro.props;
+---
+
+<section class:list={["section", "sim", { "section--tint": tone === "tint" }]} aria-labelledby="sim-title">
+  <div class="container sim__layout">
+    <div class="sim__media">
+      <Image src={imagen} alt={imagen_alt} widths={[335, 620, 1100]} sizes="(min-width: 1024px) 620px, 100vw" loading="lazy" />
+      <MediaPlay href={video_url} label={`Ver vídeo: ${etiqueta}`} variant="sim" />
+      <span class="sim__tag t-tag only-desktop">{etiqueta}</span>
+    </div>
+
+    <div class="sim__content">
+      <SectionHeading id="sim-title" eyebrow={eyebrow} title={titulo} intro={intro} />
+      <ol class="sim__steps">
+        {
+          pasos.map((paso, i) => (
+            <li class="step">
+              <span class="t-number step__num" aria-hidden="true">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 class="t-body-semibold step__title">{paso.titulo}</h3>
+                <p class="t-small step__text">{paso.texto}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <div class="sim__cta">
+        <Button variant="outline" href={ctaHref} class="sim__btn">{cta_label}</Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sim__layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .sim__media {
+    position: relative;
+    height: 210px;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-media);
+  }
+  .sim__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .sim__tag {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    padding: 7px var(--space-12);
+    border-radius: 3px;
+    background: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
+  }
+  .sim__content {
+    padding-top: 32px;
+  }
+  .sim__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 28px;
+  }
+  .step {
+    display: flex;
+    gap: var(--space-16);
+    align-items: flex-start;
+  }
+  .step__num {
+    flex: 0 0 44px;
+    color: var(--color-text-accent);
+  }
+  .step__title {
+    color: var(--color-text-primary);
+  }
+  .step__text {
+    padding-top: var(--space-4);
+    color: var(--color-text-body);
+  }
+  .sim__cta {
+    padding-top: 32px;
+  }
+  .sim__cta :global(.sim__btn) {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .sim__media {
+      height: 400px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .sim__layout {
+      flex-direction: row;
+      align-items: center;
+      gap: 88px;
+    }
+    .sim__media {
+      flex: 0 1 620px;
+      height: 440px;
+    }
+    .sim__content {
+      flex: 492 1 0;
+      min-width: 0;
+      padding-top: 0;
+    }
+    .sim__steps {
+      gap: var(--space-16);
+      padding-top: 24px;
+    }
+    .step {
+      align-items: center;
+    }
+    .step__num {
+      flex-basis: 56px;
+    }
+    .sim__cta {
+      padding-top: var(--space-16);
+    }
+    .sim__cta :global(.sim__btn) {
+      width: auto;
+    }
+  }
+</style>

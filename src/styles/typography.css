@@ -1,0 +1,158 @@
+/*
+ * Estilos de texto de Figma. Cada clase = un text style del diseño.
+ * Breakpoint de escritorio: 1024px (los tamaños móviles vienen del frame 375).
+ */
+
+/* Display/H1 Mobile → Desktop */
+.t-h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+/* Heading/H2 Mobile → Desktop */
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+/* Heading/H3 */
+.t-h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+/* Heading/H4 */
+.t-h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* Heading/Number */
+.t-number {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+/* Body/Lead (móvil usa Body/Default) */
+.t-lead {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Body/Default (Light) */
+.t-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Body/Default Regular */
+.t-body-regular {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Body/Default SemiBold */
+.t-body-semibold {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Body/Default Italic */
+.t-body-italic {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Body/Small */
+.t-small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Body/Small SemiBold */
+.t-small-semibold {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Body/Small Italic */
+.t-small-italic {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Label/Eyebrow — tracking 24% */
+.t-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-text-accent);
+}
+
+/* Label/Tag — tracking 12% */
+.t-tag {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Legal */
+.t-legal {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@media (min-width: 1024px) {
+  .t-h1 {
+    font-size: 56px;
+    line-height: 64px;
+  }
+  .t-h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .t-number {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .t-lead {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

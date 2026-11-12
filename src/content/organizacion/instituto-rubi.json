@@ -1,0 +1,62 @@
+{
+  "nombre": "Instituto Rubí",
+  "telefono": { "display": "936 77 64 51", "e164": "+34936776451" },
+  "prueba_social": {
+    "nota_google": "4,9",
+    "numero_resenas": "[X]",
+    "cirugias": "+2.500",
+    "financiacion": "100%"
+  },
+  "confianza": [
+    { "icono": "shield", "texto": { "desktop": "Quirófano hospitalario acreditado", "movil": "Hospital acreditado" } },
+    { "icono": "card", "texto": { "desktop": "Financiación hasta el 100%", "movil": "Financiación 100%" } },
+    { "icono": "video", "texto": { "desktop": "Valoración por videollamada", "movil": "Videollamada" } },
+    { "icono": "pin", "texto": "6 sedes en España" }
+  ],
+  "formulario": {
+    "titulo": "Pide tu valoración gratuita",
+    "subtitulo": "Te llamamos en menos de 24 h. Sin compromiso.",
+    "etiqueta_interes": "¿Qué te interesa?",
+    "consentimiento": "Acepto la política de privacidad y que me contacten para mi valoración.",
+    "cta_label": "Quiero mi valoración gratuita",
+    "nota": "Tus datos son confidenciales"
+  },
+  "equipo": {
+    "eyebrow": "Equipo médico",
+    "director": {
+      "nombre": "Dr. Carlos Rubí",
+      "cargo": { "desktop": "Director médico y cirujano plástico", "movil": "Director médico" }
+    },
+    "imagen": "../../assets/equipo/dr-carlos-rubi.jpg",
+    "imagen_alt": "Dr. Carlos Rubí con bata de Instituto Rubí",
+    "credenciales": [
+      { "texto": "[Nº de colegiado · sociedades científicas]" },
+      { "texto": "[Formación y años de experiencia]", "ocultar_movil": true },
+      { "texto": "+2.500 cirugías realizadas" }
+    ],
+    "avatares": [
+      { "imagen": "../../assets/equipo/avatar-1.jpg", "alt": "" },
+      { "imagen": "../../assets/equipo/avatar-2.jpg", "alt": "" },
+      { "imagen": "../../assets/equipo/avatar-3.jpg", "alt": "" },
+      { "imagen": "../../assets/equipo/avatar-4.jpg", "alt": "" }
+    ],
+    "equipo_extra": "+6",
+    "equipo_texto": { "desktop": "Equipo de [10] cirujanos plásticos", "movil": "[10] cirujanos plásticos" },
+    "sede": {
+      "imagen": "../../assets/equipo/quirofano.jpg",
+      "imagen_alt": "Equipo quirúrgico durante una intervención",
+      "texto": "Consultas en Mallorca, Madrid, Barcelona, Canarias, Almería y Alicante",
+      "detalle": "Cirugía en: [aclarar hospital / ciudad]"
+    }
+  },
+  "footer": {
+    "enlaces": {
+      "desktop": "Aviso legal · Privacidad · Cookies · Nº autorización sanitaria [X]",
+      "movil": "Aviso legal · Privacidad · Cookies"
+    },
+    "aviso": {
+      "desktop": "Información médica orientativa. Cada caso requiere una valoración individual por parte de un especialista.",
+      "movil": "Nº autorización sanitaria [X]. Información médica orientativa; cada caso requiere valoración individual."
+    }
+  }
+}

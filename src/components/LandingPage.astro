@@ -1,0 +1,151 @@
+---
+/**
+ * Plantilla única de landing. Compone las secciones en el orden que indica
+ * `landing.secciones`, mezclando:
+ *   contenido de organización → contenido del tratamiento → overrides de la landing.
+ * Ninguna landing necesita componentes ni CSS propios.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PreviewBanner from './PreviewBanner.astro';
+import Header from './sections/Header.astro';
+import Hero from './sections/Hero.astro';
+import TrustBar from './sections/TrustBar.astro';
+import BeforeAfter from './sections/BeforeAfter.astro';
+import Technique from './sections/Technique.astro';
+import Simulation3D from './sections/Simulation3D.astro';
+import RecoveryTimeline from './sections/RecoveryTimeline.astro';
+import Testimonials from './sections/Testimonials.astro';
+import MedicalTeam from './sections/MedicalTeam.astro';
+import Faq from './sections/Faq.astro';
+import FinalCta from './sections/FinalCta.astro';
+import Footer from './sections/Footer.astro';
+import StickyMobileBar from './sections/StickyMobileBar.astro';
+import { getImage } from 'astro:assets';
+import { absoluteUrl } from '../config/site';
+import type { LandingResuelta, Organizacion } from '../lib/content';
+import { resolveContacto } from '../lib/contacto';
+
+interface Props {
+  resuelta: LandingResuelta;
+  organizacion: Organizacion;
+}
+
+const { resuelta, organizacion } = Astro.props;
+const { landing, tratamiento, localidad, path } = resuelta;
+const L = landing.data;
+const T = tratamiento.data;
+const O = organizacion.data;
+
+const contacto = resolveContacto(organizacion, localidad);
+
+const HERO_FORM_ID = 'valoracion';
+const CTA_ID = 'contacto';
+const ctaHref = `#${HERO_FORM_ID}`;
+const ctaFinalHref = `#${CTA_ID}`;
+
+const formBase = {
+  textos: O.formulario,
+  opciones: T.interes_opciones,
+  seleccionado: L.interes_preseleccionado,
+  landingId: landing.id,
+  tratamiento: tratamiento.id,
+  localidad: localidad?.id,
+};
+
+/** Aplica eyebrow/titulo/intro de la landing sobre el contenido compartido. */
+function conOverrides<T extends object>(base: T, tipo: string): T {
+  const o = L.secciones.find((s) => s.tipo === tipo);
+  if (!o) return base;
+  const { tipo: _t, ...resto } = o;
+  const limpio = Object.fromEntries(Object.entries(resto).filter(([, v]) => v !== undefined));
+  return { ...base, ...limpio };
+}
+
+const sede = localidad?.data.sede ? { ...O.equipo.sede, ...localidad.data.sede } : O.equipo.sede;
+const equipo = T.secciones.equipo ? { ...O.equipo, ...T.secciones.equipo, sede } : undefined;
+
+/**
+ * Fondo alterno blanco/beige para las secciones de contenido según su posición,
+ * empezando en blanco tras la barra de confianza. Reproduce el patrón de Figma
+ * y evita dos bloques del mismo color seguidos al reordenar secciones.
+ */
+const FONDO_FIJO = new Set(['hero', 'confianza', 'cta_final']);
+const tonos = new Map<string, 'light' | 'tint'>();
+let n = 0;
+for (const { tipo } of L.secciones) {
+  if (FONDO_FIJO.has(tipo)) continue;
+  tonos.set(tipo, n++ % 2 === 0 ? 'light' : 'tint');
+}
+
+const og =
+  L.imagen_principal && L.imagen_principal.format !== 'svg'
+    ? await getImage({ src: L.imagen_principal, width: 1200, format: 'jpg' })
+    : undefined;
+---
+
+<BaseLayout
+  title={L.seo_title}
+  description={L.meta_description}
+  canonical={absoluteUrl(path)}
+  ogImage={og ? absoluteUrl(og.src) : undefined}
+>
+  <PreviewBanner estado={L.estado} fixture={L.fixture} path={path} />
+  <Header contacto={contacto} ctaHref={ctaHref} />
+
+  <main>
+    {
+      L.secciones.map(({ tipo }) => {
+        switch (tipo) {
+          case 'hero':
+            return (
+              <Hero
+                eyebrow={L.eyebrow}
+                h1={L.h1}
+                intro={L.intro}
+                imagen={L.imagen_principal}
+                imagenAlt={L.imagen_principal_alt}
+                pruebaSocial={O.prueba_social}
+                form={{ ...formBase, id: HERO_FORM_ID, variant: 'hero' }}
+              />
+            );
+          case 'confianza':
+            return <TrustBar items={O.confianza} />;
+          case 'antes_despues':
+            return T.secciones.antes_despues && (
+              <BeforeAfter {...conOverrides(T.secciones.antes_despues, tipo)} ctaHref={ctaFinalHref} tone={tonos.get(tipo)} />
+            );
+          case 'tecnica':
+            return T.secciones.tecnica && <Technique {...conOverrides(T.secciones.tecnica, tipo)} tone={tonos.get(tipo)} />;
+          case 'simulacion':
+            return T.secciones.simulacion && (
+              <Simulation3D {...conOverrides(T.secciones.simulacion, tipo)} ctaHref={ctaFinalHref} tone={tonos.get(tipo)} />
+            );
+          case 'recuperacion':
+            return T.secciones.recuperacion && <RecoveryTimeline {...conOverrides(T.secciones.recuperacion, tipo)} tone={tonos.get(tipo)} />;
+          case 'testimonios':
+            return T.secciones.testimonios && (
+              <Testimonials {...conOverrides(T.secciones.testimonios, tipo)} enlaceHref={contacto.googleReviewsUrl} tone={tonos.get(tipo)} />
+            );
+          case 'equipo':
+            return equipo && <MedicalTeam {...conOverrides(equipo, tipo)} tone={tonos.get(tipo)} />;
+          case 'faq':
+            return T.secciones.faq && (
+              <Faq {...conOverrides(T.secciones.faq, tipo)} whatsappUrl={contacto.whatsappUrl} tone={tonos.get(tipo)} />
+            );
+          case 'cta_final':
+            return (
+              <FinalCta
+                id={CTA_ID}
+                {...conOverrides(T.secciones.cta_final, tipo)}
+                contacto={contacto}
+                form={{ ...formBase, id: 'valoracion-final', variant: 'compact', hideHeaderMobile: true }}
+              />
+            );
+        }
+      })
+    }
+  </main>
+
+  <Footer enlaces={O.footer.enlaces} aviso={O.footer.aviso} />
+  <StickyMobileBar contacto={contacto} ctaHref={ctaHref} watchStart={HERO_FORM_ID} watchEnd={CTA_ID} />
+</BaseLayout>

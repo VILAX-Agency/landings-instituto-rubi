@@ -1,0 +1,217 @@
+---
+/** Equipo médico (Figma 22:687 / móvil 10:425). */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import CheckList from '../ui/CheckList.astro';
+import ResponsiveText from '../ui/ResponsiveText.astro';
+import type { TextoResponsive } from '../../lib/content';
+
+interface Props {
+  /** Fondo: lo asigna la plantilla alternando según la posición. */
+  tone?: "light" | "tint";
+  eyebrow: string;
+  titulo: string;
+  director: { nombre: string; cargo: TextoResponsive };
+  imagen: ImageMetadata;
+  imagen_alt: string;
+  credenciales: { texto: string; ocultar_movil?: boolean }[];
+  avatares: { imagen: ImageMetadata; alt: string }[];
+  equipo_extra: string;
+  equipo_texto: TextoResponsive;
+  sede: { imagen: ImageMetadata; imagen_alt: string; texto: string; detalle: string };
+}
+
+const { eyebrow, titulo, director, imagen, imagen_alt, credenciales, avatares, equipo_extra, equipo_texto, sede } =
+  Astro.props;
+const { tone = "tint" } = Astro.props;
+---
+
+<section class:list={["section", "team", { "section--tint": tone === "tint" }]} aria-labelledby="team-title">
+  <div class="container team__layout">
+    <div class="team__photo">
+      <Image src={imagen} alt={imagen_alt} widths={[335, 500, 1000]} sizes="(min-width: 1024px) 500px, 100vw" loading="lazy" />
+    </div>
+
+    <div class="team__content">
+      <p class="t-eyebrow">{eyebrow}</p>
+      <h2 id="team-title" class="t-h2 team__title">{titulo}</h2>
+      <p class="team__director">
+        <strong>{director.nombre}</strong>
+        <span> · <ResponsiveText value={director.cargo} /></span>
+      </p>
+
+      <CheckList items={credenciales} gap={14} class="team__checks" />
+
+      <div class="team__group">
+        <ul class="avatars" aria-hidden="true">
+          {
+            avatares.map((a) => (
+              <li class="avatar">
+                <Image src={a.imagen} alt={a.alt} width={48} height={48} densities={[1, 2]} loading="lazy" />
+              </li>
+            ))
+          }
+          <li class="avatar avatar--more t-small-semibold">{equipo_extra}</li>
+        </ul>
+        <p class="t-body-semibold team__group-text">
+          <ResponsiveText value={equipo_texto} />
+        </p>
+      </div>
+
+      <div class="team__sede">
+        <Image
+          class="team__sede-img"
+          src={sede.imagen}
+          alt={sede.imagen_alt}
+          width={72}
+          height={72}
+          densities={[1, 2]}
+          loading="lazy"
+        />
+        <div>
+          <p class="t-body-semibold team__sede-text">{sede.texto}</p>
+          <p class="t-small team__sede-detail">{sede.detalle}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team__layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .team__photo {
+    height: 360px;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-dark);
+  }
+  .team__photo :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .team__content {
+    padding-top: 32px;
+  }
+  .team__title {
+    padding-top: var(--space-16);
+    color: var(--color-text-primary);
+  }
+  .team__director {
+    padding-top: var(--space-12);
+    color: var(--color-text-body);
+    font-weight: 300;
+  }
+  .team__director strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+  .team__content :global(.team__checks) {
+    padding-top: 20px;
+  }
+  .team__group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 28px;
+  }
+  .avatars {
+    display: flex;
+    flex-shrink: 0;
+  }
+  .avatar {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border: 3px solid var(--section-bg, var(--color-bg-tint));
+    border-radius: 24px;
+  }
+  .avatar + .avatar {
+    margin-left: -12px;
+  }
+  .avatar :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .avatar--more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
+  }
+  .team__group-text {
+    color: var(--color-text-primary);
+  }
+  .team__sede {
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    margin-top: 28px;
+    padding: 14px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-page);
+  }
+  .team__sede :global(.team__sede-img) {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+  }
+  .team__sede-text {
+    color: var(--color-text-primary);
+  }
+  .team__sede-detail {
+    padding-top: var(--space-4);
+    color: var(--color-text-muted);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .team__photo {
+      height: 520px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team__layout {
+      flex-direction: row;
+      align-items: center;
+      gap: 96px;
+    }
+    .team__photo {
+      flex: 0 0 500px;
+      height: 600px;
+    }
+    .team__content {
+      flex: 604 1 0;
+      min-width: 0;
+      padding-top: 0;
+    }
+    .team__director {
+      padding-top: var(--space-16);
+      font-size: 18px;
+      line-height: 28px;
+    }
+    .team__content :global(.team__checks) {
+      padding-top: 28px;
+    }
+    .team__group {
+      gap: var(--space-16);
+      padding-top: 36px;
+    }
+    .team__sede {
+      margin-top: 36px;
+    }
+    .team__sede :global(.team__sede-img) {
+      width: 72px;
+      height: 72px;
+    }
+  }
+</style>

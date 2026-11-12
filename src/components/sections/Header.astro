@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/brand/logo-header.png';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import IconButton from '../ui/IconButton.astro';
+import type { Contacto } from '../../lib/contacto';
+
+interface Props {
+  contacto: Contacto;
+  ctaHref: string;
+}
+
+const { contacto, ctaHref } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <Image
+      class="site-header__logo"
+      src={logo}
+      alt="Instituto Rubí"
+      width={213}
+      height={34}
+      densities={[1, 2]}
+      loading="eager"
+    />
+
+    <div class="site-header__actions only-desktop">
+      <a class="site-header__phone t-body-semibold" href={contacto.telHref}>
+        <Icon name="phone" />
+        {contacto.telefonoDisplay}
+      </a>
+      <Button variant="outline" size="sm" icon="chat" href={contacto.whatsappUrl} pendingReason="URL de WhatsApp pendiente">
+        WhatsApp
+      </Button>
+      <Button variant="primary" size="sm" href={ctaHref}>Pedir valoración</Button>
+    </div>
+
+    <IconButton class="only-mobile" icon="phone-20" label={`Llamar al ${contacto.telefonoDisplay}`} href={contacto.telHref} />
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--color-bg-page);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .site-header :global(.site-header__logo) {
+    width: 163px;
+    height: 26px;
+    object-fit: cover;
+  }
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-20);
+  }
+  .site-header__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    color: var(--color-text-primary);
+  }
+  @media (min-width: 1024px) {
+    .site-header__inner {
+      height: 88px;
+    }
+    .site-header :global(.site-header__logo) {
+      width: 213px;
+      height: 34px;
+    }
+  }
+</style>

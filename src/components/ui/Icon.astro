@@ -1,0 +1,53 @@
+---
+/**
+ * Iconos de línea exportados de Figma (src/assets/icons/*.svg).
+ * Se insertan como SVG en línea respetando su width/height originales;
+ * el tamaño visual lo controla el contenedor (.icon).
+ */
+import type { HTMLAttributes } from 'astro/types';
+
+const modules = import.meta.glob<{ default: (props: Record<string, unknown>) => unknown }>(
+  '../../assets/icons/*.svg',
+  { eager: true },
+);
+
+const icons = Object.fromEntries(
+  Object.entries(modules).map(([path, mod]) => [path.split('/').pop()!.replace('.svg', ''), mod.default]),
+);
+
+interface Props extends HTMLAttributes<'span'> {
+  name: string;
+  /** Tamaño de la caja en px (por defecto, el del SVG). */
+  size?: number;
+}
+
+const { name, size, class: className, ...rest } = Astro.props;
+const Svg = icons[name] as any;
+if (!Svg) throw new Error(`Icono desconocido: "${name}"`);
+---
+
+<span
+  class:list={['icon', className]}
+  style={size ? `--icon-size:${size}px` : undefined}
+  aria-hidden="true"
+  {...rest}
+>
+  <Svg />
+</span>
+
+<style>
+  .icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon[style] {
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+  .icon[style] :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+</style>

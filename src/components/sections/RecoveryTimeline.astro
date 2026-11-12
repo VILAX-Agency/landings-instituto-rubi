@@ -1,0 +1,120 @@
+---
+/**
+ * Recuperación (Figma 22:546 / móvil 10:315).
+ * Timeline step: horizontal en escritorio, vertical en móvil.
+ */
+import SectionHeading from '../ui/SectionHeading.astro';
+import type { TextoResponsive } from '../../lib/content';
+
+interface Props {
+  /** Fondo: lo asigna la plantilla alternando según la posición. */
+  tone?: "light" | "tint";
+  eyebrow: string;
+  titulo: string;
+  intro?: TextoResponsive;
+  pasos: { titulo: string; texto: string }[];
+}
+
+const { eyebrow, titulo, intro, pasos } = Astro.props;
+const { tone = "tint" } = Astro.props;
+---
+
+<section class:list={["section", "rec", { "section--tint": tone === "tint" }]} aria-labelledby="rec-title">
+  <div class="container">
+    <SectionHeading id="rec-title" eyebrow={eyebrow} title={titulo} intro={intro} centerDesktopOnly class="rec__heading" />
+    <ol class="timeline" style={`--steps:${pasos.length}`}>
+      {
+        pasos.map((paso, i) => (
+          <li class="timeline__step">
+            <span class="timeline__num t-h3" aria-hidden="true">
+              {i + 1}
+            </span>
+            <div class="timeline__text">
+              <h3 class="t-body-semibold timeline__title">{paso.titulo}</h3>
+              <p class="t-small timeline__desc">{paso.texto}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 32px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    left: 24px;
+    width: 1px;
+    background: var(--color-divider-accent);
+  }
+  .timeline__step {
+    position: relative;
+    display: flex;
+    gap: var(--space-16);
+    align-items: flex-start;
+  }
+  .timeline__num {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-page);
+    color: var(--color-text-primary);
+  }
+  .timeline__text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-width: 0;
+  }
+  .timeline__title {
+    color: var(--color-text-primary);
+  }
+  .timeline__desc {
+    color: var(--color-text-body);
+  }
+
+  @media (min-width: 1024px) {
+    .rec :global(.rec__heading) {
+      max-width: 680px;
+      margin-inline: auto;
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(var(--steps), minmax(0, 1fr));
+      gap: 40px;
+      margin-top: 64px;
+    }
+    .timeline::before {
+      top: 28px;
+      bottom: auto;
+      left: 28px;
+      right: 28px;
+      width: auto;
+      height: 1px;
+    }
+    .timeline__step {
+      flex-direction: column;
+      gap: var(--space-24);
+    }
+    .timeline__num {
+      width: 56px;
+      height: 56px;
+    }
+  }
+</style>

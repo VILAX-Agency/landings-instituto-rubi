@@ -1,0 +1,30 @@
+{
+  "tratamiento_slug": "aumento-pecho",
+  "estado": "borrador",
+  "fixture": false,
+  "seo_title": "Aumento de pecho con técnica ABA | Instituto Rubí",
+  "meta_description": "Aumento de pecho con técnica ABA: incisión de ~2 cm, sin drenajes y simulación 3D antes de operarte. Pide tu valoración gratuita en Instituto Rubí.",
+  "eyebrow": "Aumento de pecho · Técnica ABA",
+  "h1": "Aumento de pecho natural, con una cicatriz de solo ~2 cm",
+  "intro": "Sin drenajes y de vuelta a tu rutina en 48-72 h. Ve tu resultado en 3D antes de operarte.",
+  "imagen_principal": "../../assets/landings/aumento-pecho-aba/hero.jpg",
+  "imagen_principal_alt": "Torso de una mujer con las manos cubriendo el pecho",
+  "interes_preseleccionado": "aumento-pecho",
+  "secciones": [
+    { "tipo": "hero" },
+    { "tipo": "confianza" },
+    { "tipo": "antes_despues" },
+    { "tipo": "tecnica" },
+    { "tipo": "simulacion" },
+    { "tipo": "recuperacion" },
+    { "tipo": "testimonios" },
+    { "tipo": "equipo" },
+    { "tipo": "faq" },
+    { "tipo": "cta_final" }
+  ],
+  "notas_revision": [
+    "seo_title y meta_description propuestos por desarrollo: pendientes de aprobación SEO.",
+    "Afirmaciones clínicas (~2 cm, 48-72 h, 2/10, sin drenajes) pendientes de validación médica.",
+    "Fotos antes/después y testimonio: confirmar consentimiento documentado."
+  ]
+}

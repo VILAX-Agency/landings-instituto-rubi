@@ -1,0 +1,60 @@
+---
+/** Lista con icono de check Almond (equipo médico, CTA final). */
+import Icon from './Icon.astro';
+
+interface Item {
+  texto: string;
+  ocultar_movil?: boolean;
+}
+
+interface Props {
+  items: Item[];
+  onDark?: boolean;
+  gap?: 14 | 16;
+  class?: string;
+}
+
+const { items, onDark = false, gap = 16, class: className } = Astro.props;
+---
+
+<ul class:list={['checks', { 'checks--dark': onDark }, className]} style={`--gap:${gap}px`}>
+  {
+    items.map((item) => (
+      <li class:list={['checks__item', { 'only-desktop': item.ocultar_movil }]}>
+        <Icon name="check" class="checks__icon" />
+        <span class="t-body-regular">{item.texto}</span>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .checks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .checks__item {
+    display: flex;
+    gap: var(--space-12);
+    align-items: flex-start;
+    color: var(--color-text-primary);
+  }
+  .checks--dark .checks__item {
+    color: var(--color-text-on-dark);
+  }
+  .checks__item :global(.checks__icon) {
+    padding-top: 1px;
+  }
+  @media (max-width: 1023.98px) {
+    .checks__item :global(.checks__icon svg) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .checks {
+      gap: var(--gap);
+    }
+  }
+</style>

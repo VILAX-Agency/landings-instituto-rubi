@@ -1,0 +1,27 @@
+---
+/**
+ * Pinta un texto que puede variar entre escritorio y móvil (frame 375 de Figma).
+ * `movil: ""` oculta el texto en móvil.
+ */
+import type { TextoResponsive } from '../../lib/content';
+
+interface Props {
+  value: TextoResponsive;
+}
+
+const { value } = Astro.props;
+const isObject = typeof value === 'object';
+const desktop = isObject ? value.desktop : value;
+const movil = isObject ? value.movil : value;
+---
+
+{
+  desktop === movil ? (
+    <Fragment set:text={desktop} />
+  ) : (
+    <>
+      <span class="only-desktop" set:text={desktop} />
+      {movil && <span class="only-mobile" set:text={movil} />}
+    </>
+  )
+}

@@ -1,0 +1,24 @@
+{
+  "tratamiento_slug": "rinoplastia",
+  "localidad_slug": "ciudad-demo",
+  "estado": "borrador",
+  "fixture": true,
+  "seo_title": "[Prueba] Rinoplastia en Ciudad Demo | Instituto Rubí",
+  "meta_description": "Landing ficticia de prueba para validar la plantilla compartida con otro tratamiento y otra localidad. No publicar.",
+  "eyebrow": "[Ficticio] Rinoplastia · Ciudad Demo",
+  "h1": "Rinoplastia en Ciudad Demo (landing de prueba)",
+  "intro": "Contenido ficticio para comprobar que una landing nueva se genera solo con datos, sin tocar componentes ni estilos.",
+  "imagen_principal": "../../assets/landings/demo/hero-demo.svg",
+  "imagen_principal_alt": "Imagen de prueba neutra",
+  "interes_preseleccionado": "rinoplastia",
+  "secciones": [
+    { "tipo": "hero" },
+    { "tipo": "confianza" },
+    { "tipo": "tecnica", "eyebrow": "[Ficticio] Override desde la landing" },
+    { "tipo": "faq" },
+    { "tipo": "recuperacion" },
+    { "tipo": "equipo" },
+    { "tipo": "cta_final" }
+  ],
+  "notas_revision": ["Fixture de escalabilidad (Fase 1). Nunca publicar."]
+}

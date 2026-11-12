@@ -1,0 +1,26 @@
+---
+/**
+ * Todas las landings salen de la colección `landings` + buildLandingPath().
+ * Añadir una landing = añadir un JSON (y sus imágenes). Sin tocar esta página.
+ */
+import type { GetStaticPaths } from 'astro';
+import LandingPage from '../components/LandingPage.astro';
+import { getLandingsResueltas, getOrganizacion, type LandingResuelta } from '../lib/content';
+
+export const getStaticPaths = (async () => {
+  const resueltas = await getLandingsResueltas();
+  return resueltas.map((resuelta) => ({
+    params: { slug: resuelta.path.replace(/^\/|\/$/g, '') },
+    props: { resuelta },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  resuelta: LandingResuelta;
+}
+
+const { resuelta } = Astro.props;
+const organizacion = await getOrganizacion();
+---
+
+<LandingPage resuelta={resuelta} organizacion={organizacion} />

@@ -1,0 +1,45 @@
+---
+/** Aviso visible de previsualización: estado editorial y contenido ficticio. */
+interface Props {
+  estado: string;
+  fixture: boolean;
+  path: string;
+}
+
+const { estado, fixture, path } = Astro.props;
+const etiquetas: Record<string, string> = {
+  borrador: 'Borrador',
+  pendiente_revision: 'Pendiente de revisión',
+  aprobado: 'Aprobado',
+};
+---
+
+{
+  (fixture || estado !== 'aprobado') && (
+    <div class:list={['preview-banner', { 'preview-banner--fixture': fixture }]} role="note">
+      <strong>{fixture ? 'Contenido ficticio de prueba' : 'Previsualización'}</strong>
+      <span>
+        · Estado: {etiquetas[estado] ?? estado} · No publicar · noindex · {path}
+      </span>
+    </div>
+  )
+}
+
+<style>
+  .preview-banner {
+    padding: 6px var(--gutter);
+    background: #fff4d6;
+    color: #5c4400;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+  }
+  .preview-banner--fixture {
+    background: #ffe0e0;
+    color: #7a1010;
+  }
+  .preview-banner strong {
+    font-weight: 600;
+  }
+</style>

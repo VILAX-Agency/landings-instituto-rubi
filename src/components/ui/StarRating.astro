@@ -1,0 +1,23 @@
+---
+/** Cinco estrellas decorativas. La nota se comunica siempre en texto adyacente. */
+import Icon from './Icon.astro';
+
+interface Props {
+  icon?: 'star' | 'star-13' | 'star-review';
+  size?: number;
+  class?: string;
+}
+
+const { icon = 'star', size, class: className } = Astro.props;
+---
+
+<span class:list={['stars', className]} aria-hidden="true">
+  {Array.from({ length: 5 }, () => <Icon name={icon} size={size} />)}
+</span>
+
+<style>
+  .stars {
+    display: inline-flex;
+    gap: 2px;
+  }
+</style>

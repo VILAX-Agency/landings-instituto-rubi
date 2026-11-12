@@ -1,0 +1,43 @@
+---
+import '@fontsource/marcellus/400.css';
+import '@fontsource/open-sans/300.css';
+import '@fontsource/open-sans/400.css';
+import '@fontsource/open-sans/400-italic.css';
+import '@fontsource/open-sans/600.css';
+import '../styles/global.css';
+import { CAMPAIGN_ROBOTS } from '../config/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** URL canónica absoluta. */
+  canonical: string;
+  /** Las landings de campaña siempre son noindex en Fase 1. */
+  robots?: string;
+  ogImage?: string;
+}
+
+const { title, description, canonical, robots = CAMPAIGN_ROBOTS, ogImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={robots} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="theme-color" content="#1b3a56" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1600" viewBox="0 0 1400 1600" role="img" aria-label="Imagen de prueba">
+  <rect width="1400" height="1600" fill="#e2d6ca"/>
+  <g fill="none" stroke="#c3a38d" stroke-width="4" opacity="0.6">
+    <path d="M0 0L1400 1600M1400 0L0 1600"/>
+    <rect x="80" y="80" width="1240" height="1440"/>
+  </g>
+  <text x="700" y="780" text-anchor="middle" font-family="Georgia, serif" font-size="72" fill="#1b3a56">Imagen de prueba</text>
+  <text x="700" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#3e5469">Contenido ficticio · no publicar</text>
+</svg>

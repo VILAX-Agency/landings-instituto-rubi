@@ -1,0 +1,79 @@
+---
+/** Pie (Figma 22:900 / móvil 10:580). */
+import { Image } from 'astro:assets';
+import logo from '../../assets/brand/logo-footer.png';
+import ResponsiveText from '../ui/ResponsiveText.astro';
+import type { TextoResponsive } from '../../lib/content';
+
+interface Props {
+  enlaces: TextoResponsive;
+  aviso: TextoResponsive;
+}
+
+const { enlaces, aviso } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <Image
+      class="site-footer__logo"
+      src={logo}
+      alt="Instituto Rubí · Cirugía plástica"
+      width={168}
+      height={84}
+      densities={[1, 2]}
+      loading="lazy"
+    />
+    <div class="site-footer__legal">
+      <!-- Enlaces legales pendientes de URL: se muestran como texto -->
+      <p class="t-legal site-footer__links"><ResponsiveText value={enlaces} /></p>
+      <p class="t-legal site-footer__aviso"><ResponsiveText value={aviso} /></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 36px 0 112px;
+    background: var(--color-bg-footer);
+  }
+  .site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-footer :global(.site-footer__logo) {
+    width: 128px;
+    height: 64px;
+    object-fit: cover;
+  }
+  .site-footer__links {
+    padding-top: 20px;
+    color: var(--color-text-on-dark-muted);
+  }
+  .site-footer__aviso {
+    padding-top: 6px;
+    color: var(--color-text-on-dark-subtle);
+  }
+  @media (min-width: 1024px) {
+    .site-footer {
+      padding-block: 48px;
+    }
+    .site-footer__inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-32);
+    }
+    .site-footer :global(.site-footer__logo) {
+      width: 168px;
+      height: 84px;
+    }
+    .site-footer__legal {
+      text-align: right;
+    }
+    .site-footer__links {
+      padding-top: 0;
+    }
+  }
+</style>

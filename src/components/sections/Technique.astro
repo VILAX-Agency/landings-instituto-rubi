@@ -1,0 +1,241 @@
+---
+/**
+ * Ventajas de la técnica + tabla comparativa (Figma 22:381 / móvil 10:161).
+ * Feature: vertical en escritorio (rejilla 2×2), horizontal en móvil (lista).
+ */
+import SectionHeading from '../ui/SectionHeading.astro';
+import IconRing from '../ui/IconRing.astro';
+import ResponsiveText from '../ui/ResponsiveText.astro';
+import { esMarcador, type TextoResponsive } from '../../lib/content';
+
+interface Props {
+  /** Fondo: lo asigna la plantilla alternando según la posición. */
+  tone?: "light" | "tint";
+  eyebrow: string;
+  titulo: string;
+  intro: TextoResponsive;
+  ventajas: { icono: string; titulo: string; texto: string }[];
+  comparativa?: {
+    columna_propia: TextoResponsive;
+    columna_alternativa: TextoResponsive;
+    filas: { concepto: TextoResponsive; propia: TextoResponsive; alternativa: string }[];
+  };
+}
+
+const { eyebrow, titulo, intro, ventajas, comparativa } = Astro.props;
+const { tone = "tint" } = Astro.props;
+---
+
+<section class:list={["section", "tech", { "section--tint": tone === "tint" }]} aria-labelledby="tech-title">
+  <div class="container tech__layout">
+    <div class="tech__main">
+      <SectionHeading id="tech-title" eyebrow={eyebrow} title={titulo} intro={intro} />
+      <ul class="tech__features">
+        {
+          ventajas.map((v) => (
+            <li class="feature">
+              <IconRing icon={v.icono} />
+              <div class="feature__text">
+                <h3 class="t-body-semibold feature__title">{v.titulo}</h3>
+                <p class="t-small feature__desc">{v.texto}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    {
+      comparativa && (
+        <div class="tech__table-wrap">
+          <table class="compare">
+            <caption class="visually-hidden">Comparativa entre técnicas</caption>
+            <colgroup>
+              <col class="compare__col-concept" />
+              <col class="compare__col-own" />
+              <col class="compare__col-alt" />
+            </colgroup>
+            <thead>
+              <tr>
+                <td class="compare__corner" />
+                <th scope="col" class="compare__head compare__head--own t-tag">
+                  <ResponsiveText value={comparativa.columna_propia} />
+                </th>
+                <th scope="col" class="compare__head compare__head--alt t-tag">
+                  <ResponsiveText value={comparativa.columna_alternativa} />
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparativa.filas.map((f) => (
+                <tr>
+                  <th scope="row" class="compare__concept">
+                    <ResponsiveText value={f.concepto} />
+                  </th>
+                  <td class="compare__own">
+                    <ResponsiveText value={f.propia} />
+                  </td>
+                  <td class:list={['compare__alt', { 'is-placeholder': esMarcador(f.alternativa) }]}>{f.alternativa}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .tech__layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .tech__features {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 32px;
+  }
+  .feature {
+    display: flex;
+    gap: var(--space-16);
+    align-items: flex-start;
+  }
+  .feature__text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-width: 0;
+  }
+  .feature__title {
+    color: var(--color-text-primary);
+  }
+  .feature__desc {
+    color: var(--color-text-body);
+  }
+
+  .tech__table-wrap {
+    padding-top: 36px;
+  }
+  .compare {
+    width: 100%;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    background: var(--color-bg-page);
+    table-layout: fixed;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  /* Proporciones de las columnas de Figma (móvil 120/103/110 · escritorio 195/156/167) */
+  .compare__col-concept {
+    width: 36.1%;
+  }
+  .compare__col-own {
+    width: 30.8%;
+  }
+  .compare__col-alt {
+    width: 33.1%;
+  }
+  .compare th,
+  .compare td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 400;
+  }
+  .compare tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+  .compare thead th,
+  .compare thead td {
+    padding-block: 15.5px;
+  }
+  .compare__head--own {
+    background: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
+  }
+  .compare__head--alt {
+    color: var(--color-text-muted);
+  }
+  .compare thead .t-tag {
+    font-weight: 600;
+  }
+  .compare__concept {
+    color: var(--color-text-body);
+  }
+  .compare__own {
+    background: var(--color-bg-highlight);
+    color: var(--color-text-primary);
+    font-weight: 600 !important;
+  }
+  .compare__alt {
+    color: var(--color-text-body);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .tech__features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px 36px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .tech__layout {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 80px;
+    }
+    .tech__main {
+      flex: 600 1 0;
+      min-width: 0;
+    }
+    .tech__features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 40px 36px;
+      padding-top: 48px;
+    }
+    .feature {
+      flex-direction: column;
+    }
+    .tech__table-wrap {
+      flex: 0 1 520px;
+      padding-top: 0;
+    }
+    .compare {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .compare__col-concept {
+      width: 37.7%;
+    }
+    .compare__col-own {
+      width: 30%;
+    }
+    .compare__col-alt {
+      width: 32.3%;
+    }
+    .compare__concept {
+      white-space: nowrap;
+    }
+    .compare th,
+    .compare td {
+      padding: var(--space-16) var(--space-20);
+    }
+    .compare thead th,
+    .compare thead td {
+      padding: var(--space-20) var(--space-20) var(--space-16);
+    }
+    .compare .is-placeholder {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+</style>

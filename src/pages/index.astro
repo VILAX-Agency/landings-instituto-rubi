@@ -1,0 +1,77 @@
+---
+/**
+ * Índice interno de previsualización (no es una página pública).
+ * Lista las landings generadas, su estado y la ruta resultante.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LANDINGS_BASE_PATH, INCLUDE_DRAFTS, INCLUDE_FIXTURES, absoluteUrl } from '../config/site';
+import { getLandingsResueltas } from '../lib/content';
+
+const landings = await getLandingsResueltas();
+---
+
+<BaseLayout
+  title="Previsualización de landings · Instituto Rubí"
+  description="Índice interno de previsualización de landings. No publicar."
+  canonical={absoluteUrl('/')}
+>
+  <main class="container index">
+    <h1 class="t-h2">Previsualización de landings</h1>
+    <p class="t-small">
+      Uso interno · no publicar · todas las landings son <code>noindex</code>. Prefijo de URL:
+      <code>/{LANDINGS_BASE_PATH || '(raíz)'}/</code> · borradores: {INCLUDE_DRAFTS ? 'incluidos' : 'excluidos'} · fixtures:
+      {INCLUDE_FIXTURES ? 'incluidos' : 'excluidos'}
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Ruta</th>
+          <th scope="col">Landing</th>
+          <th scope="col">Tratamiento</th>
+          <th scope="col">Localidad</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Ficticia</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          landings.map(({ landing, tratamiento, localidad, path }) => (
+            <tr>
+              <td>
+                <a href={path}>{path}</a>
+              </td>
+              <td>{landing.id}</td>
+              <td>{tratamiento.id}</td>
+              <td>{localidad?.id ?? '—'}</td>
+              <td>{landing.data.estado}</td>
+              <td>{landing.data.fixture ? 'sí' : 'no'}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </main>
+</BaseLayout>
+
+<style>
+  .index {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-block: 48px;
+    color: var(--color-text-primary);
+  }
+  table {
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th,
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    text-align: left;
+  }
+  a {
+    text-decoration: underline;
+  }
+</style>

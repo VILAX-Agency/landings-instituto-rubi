@@ -1,0 +1,73 @@
+/*
+ * Tokens de diseño — extraídos de las variables de Figma
+ * (archivo Instituto-Rubi, frame ABA_v2 · Hi-fi). Mantener los mismos nombres.
+ */
+:root {
+  /* Texto */
+  --color-text-primary: #1b3a56;
+  --color-text-body: #3e5469;
+  --color-text-muted: #7d8b98;
+  --color-text-subtle: #b5a99d;
+  --color-text-accent: #c3a38d;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-muted: #c9d3dd;
+  --color-text-on-dark-subtle: #8ea2b5;
+
+  /* Iconos */
+  --color-icon-primary: #1b3a56;
+  --color-icon-accent: #c3a38d;
+  --color-icon-on-dark: #ffffff;
+
+  /* Acciones */
+  --color-action-primary: #1b3a56;
+
+  /* Fondos */
+  --color-bg-page: #ffffff;
+  --color-bg-tint: #f8f2ec;
+  --color-bg-highlight: #f6eee6;
+  --color-bg-input: #fdfbf9;
+  --color-bg-muted: #e2d6ca;
+  --color-bg-dark: #1b3a56;
+  --color-bg-footer: #142d44;
+  --color-bg-media: #000000;
+
+  /* Bordes y divisores */
+  --color-border-subtle: #efe4d8;
+  --color-border-input: #d7ccc1;
+  --color-border-accent: #c3a38d;
+  --color-divider-default: #d7ccc1;
+  --color-divider-accent: #c3a38d;
+
+  /* Espaciado */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Radios */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-full: 999px;
+
+  /* Elevación */
+  --shadow-card: 0 20px 50px rgb(27 58 86 / 0.1); /* Elevation/Card */
+  --shadow-sticky: 0 -8px 24px rgb(27 58 86 / 0.1); /* Elevation/Sticky */
+
+  /* Familias */
+  --font-display: 'Marcellus', Georgia, 'Times New Roman', serif;
+  --font-body: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --container-max: 1200px;
+  --gutter: 20px;
+  --section-pad-y: 64px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-pad-y: 112px;
+  }
+}

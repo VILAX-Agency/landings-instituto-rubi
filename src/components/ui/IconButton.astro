@@ -1,0 +1,49 @@
+---
+/** Botón cuadrado solo icono (Figma: Icon button 20:160) — WhatsApp, llamar. */
+import Icon from './Icon.astro';
+
+interface Props {
+  icon: string;
+  label: string;
+  href?: string;
+  size?: 40 | 48;
+  iconSize?: number;
+  class?: string;
+}
+
+const { icon, label, href, size = 40, iconSize = 20, class: className } = Astro.props;
+const isExternal = href?.startsWith('http');
+---
+
+<a
+  class:list={['icon-btn', className]}
+  style={`--size:${size}px`}
+  href={href}
+  aria-label={label}
+  aria-disabled={href ? undefined : 'true'}
+  title={href ? label : `${label} (enlace pendiente de configurar)`}
+  target={isExternal ? '_blank' : undefined}
+  rel={isExternal ? 'noopener' : undefined}
+>
+  <Icon name={icon} size={iconSize} />
+</a>
+
+<style>
+  .icon-btn {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid var(--color-action-primary);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-page);
+  }
+  .icon-btn:hover {
+    background: var(--color-bg-tint);
+  }
+  .icon-btn[aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+</style>

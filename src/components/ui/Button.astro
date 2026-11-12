@@ -1,0 +1,109 @@
+---
+/**
+ * Botón de marca (Figma: Button 18:91).
+ * Primary = acción principal · Outline = secundarias · On dark = sobre azul Prusia.
+ * Si no hay `href` (dato pendiente, p. ej. WhatsApp), se pinta igual pero inactivo.
+ */
+import Icon from './Icon.astro';
+
+interface Props {
+  variant?: 'primary' | 'outline' | 'on-dark';
+  size?: 'md' | 'sm';
+  href?: string;
+  icon?: string;
+  iconPosition?: 'start' | 'end';
+  full?: boolean;
+  class?: string;
+  /** Motivo por el que el enlace está pendiente (se muestra como title). */
+  pendingReason?: string;
+  [key: `data-${string}`]: string | undefined;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  icon,
+  iconPosition = 'start',
+  full = false,
+  class: className,
+  pendingReason = 'Enlace pendiente de configurar',
+  ...rest
+} = Astro.props;
+
+const isExternal = href?.startsWith('http');
+---
+
+<a
+  class:list={['btn', `btn--${variant}`, `btn--${size}`, { 'btn--full': full }, className]}
+  href={href}
+  aria-disabled={href ? undefined : 'true'}
+  title={href ? undefined : pendingReason}
+  target={isExternal ? '_blank' : undefined}
+  rel={isExternal ? 'noopener' : undefined}
+  {...rest}
+>
+  {icon && iconPosition === 'start' && <Icon name={icon} />}
+  <span><slot /></span>
+  {icon && iconPosition === 'end' && <Icon name={icon} />}
+</a>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    border: 1px solid var(--color-action-primary);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease,
+      border-color 0.15s ease;
+  }
+  .btn--md {
+    height: 54px;
+    padding-inline: var(--space-24);
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .btn--sm {
+    height: 44px;
+    padding-inline: var(--space-16);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .btn--full {
+    width: 100%;
+  }
+  .btn--primary {
+    background: var(--color-action-primary);
+    color: var(--color-text-on-dark);
+  }
+  .btn--primary:hover {
+    background: #142d44;
+    border-color: #142d44;
+  }
+  .btn--outline {
+    background: transparent;
+    color: var(--color-text-primary);
+  }
+  .btn--outline:hover {
+    background: var(--color-bg-tint);
+  }
+  .btn--on-dark {
+    background: transparent;
+    border-color: var(--color-icon-on-dark);
+    color: var(--color-text-on-dark);
+  }
+  .btn--on-dark:hover {
+    background: rgb(255 255 255 / 0.08);
+  }
+  .btn[aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+</style>

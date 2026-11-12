@@ -1,0 +1,9 @@
+{
+  "nombre": "Ciudad Demo",
+  "fixture": true,
+  "datos_locales_fuente": "Fixture ficticio para pruebas de plantilla. Sin fuente real: no publicable.",
+  "sede": {
+    "texto": "[Ficticio] Consulta de ejemplo en Ciudad Demo",
+    "detalle": "Dato local inventado para pruebas · no publicar"
+  }
+}

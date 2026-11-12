@@ -1,0 +1,84 @@
+---
+/** Eyebrow + H2 + entradilla. Patrón repetido en todas las secciones. */
+import ResponsiveText from './ResponsiveText.astro';
+import type { TextoResponsive } from '../../lib/content';
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  title: string;
+  intro?: TextoResponsive;
+  align?: 'start' | 'center';
+  /** Alinear al centro solo en escritorio (Recuperación). */
+  centerDesktopOnly?: boolean;
+  onDark?: boolean;
+  class?: string;
+}
+
+const {
+  id,
+  eyebrow,
+  title,
+  intro,
+  align = 'start',
+  centerDesktopOnly = false,
+  onDark = false,
+  class: className,
+} = Astro.props;
+
+const hideIntroMobile = typeof intro === 'object' && intro.movil === '';
+---
+
+<header
+  class:list={[
+    'heading',
+    `heading--${align}`,
+    { 'heading--center-desktop': centerDesktopOnly, 'heading--dark': onDark },
+    className,
+  ]}
+>
+  <p class="t-eyebrow">{eyebrow}</p>
+  <h2 id={id} class="t-h2 heading__title">{title}</h2>
+  {
+    intro && (
+      <p class:list={['t-lead', 'heading__intro', { 'only-desktop': hideIntroMobile }]}>
+        <ResponsiveText value={intro} />
+      </p>
+    )
+  }
+</header>
+
+<style>
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .heading__title {
+    padding-top: var(--space-16);
+    color: var(--color-text-primary);
+  }
+  .heading__intro {
+    padding-top: var(--space-12);
+    color: var(--color-text-body);
+  }
+  .heading--center {
+    align-items: center;
+    text-align: center;
+  }
+  .heading--dark .heading__title {
+    color: var(--color-text-on-dark);
+  }
+  .heading--dark .heading__intro {
+    color: var(--color-text-on-dark-muted);
+  }
+  @media (min-width: 1024px) {
+    .heading__intro {
+      padding-top: var(--space-16);
+    }
+    .heading--center-desktop {
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>

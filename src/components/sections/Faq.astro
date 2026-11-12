@@ -1,0 +1,116 @@
+---
+/**
+ * Preguntas frecuentes (Figma 22:808 / móvil 10:476). FAQ item 20:112:
+ * acordeón nativo <details>, solo la primera abierta.
+ */
+import SectionHeading from '../ui/SectionHeading.astro';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+
+interface Props {
+  /** Fondo: lo asigna la plantilla alternando según la posición. */
+  tone?: "light" | "tint";
+  eyebrow: string;
+  titulo: string;
+  intro: string;
+  cta_label: string;
+  whatsappUrl?: string;
+  preguntas: { pregunta: string; respuesta: string }[];
+}
+
+const { eyebrow, titulo, intro, cta_label, whatsappUrl, preguntas } = Astro.props;
+const { tone = "light" } = Astro.props;
+---
+
+<section class:list={["section", "faq", { "section--tint": tone === "tint" }]} aria-labelledby="faq-title">
+  <div class="container faq__layout">
+    <div class="faq__aside">
+      <SectionHeading id="faq-title" eyebrow={eyebrow} title={titulo} intro={{ desktop: intro, movil: '' }} />
+      <div class="faq__cta only-desktop">
+        <Button variant="outline" icon="chat" href={whatsappUrl} pendingReason="URL de WhatsApp pendiente">
+          {cta_label}
+        </Button>
+      </div>
+    </div>
+
+    <div class="faq__list">
+      {
+        preguntas.map((p, i) => (
+          <details class="faq-item" name="faq" open={i === 0}>
+            <summary class="faq-item__q">
+              <span class="t-body-semibold faq-item__text">{p.pregunta}</span>
+              <Icon name="plus" class="faq-item__plus" />
+              <Icon name="minus" class="faq-item__minus" />
+            </summary>
+            <p class="t-body faq-item__a">{p.respuesta}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq__layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .faq__cta {
+    padding-top: var(--space-32);
+  }
+  .faq__list {
+    padding-top: 12px;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+  .faq-item__q {
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    padding-block: var(--space-24);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item__q::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item__text {
+    flex: 1;
+    min-width: 0;
+  }
+  .faq-item[open] .faq-item__q {
+    padding-bottom: var(--space-12);
+  }
+  .faq-item :global(.faq-item__minus),
+  .faq-item[open] :global(.faq-item__plus) {
+    display: none;
+  }
+  .faq-item[open] :global(.faq-item__minus) {
+    display: inline-flex;
+  }
+  .faq-item__a {
+    padding-bottom: var(--space-24);
+    color: var(--color-text-body);
+  }
+
+  @media (min-width: 1024px) {
+    .faq__layout {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 112px;
+    }
+    .faq__aside {
+      flex: 0 0 380px;
+    }
+    .faq__list {
+      flex: 708 1 0;
+      min-width: 0;
+      padding-top: 0;
+    }
+    .faq-item:first-child .faq-item__q {
+      padding-top: 0;
+    }
+  }
+</style>

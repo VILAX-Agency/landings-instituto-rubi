@@ -1,0 +1,117 @@
+---
+/**
+ * CTA final sobre azul Prusia (Figma 22:809 / móvil 10:530).
+ * Móvil: cabecera → formulario (sin cabecera) → botones; la lista se oculta.
+ */
+import type { ComponentProps } from 'astro/types';
+import LeadForm from '../forms/LeadForm.astro';
+import CheckList from '../ui/CheckList.astro';
+import Button from '../ui/Button.astro';
+import type { Contacto } from '../../lib/contacto';
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  titulo: string;
+  intro: string;
+  puntos: string[];
+  contacto: Contacto;
+  form: ComponentProps<typeof LeadForm>;
+}
+
+const { id, eyebrow, titulo, intro, puntos, contacto, form } = Astro.props;
+---
+
+<section id={id} class="section section--dark cta" aria-labelledby="cta-title">
+  <div class="container cta__layout">
+    <div class="cta__intro">
+      <p class="t-eyebrow">{eyebrow}</p>
+      <h2 id="cta-title" class="t-h2 cta__title">{titulo}</h2>
+      <p class="t-lead cta__lead">{intro}</p>
+    </div>
+
+    <div class="cta__checks only-desktop">
+      <CheckList items={puntos.map((texto) => ({ texto }))} onDark />
+    </div>
+
+    <div class="cta__buttons">
+      <Button variant="on-dark" size="sm" icon="chat-on-dark" href={contacto.whatsappUrl} pendingReason="URL de WhatsApp pendiente">
+        WhatsApp
+      </Button>
+      <Button variant="on-dark" size="sm" icon="phone-on-dark" href={contacto.telHref}>
+        <span class="only-desktop">{contacto.telefonoDisplay}</span>
+        <span class="only-mobile">Llamar</span>
+      </Button>
+    </div>
+
+    <div class="cta__form">
+      <LeadForm {...form} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'intro'
+      'form'
+      'buttons';
+  }
+  .cta__intro {
+    grid-area: intro;
+  }
+  .cta__checks {
+    grid-area: checks;
+  }
+  .cta__buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: var(--space-16);
+  }
+  .cta__form {
+    grid-area: form;
+    padding-top: 28px;
+  }
+  .cta__title {
+    padding-top: var(--space-16);
+    color: var(--color-text-on-dark);
+  }
+  .cta__lead {
+    padding-top: var(--space-12);
+    color: var(--color-text-on-dark-muted);
+  }
+
+  @media (min-width: 1024px) {
+    .cta__layout {
+      grid-template-columns: minmax(0, 608fr) minmax(0, 480px);
+      /* Filas 1fr arriba y abajo: la columna izquierda queda centrada frente al formulario */
+      grid-template-rows: 1fr auto auto auto 1fr;
+      grid-template-areas:
+        '. form'
+        'intro form'
+        'checks form'
+        'buttons form'
+        '. form';
+      column-gap: 112px;
+    }
+    .cta__checks {
+      padding-top: 36px;
+    }
+    .cta__buttons {
+      display: flex;
+      gap: var(--space-12);
+      padding-top: 44px;
+    }
+    .cta__form {
+      align-self: center;
+      padding-top: 0;
+    }
+    .cta__lead {
+      padding-top: var(--space-16);
+    }
+  }
+</style>
