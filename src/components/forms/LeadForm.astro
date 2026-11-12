@@ -9,7 +9,7 @@
  * FASE 1: NO OPERATIVO. Ver ./formConfig.ts.
  */
 import Icon from '../ui/Icon.astro';
-import { isLeadFormOperational, leadFormConfig } from './formConfig';
+import { ciudadesFormulario, isLeadFormOperational, leadFormConfig } from './formConfig';
 
 interface Opcion {
   valor: string;
@@ -53,6 +53,9 @@ const {
 const operativo = isLeadFormOperational();
 const titleId = `${id}-titulo`;
 const avisoId = `${id}-aviso`;
+const ciudadId = `${id}-ciudad`;
+// Si la landing es de una localidad incluida en la lista, se preselecciona.
+const ciudadInicial = ciudadesFormulario.some((c) => c.valor === localidad) ? localidad : '';
 
 const campos = [
   { name: 'nombre', label: 'Nombre', placeholder: 'Tu nombre', placeholderMovil: 'Nombre', type: 'text', autocomplete: 'given-name' },
@@ -109,25 +112,42 @@ const campos = [
       ))
     }
   </div>
-  {
-    campos.slice(2).map((c) => (
-      <div class="field">
-        <label class="field__label t-tag" for={`${id}-${c.name}`}>
-          {c.label}
-        </label>
-        <input
-          class="field__input"
-          id={`${id}-${c.name}`}
-          name={c.name}
-          type={c.type}
-          autocomplete={c.autocomplete}
-          placeholder={c.placeholder}
-          data-placeholder-desktop={c.placeholder}
-          data-placeholder-mobile={c.placeholderMovil}
-        />
+  <div class="lead-form__row">
+    {
+      campos.slice(2).map((c) => (
+        <div class="field">
+          <label class="field__label t-tag" for={`${id}-${c.name}`}>
+            {c.label}
+          </label>
+          <input
+            class="field__input"
+            id={`${id}-${c.name}`}
+            name={c.name}
+            type={c.type}
+            autocomplete={c.autocomplete}
+            placeholder={c.placeholder}
+            data-placeholder-desktop={c.placeholder}
+            data-placeholder-mobile={c.placeholderMovil}
+          />
+        </div>
+      ))
+    }
+    <div class="field">
+      <label class="field__label t-tag" for={ciudadId}>Ciudad</label>
+      <div class="field__select">
+        <select class="field__input field__input--select" id={ciudadId} name="ciudad" required>
+          <option value="" disabled selected={!ciudadInicial}>Tu ciudad</option>
+          {
+            ciudadesFormulario.map((c) => (
+              <option value={c.valor} selected={c.valor === ciudadInicial}>
+                {c.label}
+              </option>
+            ))
+          }
+        </select>
       </div>
-    ))
-  }
+    </div>
+  </div>
 
   <fieldset class="lead-form__interest">
     <legend class="t-tag lead-form__legend">{textos.etiqueta_interes}</legend>
@@ -267,6 +287,33 @@ const campos = [
   .field__input::placeholder {
     color: var(--color-text-muted);
     opacity: 1;
+  }
+  .field__select {
+    position: relative;
+  }
+  .field__select::after {
+    position: absolute;
+    top: 50%;
+    right: var(--space-16);
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid var(--color-text-muted);
+    border-bottom: 1.5px solid var(--color-text-muted);
+    content: '';
+    pointer-events: none;
+    transform: translateY(-75%) rotate(45deg);
+  }
+  .field__input--select {
+    appearance: none;
+    padding-right: calc(var(--space-16) * 2 + 8px);
+    cursor: pointer;
+  }
+  /* Sin ciudad elegida: el texto de la opción vacía se ve como un placeholder */
+  .field__input--select:invalid {
+    color: var(--color-text-muted);
+  }
+  .field__input--select option {
+    color: var(--color-text-primary);
   }
   .field__input:focus {
     border-color: var(--color-action-primary);

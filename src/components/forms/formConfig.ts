@@ -24,6 +24,7 @@ export interface LeadPayload {
   nombre: string;
   telefono: string;
   email?: string;
+  ciudad: string;
   interes: string;
   consentimiento: boolean;
   landing_id: string;
@@ -31,10 +32,31 @@ export interface LeadPayload {
   localidad?: string;
 }
 
+export interface CiudadFormulario {
+  /** Valor enviado (slug en minúscula, sin tildes). */
+  valor: string;
+  label: string;
+}
+
+/**
+ * Ciudades del desplegable del formulario.
+ * PROVISIONAL: lista de prueba pendiente de confirmar por el cliente/equipo SEO.
+ * No implica que se atienda en estas ciudades ni que existan landings para ellas.
+ */
+export const ciudadesFormulario: CiudadFormulario[] = [
+  { valor: "mallorca", label: "Mallorca" },
+  { valor: "barcelona", label: "Barcelona" },
+  { valor: "madrid", label: "Madrid" },
+  { valor: "almeria", label: "Almería" },
+  { valor: "murcia", label: "Murcia" },
+  { valor: "tenerife", label: "Tenerife" },
+];
+
 export const leadFormConfig: LeadFormConfig = {
   endpoint: undefined,
   provider: undefined,
 };
 
-export const isLeadFormOperational = (config: LeadFormConfig = leadFormConfig): boolean =>
-  Boolean(config.endpoint);
+export const isLeadFormOperational = (
+  config: LeadFormConfig = leadFormConfig,
+): boolean => Boolean(config.endpoint);
