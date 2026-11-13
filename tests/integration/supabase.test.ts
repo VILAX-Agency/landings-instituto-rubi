@@ -4,7 +4,9 @@
  * Opcional: RESEND_TEST_API_KEY + RESEND_TEST_FROM envían un email real a
  * delivered@resend.dev (cuenta para la cuota de Resend).
  *
- * Todas las filas usan landing_id "test-integracion" y se borran al final.
+ * Todas las filas usan landing_id "test-integracion". Sin privilegio DELETE no se
+ * borran solas: limpiar desde el panel con
+ *   delete from public.leads where landing_id = 'test-integracion';
  * La prueba de concurrencia puede reclamar otras filas pendientes del
  * proyecto de desarrollo (nunca usar producción).
  */
@@ -65,7 +67,9 @@ describe.skipIf(!URL_ || !KEY)('Supabase (desarrollo)', () => {
   });
 
   afterAll(async () => {
-    await rest(`/leads?landing_id=eq.${LANDING}`, { method: 'DELETE' });
+    // service_role no tiene DELETE (mínimo privilegio): limpieza best-effort.
+    // Las filas de prueba quedan identificadas con landing_id "test-integracion".
+    await rest(`/leads?landing_id=eq.${LANDING}`, { method: 'DELETE' }).catch(() => undefined);
   });
 
   it('un envío crea exactamente una fila, también si se repite', async () => {

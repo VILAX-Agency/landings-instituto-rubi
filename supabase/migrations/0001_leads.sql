@@ -2,7 +2,7 @@
 -- Aplicar primero en el proyecto de DESARROLLO; en producción solo con aprobación.
 --
 -- Seguridad: RLS activado SIN políticas y sin privilegios para anon/authenticated.
--- Solo el servidor (clave secreta, rol service_role) lee y escribe.
+-- Solo el servidor (clave secreta, rol service_role) lee, inserta y actualiza.
 
 create table public.leads (
   id                       uuid primary key default gen_random_uuid(),
@@ -50,6 +50,10 @@ create index leads_notification_idx on public.leads (notification_status, create
 
 alter table public.leads enable row level security;
 revoke all on table public.leads from anon, authenticated;
+-- Los proyectos recientes no conceden privilegios por defecto a los roles de la
+-- API sobre tablas creadas por SQL: el servidor (service_role) necesita los suyos.
+-- Mínimo necesario: leer, insertar y actualizar el estado. Sin DELETE.
+grant select, insert, update on table public.leads to service_role;
 
 -- Reclamación atómica de notificaciones pendientes o fallidas.
 -- Solo quien recibe una fila la envía: FOR UPDATE SKIP LOCKED impide que dos
