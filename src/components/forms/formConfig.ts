@@ -24,19 +24,18 @@ export interface CiudadFormulario {
 }
 
 /**
- * Ciudades del desplegable del formulario.
- * PROVISIONAL: lista de prueba pendiente de confirmar por el cliente/equipo SEO.
- * No implica que se atienda en estas ciudades ni que existan landings para ellas.
+ * Ciudades del desplegable del formulario (lista confirmada por el cliente, 13/11/2026).
+ * Indica dónde quiere atenderse el usuario; no implica que existan landings para ellas.
+ * El servidor solo acepta estos valores (src/lib/leads/schema.ts).
  */
 export const ciudadesFormulario: CiudadFormulario[] = [
   { valor: "mallorca", label: "Mallorca" },
-  { valor: "barcelona", label: "Barcelona" },
   { valor: "madrid", label: "Madrid" },
+  { valor: "barcelona", label: "Barcelona" },
+  { valor: "canarias", label: "Canarias" },
   { valor: "almeria", label: "Almería" },
-  { valor: "murcia", label: "Murcia" },
-  { valor: "tenerife", label: "Tenerife" },
+  { valor: "alicante", label: "Alicante" },
 ];
-
 export const leadFormConfig: LeadFormConfig = {
   endpoint: import.meta.env.PUBLIC_LEADS_ENABLED === 'true' ? '/api/lead/' : undefined,
   thanksPath: '/gracias/',
