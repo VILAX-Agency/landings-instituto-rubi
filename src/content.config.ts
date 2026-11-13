@@ -65,7 +65,7 @@ const organizacion = defineCollection({
         /** Formato E.164 sin espacios, p. ej. +34936776451 */
         e164: z.string().regex(/^\+\d{8,15}$/),
       }),
-      /** Pendiente: no hay número de WhatsApp confirmado. */
+      /** Enlace wa.me de WhatsApp; los botones se pintan inactivos si falta. */
       whatsapp_url: urlOpcional,
       google_reviews_url: urlOpcional,
       prueba_social: z.object({
@@ -161,7 +161,7 @@ const tratamientos = defineCollection({
                     z.object({
                       concepto: textoResponsive,
                       propia: textoResponsive,
-                      alternativa: z.string(),
+                      alternativa: textoResponsive,
                     }),
                   )
                   .min(1),
@@ -210,7 +210,6 @@ const tratamientos = defineCollection({
                 }),
               )
               .min(1),
-            enlace_label: z.string(),
           })
           .optional(),
         faq: z

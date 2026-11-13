@@ -41,11 +41,11 @@
         "columna_propia": { "desktop": "Técnica ABA", "movil": "ABA" },
         "columna_alternativa": { "desktop": "Técnica clásica", "movil": "Clásica" },
         "filas": [
-          { "concepto": "Incisión", "propia": "~2 cm", "alternativa": "[validar]" },
-          { "concepto": "Drenajes", "propia": "No", "alternativa": "[validar]" },
-          { "concepto": { "desktop": "Vendaje compresivo", "movil": "Vendaje" }, "propia": "No", "alternativa": "[validar]" },
-          { "concepto": { "desktop": "Vuelta a la rutina", "movil": "Rutina" }, "propia": "48-72 h", "alternativa": "[validar]" },
-          { "concepto": { "desktop": "Molestias referidas", "movil": "Molestias" }, "propia": { "desktop": "2/10 de media", "movil": "2/10" }, "alternativa": "[validar]" }
+          { "concepto": "Incisión", "propia": "~2 cm", "alternativa": "4-5 cm" },
+          { "concepto": "Drenajes", "propia": "No", "alternativa": "Sí" },
+          { "concepto": { "desktop": "Vendaje compresivo", "movil": "Vendaje" }, "propia": "No", "alternativa": "Sí" },
+          { "concepto": { "desktop": "Vuelta a la rutina", "movil": "Rutina" }, "propia": "48-72 h", "alternativa": "Semanas" },
+          { "concepto": { "desktop": "Molestias referidas", "movil": "Molestias" }, "propia": { "desktop": "2/10 de media", "movil": "2/10" }, "alternativa": { "desktop": "8/10 de media", "movil": "8/10" } }
         ]
       }
     },
@@ -90,11 +90,10 @@
         "detalle": "@judiitharias_ · Aumento de pecho ABA"
       },
       "resenas": [
-        { "cita": "“Reseña real de Google sobre aumento de pecho: cicatriz, recuperación y trato del equipo.”", "autor": "[Nombre] · Reseña de Google · [fecha]" },
-        { "cita": "“Reseña real de Google sobre la simulación 3D y cómo ayudó a decidir la talla.”", "autor": "[Nombre] · Reseña de Google · [fecha]" },
-        { "cita": "“Reseña real de Google sobre la consulta, el presupuesto y la financiación.”", "autor": "[Nombre] · Reseña de Google · [fecha]", "ocultar_movil": true }
-      ],
-      "enlace_label": "Ver todas las reseñas en Google"
+        { "cita": "“Elegí la técnica ABA por la cicatriz mínima invisible y la recuperación rápida. A los 3 días estaba haciendo vida normal, sin dolor. El resultado es tan natural que nadie diría que llevo prótesis.”", "autor": "Marta · Palma de Mallorca · Aumento de pecho ABA con prótesis" },
+        { "cita": "“La simulación 3D con Arbrea me dio muchísima confianza: pude ver mi resultado antes de operarme. Coincide exactamente con lo que vi en la consulta.”", "autor": "Cristina · Barcelona · Aumento con prótesis + simulación 3D" },
+        { "cita": "“Buscaba un aumento moderado y muy natural. El Dr. Rubí me propuso lipofilling con mi propia grasa. Cero cicatrices, resultado natural, encantada.”", "autor": "Patricia · Canarias · Aumento de pecho con grasa propia", "ocultar_movil": true }
+      ]
     },
     "faq": {
       "eyebrow": "Preguntas frecuentes",
@@ -102,12 +101,14 @@
       "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
       "cta_label": "Preguntar por WhatsApp",
       "preguntas": [
-        { "pregunta": "¿Cuánto cuesta un aumento de pecho?", "respuesta": "Desde [X] €, según la técnica y el implante. Tras la valoración te entregamos un presupuesto cerrado, con financiación de hasta el 100%." },
-        { "pregunta": "¿Prótesis o aumento con grasa propia?", "respuesta": "[Respuesta pendiente de redactar y validar por el equipo médico]" },
-        { "pregunta": "¿Cómo es el postoperatorio?", "respuesta": "[Respuesta pendiente de redactar y validar por el equipo médico]" },
-        { "pregunta": "¿Se notará la cicatriz?", "respuesta": "[Respuesta pendiente de redactar y validar por el equipo médico]" },
-        { "pregunta": "¿Podré dar el pecho después?", "respuesta": "[Respuesta pendiente de redactar y validar por el equipo médico]" },
-        { "pregunta": "¿Tengo que viajar para operarme?", "respuesta": "[Respuesta pendiente de redactar y validar por el equipo médico]" }
+        { "pregunta": "¿Prótesis mamarias o aumento con grasa propia?", "respuesta": "Depende del volumen que buscas y de tu anatomía. Las prótesis permiten aumentos grandes y forma estable a largo plazo; el lipofilling (grasa propia) aporta un aumento moderado (media talla o una talla) con resultado extremadamente natural y sin implante. En muchos casos combinamos ambas técnicas — prótesis para dar volumen y proyección + grasa para suavizar bordes y perfeccionar escote. Lo definimos en tu consulta con simulación 3D." },
+        { "pregunta": "¿Qué es la técnica ABA y en qué se diferencia de la técnica clásica?", "respuesta": "La técnica ABA es la metodología exclusiva de Instituto Rubí para el aumento de pecho. Frente al aumento clásico, ABA emplea una incisión mínima de aproximadamente 2 cm, NO utiliza drenajes ni vendajes compresivos, respeta el músculo pectoral y consigue una recuperación revolucionaria de 48-72 h. La media de dolor referida por nuestras pacientes es de 2 sobre 10." },
+        { "pregunta": "¿Duele el postoperatorio del aumento de pecho?", "respuesta": "Con la técnica ABA, no. Nuestras pacientes describen la sensación como una presión o tirantez en el pecho más que como dolor, con una media de 2/10 en escala numérica. La pauta analgésica pautada por el equipo médico controla las molestias en los primeros días y desaparecen rápido." },
+        { "pregunta": "¿Quedará una cicatriz visible tras el aumento de pecho ABA?", "respuesta": "La incisión de la técnica ABA es de aproximadamente 2 cm, estratégicamente colocada para que quede oculta y disimulada. Además tratamos la cicatriz con láser Lumenis CO₂ UltraPulse — el láser fraccional más potente de Europa — y con parches cicatrizantes, hasta hacerla prácticamente imperceptible." },
+        { "pregunta": "¿ABALift deja cicatriz vertical como una mastopexia clásica?", "respuesta": "No. La técnica ABALift es nuestra elevación mamaria exclusiva y evita la clásica cicatriz vertical en forma de ancla o T invertida. Reposicionamos la areola, redistribuimos el tejido mamario y elevamos el pecho con cicatrices mucho más discretas, con o sin prótesis según cada caso." },
+        { "pregunta": "¿Puedo dar el pecho después de un aumento mamario?", "respuesta": "Sí. La técnica ABA respeta los conductos galactóforos y la glándula mamaria, por lo que la lactancia posterior es posible en la gran mayoría de casos. No obstante, cada anatomía es distinta y lo valoramos individualmente en la primera consulta." },
+        { "pregunta": "¿A partir de qué edad puedo operarme el pecho?", "respuesta": "A partir de los 18 años, cuando el desarrollo mamario ha finalizado. En todos los casos realizamos una valoración individual de tu salud general y mamaria antes de plantear la cirugía." },
+        { "pregunta": "¿Cuál es el precio del aumento de pecho en Instituto Rubí?", "respuesta": "El precio depende del tipo de técnica (ABA con prótesis, aumento con grasa propia, ABALift, mastopexia de aumento) y del implante seleccionado. Tras una valoración personalizada te entregamos un presupuesto cerrado y opciones de financiación hasta 100%." }
       ]
     },
     "equipo": {

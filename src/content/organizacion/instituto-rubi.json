@@ -1,9 +1,10 @@
 {
   "nombre": "Instituto Rubí",
   "telefono": { "display": "936 77 64 51", "e164": "+34936776451" },
+  "whatsapp_url": "https://wa.me/34722451834",
   "prueba_social": {
     "nota_google": "4,9",
-    "numero_resenas": "[X]",
+    "numero_resenas": "161",
     "cirugias": "+2.500",
     "financiacion": "100%"
   },
@@ -30,8 +31,8 @@
     "imagen": "../../assets/equipo/dr-carlos-rubi.jpg",
     "imagen_alt": "Dr. Carlos Rubí con bata de Instituto Rubí",
     "credenciales": [
-      { "texto": "[Nº de colegiado · sociedades científicas]" },
-      { "texto": "[Formación y años de experiencia]", "ocultar_movil": true },
+      { "texto": "Nº de colegiado 073107608" },
+      { "texto": "Especialista en Cirugía Plástica, Reparadora y Estética", "ocultar_movil": true },
       { "texto": "+2.500 cirugías realizadas" }
     ],
     "avatares": [
@@ -41,7 +42,7 @@
       { "imagen": "../../assets/equipo/avatar-4.jpg", "alt": "" }
     ],
     "equipo_extra": "+6",
-    "equipo_texto": { "desktop": "Equipo de [10] cirujanos plásticos", "movil": "[10] cirujanos plásticos" },
+    "equipo_texto": { "desktop": "Equipo de 10 cirujanos plásticos", "movil": "10 cirujanos plásticos" },
     "sede": {
       "imagen": "../../assets/equipo/quirofano.jpg",
       "imagen_alt": "Equipo quirúrgico durante una intervención",
