@@ -1,0 +1,26 @@
+---
+/** Página 404 mínima (también la respuesta de `/` en producción). No indexable. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { absoluteUrl } from '../config/site';
+---
+
+<BaseLayout title="Página no encontrada · Instituto Rubí" description="Página no encontrada." canonical={absoluteUrl('/404/')}>
+  <main class="container not-found">
+    <h1 class="t-h2">Página no encontrada</h1>
+    <p>La página que buscas no existe o ya no está disponible.</p>
+    <p><a href="https://institutorubi.com/">Ir a institutorubi.com</a></p>
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-block: 96px;
+    color: var(--color-text-primary);
+  }
+  a {
+    text-decoration: underline;
+  }
+</style>
