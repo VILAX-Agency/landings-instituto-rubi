@@ -1,8 +1,8 @@
 ---
 /**
  * Botón circular de reproducción sobre una imagen (simulación 3D, testimonio).
- * Si no hay URL de vídeo, se pinta como elemento decorativo (no interactivo)
- * para no ofrecer un control que no hace nada.
+ * Solo se pinta si hay URL de vídeo: sin vídeo, la imagen se muestra tal cual
+ * (decisión del cliente, 13/11/2026: no mostrar un icono de play sin vídeo).
  */
 import Icon from './Icon.astro';
 
@@ -14,19 +14,15 @@ interface Props {
 
 const { href, label, variant } = Astro.props;
 const icon = variant === 'sim' ? 'play' : 'play-testimonial';
-const Tag = href ? 'a' : 'span';
 ---
 
-<Tag
-  class:list={['play', `play--${variant}`]}
-  href={href}
-  target={href ? '_blank' : undefined}
-  rel={href ? 'noopener' : undefined}
-  aria-label={href ? label : undefined}
-  aria-hidden={href ? undefined : 'true'}
->
-  <Icon name={icon} class="play__icon" />
-</Tag>
+{
+  href && (
+    <a class:list={['play', `play--${variant}`]} href={href} target="_blank" rel="noopener" aria-label={label}>
+      <Icon name={icon} class="play__icon" />
+    </a>
+  )
+}
 
 <style>
   .play {
