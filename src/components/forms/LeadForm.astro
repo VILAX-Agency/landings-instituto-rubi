@@ -25,6 +25,8 @@ interface Textos {
   subtitulo: string;
   etiqueta_interes: string;
   consentimiento: string;
+  /** Fragmento de `consentimiento` que se enlaza a la política de privacidad. */
+  consentimiento_enlace?: string;
   cta_label: string;
   nota: string;
 }
@@ -41,6 +43,8 @@ interface Props {
   localidad?: string;
   /** Teléfono de contacto para <noscript> y mensajes de error. */
   telefono?: { display: string; href: string };
+  /** URL de la política de privacidad (enlaza `textos.consentimiento_enlace`). */
+  privacidadUrl?: string;
 }
 
 const {
@@ -54,7 +58,16 @@ const {
   tratamiento,
   localidad,
   telefono,
+  privacidadUrl,
 } = Astro.props;
+
+// Texto de la casilla partido alrededor del fragmento enlazado.
+const enlace = textos.consentimiento_enlace;
+const corte = privacidadUrl && enlace ? textos.consentimiento.indexOf(enlace) : -1;
+const consentimiento =
+  corte >= 0
+    ? { antes: textos.consentimiento.slice(0, corte), enlace, despues: textos.consentimiento.slice(corte + enlace!.length) }
+    : undefined;
 
 const operativo = isLeadFormOperational();
 const titleId = `${id}-titulo`;
@@ -196,7 +209,21 @@ const campos = [
   <div class="consent-field">
     <label class="consent">
       <input class="consent__box" type="checkbox" name="consentimiento" required />
-      <span class="t-legal consent__text">{textos.consentimiento}</span>
+      <span class="t-legal consent__text">
+        {
+          consentimiento ? (
+            <>
+              {consentimiento.antes}
+              <a href={privacidadUrl} target="_blank" rel="noopener">
+                {consentimiento.enlace}
+              </a>
+              {consentimiento.despues}
+            </>
+          ) : (
+            textos.consentimiento
+          )
+        }
+      </span>
     </label>
     <p class="field__error t-legal" id={errorId('consentimiento')} data-error-for="consentimiento" hidden></p>
   </div>
@@ -439,6 +466,10 @@ const campos = [
   .consent__text {
     flex: 1;
     color: var(--color-text-muted);
+  }
+  .consent__text a {
+    color: inherit;
+    text-decoration: underline;
   }
 
   .lead-form__submit {

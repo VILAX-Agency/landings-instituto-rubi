@@ -51,6 +51,7 @@ const formBase = {
   tratamiento: tratamiento.id,
   localidad: localidad?.id,
   telefono: { display: contacto.telefonoDisplay, href: contacto.telHref },
+  privacidadUrl: O.legal.privacidad_url,
 };
 
 /** Aplica eyebrow/titulo/intro de la landing sobre el contenido compartido. */
@@ -147,6 +148,6 @@ const og =
     }
   </main>
 
-  <Footer enlaces={O.footer.enlaces} aviso={O.footer.aviso} />
+  <Footer legal={O.legal} aviso={O.footer.aviso} />
   <StickyMobileBar contacto={contacto} ctaHref={ctaHref} watchStart={HERO_FORM_ID} watchEnd={CTA_ID} />
 </BaseLayout>
