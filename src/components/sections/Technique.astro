@@ -18,7 +18,7 @@ interface Props {
   comparativa?: {
     columna_propia: TextoResponsive;
     columna_alternativa: TextoResponsive;
-    filas: { concepto: TextoResponsive; propia: TextoResponsive; alternativa: string }[];
+    filas: { concepto: TextoResponsive; propia: TextoResponsive; alternativa: TextoResponsive }[];
   };
 }
 
@@ -75,7 +75,9 @@ const { tone = "tint" } = Astro.props;
                   <td class="compare__own">
                     <ResponsiveText value={f.propia} />
                   </td>
-                  <td class:list={['compare__alt', { 'is-placeholder': esMarcador(f.alternativa) }]}>{f.alternativa}</td>
+                  <td class:list={['compare__alt', { 'is-placeholder': esMarcador(typeof f.alternativa === 'string' ? f.alternativa : f.alternativa.desktop) }]}>
+                    <ResponsiveText value={f.alternativa} />
+                  </td>
                 </tr>
               ))}
             </tbody>

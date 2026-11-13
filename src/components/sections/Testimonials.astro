@@ -5,7 +5,6 @@ import type { ImageMetadata } from 'astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 import StarRating from '../ui/StarRating.astro';
 import MediaPlay from '../ui/MediaPlay.astro';
-import Icon from '../ui/Icon.astro';
 
 interface Props {
   /** Fondo: lo asigna la plantilla alternando según la posición. */
@@ -14,11 +13,9 @@ interface Props {
   titulo: string;
   video: { imagen: ImageMetadata; alt: string; nombre: string; detalle: string; video_url?: string };
   resenas: { cita: string; autor: string; ocultar_movil?: boolean }[];
-  enlace_label: string;
-  enlaceHref?: string;
 }
 
-const { eyebrow, titulo, video, resenas, enlace_label, enlaceHref } = Astro.props;
+const { eyebrow, titulo, video, resenas } = Astro.props;
 const { tone = "light" } = Astro.props;
 ---
 
@@ -46,19 +43,6 @@ const { tone = "light" } = Astro.props;
             </blockquote>
           ))
         }
-        <p class="testi__more">
-          <a
-            class="testi__link t-body-semibold"
-            href={enlaceHref}
-            aria-disabled={enlaceHref ? undefined : 'true'}
-            title={enlaceHref ? undefined : 'URL de reseñas de Google pendiente'}
-            target={enlaceHref ? '_blank' : undefined}
-            rel={enlaceHref ? 'noopener' : undefined}
-          >
-            {enlace_label}
-            <Icon name="arrow-link" />
-          </a>
-        </p>
       </div>
     </div>
   </div>
@@ -125,22 +109,6 @@ const { tone = "light" } = Astro.props;
   .review__author {
     color: var(--color-text-muted);
   }
-  .testi__more {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-  }
-  .testi__link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-8);
-    padding-bottom: var(--space-4);
-    border-bottom: 1px solid var(--color-border-accent);
-    color: var(--color-text-primary);
-  }
-  .testi__link[aria-disabled='true'] {
-    cursor: not-allowed;
-  }
 
   @media (min-width: 1024px) {
     .testi__layout {
@@ -170,10 +138,6 @@ const { tone = "light" } = Astro.props;
       gap: var(--space-20);
       min-width: 0;
       padding-top: 0;
-    }
-    .testi__more {
-      justify-content: flex-start;
-      padding-top: var(--space-8);
     }
   }
 </style>

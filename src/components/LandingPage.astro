@@ -124,7 +124,7 @@ const og =
             return T.secciones.recuperacion && <RecoveryTimeline {...conOverrides(T.secciones.recuperacion, tipo)} tone={tonos.get(tipo)} />;
           case 'testimonios':
             return T.secciones.testimonios && (
-              <Testimonials {...conOverrides(T.secciones.testimonios, tipo)} enlaceHref={contacto.googleReviewsUrl} tone={tonos.get(tipo)} />
+              <Testimonials {...conOverrides(T.secciones.testimonios, tipo)} tone={tonos.get(tipo)} />
             );
           case 'equipo':
             return equipo && <MedicalTeam {...conOverrides(equipo, tipo)} tone={tonos.get(tipo)} />;
