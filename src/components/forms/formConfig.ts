@@ -1,35 +1,20 @@
 /**
- * Punto de enganche para la captación de leads (FASE 2 — pendiente).
+ * Configuración del formulario de captación (Fase 2).
  *
- * En Fase 1 los formularios son solo maquetación: no hay endpoint, no se
- * envían ni almacenan datos y no se simula ningún mensaje de éxito.
- * Mientras `endpoint` sea `undefined`, LeadForm:
- *   - no tiene atributo `action`,
- *   - bloquea el envío (botón deshabilitado + preventDefault),
- *   - muestra el aviso "Formulario no operativo".
- *
- * Fase 2: definir aquí el proveedor/endpoint aprobado y el contrato de datos
- * (`LeadPayload`). No conectar servicios sin aprobación expresa.
+ * El formulario es operativo solo con `PUBLIC_LEADS_ENABLED=true`: envía JSON
+ * a `endpoint` (ver src/pages/api/lead.ts). Sin esa variable se mantiene el
+ * comportamiento "no operativo" de Fase 1 (botón deshabilitado y aviso).
+ * El contrato de datos y su validación están en src/lib/leads/schema.ts.
+ * Este fichero lo usan cliente y servidor: no puede contener secretos.
  */
 
 export interface LeadFormConfig {
-  /** URL del sistema de captación. Fase 1: siempre undefined. */
+  /** Ruta del endpoint de leads. undefined = formulario no operativo. */
   endpoint?: string;
-  /** Identificador del proveedor elegido en Fase 2. */
-  provider?: string;
-}
-
-/** Contrato previsto de los datos del formulario (para Fase 2). */
-export interface LeadPayload {
-  nombre: string;
-  telefono: string;
-  email?: string;
-  ciudad: string;
-  interes: string;
-  consentimiento: boolean;
-  landing_id: string;
-  tratamiento: string;
-  localidad?: string;
+  /** Página de destino tras un envío confirmado. */
+  thanksPath: string;
+  /** Clave pública de Cloudflare Turnstile (vacía en desarrollo local). */
+  turnstileSiteKey?: string;
 }
 
 export interface CiudadFormulario {
@@ -53,8 +38,9 @@ export const ciudadesFormulario: CiudadFormulario[] = [
 ];
 
 export const leadFormConfig: LeadFormConfig = {
-  endpoint: undefined,
-  provider: undefined,
+  endpoint: import.meta.env.PUBLIC_LEADS_ENABLED === 'true' ? '/api/lead/' : undefined,
+  thanksPath: '/gracias/',
+  turnstileSiteKey: import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || undefined,
 };
 
 export const isLeadFormOperational = (

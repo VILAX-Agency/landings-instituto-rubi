@@ -6,7 +6,10 @@
  * Móvil: sin etiquetas visibles (siguen accesibles), placeholders cortos,
  * chips con etiqueta corta. `hideHeaderMobile` quita la cabecera en el CTA final.
  *
- * FASE 1: NO OPERATIVO. Ver ./formConfig.ts.
+ * FASE 2: operativo solo con PUBLIC_LEADS_ENABLED=true (ver ./formConfig.ts).
+ * Envío por JavaScript (JSON a /api/lead/) con Cloudflare Turnstile: sin JS
+ * no se puede enviar y <noscript> muestra el teléfono de contacto.
+ * Solo se navega a /gracias/ cuando el servidor confirma que el lead se ha guardado.
  */
 import Icon from '../ui/Icon.astro';
 import { ciudadesFormulario, isLeadFormOperational, leadFormConfig } from './formConfig';
@@ -36,6 +39,8 @@ interface Props {
   landingId: string;
   tratamiento: string;
   localidad?: string;
+  /** Teléfono de contacto para <noscript> y mensajes de error. */
+  telefono?: { display: string; href: string };
 }
 
 const {
@@ -48,12 +53,14 @@ const {
   landingId,
   tratamiento,
   localidad,
+  telefono,
 } = Astro.props;
 
 const operativo = isLeadFormOperational();
 const titleId = `${id}-titulo`;
 const avisoId = `${id}-aviso`;
 const ciudadId = `${id}-ciudad`;
+const errorId = (campo: string) => `${id}-${campo}-error`;
 // Si la landing es de una localidad incluida en la lista, se preselecciona.
 const ciudadInicial = ciudadesFormulario.some((c) => c.valor === localidad) ? localidad : '';
 
@@ -67,9 +74,11 @@ const campos = [
 <form
   id={id}
   class:list={['lead-form', `lead-form--${variant}`, { 'lead-form--no-header-mobile': hideHeaderMobile }]}
-  action={operativo ? leadFormConfig.endpoint : undefined}
-  method={operativo ? 'post' : undefined}
   data-form-status={operativo ? 'enabled' : 'disabled'}
+  data-endpoint={operativo ? leadFormConfig.endpoint : undefined}
+  data-thanks={operativo ? leadFormConfig.thanksPath : undefined}
+  data-turnstile-sitekey={operativo ? leadFormConfig.turnstileSiteKey : undefined}
+  data-telefono={telefono?.display}
   data-landing={landingId}
   data-tratamiento={tratamiento}
   data-localidad={localidad}
@@ -106,8 +115,10 @@ const campos = [
             placeholder={c.placeholder}
             data-placeholder-desktop={c.placeholder}
             data-placeholder-mobile={c.placeholderMovil}
+            maxlength={c.name === 'nombre' ? 120 : 40}
             required
           />
+          <p class="field__error t-legal" id={errorId(c.name)} data-error-for={c.name} hidden />
         </div>
       ))
     }
@@ -128,7 +139,9 @@ const campos = [
             placeholder={c.placeholder}
             data-placeholder-desktop={c.placeholder}
             data-placeholder-mobile={c.placeholderMovil}
+            maxlength={254}
           />
+          <p class="field__error t-legal" id={errorId(c.name)} data-error-for={c.name} hidden />
         </div>
       ))
     }
@@ -146,6 +159,7 @@ const campos = [
           }
         </select>
       </div>
+      <p class="field__error t-legal" id={errorId('ciudad')} data-error-for="ciudad" hidden></p>
     </div>
   </div>
 
@@ -176,22 +190,59 @@ const campos = [
         ))
       }
     </div>
+    <p class="field__error t-legal" id={errorId('interes')} data-error-for="interes" hidden></p>
   </fieldset>
 
-  <label class="consent">
-    <input class="consent__box" type="checkbox" name="consentimiento" required />
-    <span class="t-legal consent__text">{textos.consentimiento}</span>
-  </label>
+  <div class="consent-field">
+    <label class="consent">
+      <input class="consent__box" type="checkbox" name="consentimiento" required />
+      <span class="t-legal consent__text">{textos.consentimiento}</span>
+    </label>
+    <p class="field__error t-legal" id={errorId('consentimiento')} data-error-for="consentimiento" hidden></p>
+  </div>
+
+  {
+    operativo && (
+      <>
+        <input type="hidden" name="landing_id" value={landingId} />
+        {/* Honeypot: invisible para personas y tecnologías de apoyo. */}
+        <div class="lead-form__hp" aria-hidden="true">
+          <label>
+            No rellenar
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+        <div class="lead-form__turnstile" data-turnstile />
+        <p class="lead-form__status t-small" data-status aria-live="assertive" />
+      </>
+    )
+  }
 
   <button
     class="lead-form__submit"
     type="submit"
-    disabled={!operativo}
+    disabled
     aria-disabled={operativo ? undefined : 'true'}
     title={operativo ? undefined : 'Formulario no operativo (Fase 2)'}
   >
     {textos.cta_label}
   </button>
+
+  {
+    operativo && (
+      <noscript>
+        <p class="lead-form__noscript t-legal">
+          Para enviar este formulario necesitas activar JavaScript.
+          {telefono && (
+            <>
+              {' '}
+              También puedes llamarnos al <a href={telefono.href}>{telefono.display}</a>.
+            </>
+          )}
+        </p>
+      </noscript>
+    )
+  }
 
   <p class="lead-form__note t-legal">
     <Icon name="lock" />
@@ -200,13 +251,17 @@ const campos = [
 </form>
 
 <script>
-  // Fase 1: ningún formulario no operativo puede enviarse.
+  import { initLeadForm } from './leadFormClient';
+
+  // Formularios no operativos (PUBLIC_LEADS_ENABLED distinto de true): nunca se envían.
   document.querySelectorAll<HTMLFormElement>('form[data-form-status="disabled"]').forEach((form) => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       event.stopImmediatePropagation();
     });
   });
+
+  document.querySelectorAll<HTMLFormElement>('form[data-form-status="enabled"]').forEach(initLeadForm);
 
   // Placeholders cortos en móvil (Figma: el input oculta la etiqueta y usa el placeholder).
   const mq = window.matchMedia('(max-width: 1023.98px)');
@@ -455,5 +510,53 @@ const campos = [
     .lead-form--compact .lead-form__legend {
       margin-bottom: var(--space-8);
     }
+  }
+
+  /* ---------- Fase 2: estados de envío y errores ---------- */
+  .consent-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  .field__error {
+    color: var(--color-feedback-error);
+  }
+  .field__error[hidden] {
+    display: none;
+  }
+  .field__input[aria-invalid='true'] {
+    border-color: var(--color-feedback-error);
+  }
+  .consent__box[aria-invalid='true'] {
+    border-color: var(--color-feedback-error);
+  }
+  .lead-form__status {
+    color: var(--color-feedback-error);
+  }
+  /* Vacío: fuera del flujo (sin hueco) pero presente para lectores de pantalla. */
+  .lead-form__status:empty,
+  .lead-form__turnstile:empty,
+  .lead-form__hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .lead-form {
+    position: relative;
+  }
+  .lead-form__noscript {
+    color: var(--color-text-body);
+    text-align: center;
+  }
+  .lead-form__noscript a {
+    text-decoration: underline;
+  }
+  .lead-form[aria-busy='true'] .lead-form__submit {
+    cursor: progress;
+    opacity: 0.8;
   }
 </style>

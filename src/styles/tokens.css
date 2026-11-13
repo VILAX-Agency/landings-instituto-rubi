@@ -38,6 +38,10 @@
   --color-divider-default: #d7ccc1;
   --color-divider-accent: #c3a38d;
 
+  /* Estados de formulario (Fase 2). PENDIENTE de validar en Figma: no existe
+     variable de error en el diseño aprobado. Contraste 6,5:1 sobre blanco. */
+  --color-feedback-error: #b42318;
+
   /* Espaciado */
   --space-4: 4px;
   --space-8: 8px;

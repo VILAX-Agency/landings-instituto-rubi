@@ -1,0 +1,52 @@
+---
+/**
+ * Página de gracias (Fase 2). El formulario solo navega aquí cuando el servidor
+ * confirma que el lead se ha guardado, pero cualquiera puede visitarla
+ * directamente: NO es prueba de conversión. La fuente de verdad es la tabla
+ * `leads`. Sin datos personales ni identificadores en la URL. No indexable.
+ */
+import { Image } from 'astro:assets';
+import logo from '../assets/brand/logo-header.png';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { absoluteUrl } from '../config/site';
+import { getOrganizacion } from '../lib/content';
+import { resolveContacto } from '../lib/contacto';
+
+const organizacion = await getOrganizacion();
+const contacto = resolveContacto(organizacion);
+---
+
+<BaseLayout
+  title="Solicitud recibida · Instituto Rubí"
+  description="Hemos recibido tu solicitud de valoración."
+  canonical={absoluteUrl('/gracias/')}
+>
+  <main class="container gracias">
+    <Image src={logo} alt="Instituto Rubí" class="gracias__logo" width={213} height={34} densities={[1, 2]} loading="eager" />
+    <h1 class="t-h2">Hemos recibido tu solicitud</h1>
+    <p>Gracias por contactar con {organizacion.data.nombre}. Nuestro equipo se pondrá en contacto contigo.</p>
+    <p>
+      Si lo prefieres, puedes llamarnos al <a href={contacto.telHref}>{contacto.telefonoDisplay}</a>.
+    </p>
+  </main>
+</BaseLayout>
+
+<style>
+  .gracias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-16);
+    max-width: 640px;
+    padding-block: 96px;
+    color: var(--color-text-primary);
+    text-align: center;
+  }
+  .gracias__logo {
+    margin-bottom: var(--space-16);
+  }
+  a {
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+</style>
