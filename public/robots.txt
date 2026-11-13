@@ -1,0 +1,5 @@
+# Landings de campañas de pago: no se indexan (meta robots + X-Robots-Tag noindex).
+# No se bloquea el rastreo para que Google y AdsBot puedan leer el noindex
+# y revisar las páginas de destino de los anuncios.
+User-agent: *
+Allow: /

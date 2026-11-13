@@ -8,6 +8,8 @@ Instituto Rubí es una clínica de cirugía estética. El proyecto consiste en r
 
 El objetivo es que el equipo SEO pueda preparar nuevas landings en **Excel y/o Word** y que un proceso reproducible las convierta en páginas, sin tener que maquetarlas individualmente.
 
+**Uso de las landings:** solo tráfico de **campañas de pago** (anuncios). No son páginas SEO: todas son `noindex` y no entran en ningún sitemap (decisión de Fase 2, ver `docs/fase-2-plan.md`).
+
 Sitios de referencia (no asumir que su contenido está actualizado):
 - Web principal: https://institutorubi.com/
 - Primera landing que se va a reconstruir: https://aumento-pecho-aba.drcarlosrubi.com/
@@ -21,32 +23,34 @@ Sitios de referencia (no asumir que su contenido está actualizado):
 - **Diseño:** Figma, con componentes, tokens y variables aprobados. Acceder a los frames y tokens mediante Figma MCP cuando esté disponible.
 - **Código y revisiones:** GitHub.
 - **Fuentes para nuevas landings:** ficheros Excel (`.xlsx`/`.csv`) y Word (`.docx`).
-- **Destino de URLs:** subdirectorios del dominio principal `institutorubi.com`, no un subdominio independiente por landing.
+- **Destino de URLs:** un único subdominio para todas las landings, `tratamiento.institutorubi.com`, independiente del WordPress del dominio principal. No crear un subdominio por landing.
 - **Modelo de generación:** plantillas y componentes reutilizables; los datos de cada landing quedan separados de la presentación.
-- **Publicación:** mediante un despliegue revisado. El proveedor de hosting, el método de integración con el WordPress existente y el CI/CD siguen pendientes de definir y validar.
+- **Publicación:** despliegue revisado en **Vercel Pro** desde GitHub (previews por PR). Formularios: Supabase (leads), Resend (notificaciones) y Cloudflare Turnstile (anti-spam). Ver `docs/fase-2-plan.md` y `docs/despliegue.md`.
 
 No introducir WordPress/ACF como CMS obligatorio ni sustituir Astro sin autorización expresa.
 
 ## 3. Arquitectura de URLs
 
-Usar este patrón como objetivo, sujeto a auditoría de URLs existentes:
+Patrón en el subdominio `tratamiento.institutorubi.com` (prefijo configurable con `PUBLIC_LANDINGS_BASE`, vacío por defecto):
 
 ```text
-/tratamientos/{tratamiento}/
-/tratamientos/{tratamiento}/{localidad}/
+/{tratamiento}/
+/{tratamiento}/{localidad}/
 ```
 
 Ejemplos ilustrativos, no afirmaciones de que esas localidades se atiendan:
 
 ```text
-/tratamientos/aumento-pecho/
-/tratamientos/aumento-pecho/mallorca/
-/tratamientos/rinoplastia/barcelona/
+/aumento-pecho/
+/aumento-pecho/mallorca/
+/rinoplastia/barcelona/
 ```
+
+Rutas reservadas por la aplicación (ninguna landing puede empezar por ellas): `api`, `gracias`, `404`.
 
 Reglas:
 - Slugs en minúscula, sin tildes, con guiones y barra final según la configuración del proyecto.
-- Una sola URL canónica por intención de búsqueda; evitar duplicados.
+- Una sola URL por landing; evitar duplicados.
 - No crear páginas de localidad simplemente cambiando el topónimo: exigir valor local diferenciador y verificado.
 - No crear páginas para servicios/localidades no confirmados.
 - Registrar y validar cualquier cambio de slug. **Nunca borrar, renombrar ni redirigir URLs antiguas automáticamente**.
@@ -119,12 +123,14 @@ No dar por definitivo este esquema hasta validar el primer Excel real con el equ
 
 Un Word puede contener contenido largo y secciones; si su estructura es ambigua, generar incidencias para revisión en lugar de inventar cómo mapearlo.
 
-## 7. Reglas SEO obligatorias
+## 7. Reglas SEO y de anuncios obligatorias
 
-- Cada página indexable debe responder a una intención de búsqueda propia y ofrecer contenido útil y suficientemente diferenciado.
+Las landings son para campañas de pago y **siempre `noindex`** (meta robots + cabecera `X-Robots-Tag`). No bloquear el rastreo en `robots.txt`: Google y AdsBot deben poder leer el `noindex` y revisar la página de destino. Las reglas siguientes siguen aplicando a la calidad del contenido:
+
+- Cada landing debe responder a una intención propia y ofrecer contenido útil y suficientemente diferenciado.
 - El equipo SEO define keywords, intención, estructura editorial, title y metadescripción; Claude puede proponer mejoras, pero no darlas por aprobadas.
 - Mantener un solo H1 principal, jerarquía H2/H3 lógica, enlaces internos relevantes y breadcrumbs cuando proceda.
-- Generar canonical absoluto correcto y revisar indexación, sitemap y robots según el estado de publicación.
+- Generar canonical absoluto correcto (`PUBLIC_SITE_URL`) y mantener `noindex`; no generar sitemap.
 - Evitar páginas puerta (*doorway pages*), contenido local superficial, contenido repetido y keyword stuffing.
 - No fabricar direcciones, clínicas, horarios, médicos ni servicios disponibles en un lugar.
 - Los datos estructurados (`schema.org`) solo deben reflejar contenido visible y hechos verificados; no inventar reseñas, puntuaciones ni FAQs.

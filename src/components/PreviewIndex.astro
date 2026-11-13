@@ -2,6 +2,8 @@
 /**
  * Índice interno de previsualización (no es una página pública).
  * Lista las landings generadas, su estado y la ruta resultante.
+ * Solo se genera en builds de previsualización (INCLUDE_DRAFTS): en
+ * producción `/` no existe y Vercel responde 404 (ver src/pages/[...slug].astro).
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { LANDINGS_BASE_PATH, INCLUDE_DRAFTS, INCLUDE_FIXTURES, absoluteUrl } from '../config/site';

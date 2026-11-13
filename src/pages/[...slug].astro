@@ -2,25 +2,37 @@
 /**
  * Todas las landings salen de la colección `landings` + buildLandingPath().
  * Añadir una landing = añadir un JSON (y sus imágenes). Sin tocar esta página.
+ *
+ * La raíz (`slug` undefined) es el índice interno de previsualización y solo se
+ * genera cuando INCLUDE_DRAFTS es true. En producción no hay `/index.html` y
+ * Vercel devuelve un 404 real (src/pages/404.astro).
  */
 import type { GetStaticPaths } from 'astro';
 import LandingPage from '../components/LandingPage.astro';
+import PreviewIndex from '../components/PreviewIndex.astro';
+import { INCLUDE_DRAFTS } from '../config/site';
 import { getLandingsResueltas, getOrganizacion, type LandingResuelta } from '../lib/content';
 
 export const getStaticPaths = (async () => {
   const resueltas = await getLandingsResueltas();
-  return resueltas.map((resuelta) => ({
-    params: { slug: resuelta.path.replace(/^\/|\/$/g, '') },
-    props: { resuelta },
-  }));
+  const paths: { params: { slug: string | undefined }; props: { resuelta?: LandingResuelta } }[] = resueltas.map(
+    (resuelta) => ({
+      params: { slug: resuelta.path.replace(/^\/|\/$/g, '') || undefined },
+      props: { resuelta },
+    }),
+  );
+  if (INCLUDE_DRAFTS && !paths.some((p) => p.params.slug === undefined)) {
+    paths.push({ params: { slug: undefined }, props: {} });
+  }
+  return paths;
 }) satisfies GetStaticPaths;
 
 interface Props {
-  resuelta: LandingResuelta;
+  resuelta?: LandingResuelta;
 }
 
 const { resuelta } = Astro.props;
-const organizacion = await getOrganizacion();
+const organizacion = resuelta ? await getOrganizacion() : undefined;
 ---
 
-<LandingPage resuelta={resuelta} organizacion={organizacion} />
+{resuelta && organizacion ? <LandingPage resuelta={resuelta} organizacion={organizacion} /> : <PreviewIndex />}
