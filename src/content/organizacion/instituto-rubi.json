@@ -14,11 +14,17 @@
     { "icono": "video", "texto": { "desktop": "Valoración por videollamada", "movil": "Videollamada" } },
     { "icono": "pin", "texto": "6 sedes en España" }
   ],
+  "legal": {
+    "aviso_legal_url": "https://institutorubi.com/aviso-legal/",
+    "privacidad_url": "https://institutorubi.com/politica-privacidad",
+    "cookies_url": "https://institutorubi.com/politica-de-cookies"
+  },
   "formulario": {
     "titulo": "Pide tu valoración gratuita",
     "subtitulo": "Te llamamos en menos de 24 h. Sin compromiso.",
     "etiqueta_interes": "¿Qué te interesa?",
     "consentimiento": "Acepto la política de privacidad y que me contacten para mi valoración.",
+    "consentimiento_enlace": "política de privacidad",
     "cta_label": "Quiero mi valoración gratuita",
     "nota": "Tus datos son confidenciales"
   },
@@ -51,13 +57,9 @@
     }
   },
   "footer": {
-    "enlaces": {
-      "desktop": "Aviso legal · Privacidad · Cookies · Nº autorización sanitaria [X]",
-      "movil": "Aviso legal · Privacidad · Cookies"
-    },
     "aviso": {
       "desktop": "Información médica orientativa. Cada caso requiere una valoración individual por parte de un especialista.",
-      "movil": "Nº autorización sanitaria [X]. Información médica orientativa; cada caso requiere valoración individual."
+      "movil": "Información médica orientativa; cada caso requiere valoración individual."
     }
   }
 }

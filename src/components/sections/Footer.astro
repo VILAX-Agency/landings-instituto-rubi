@@ -6,11 +6,16 @@ import ResponsiveText from '../ui/ResponsiveText.astro';
 import type { TextoResponsive } from '../../lib/content';
 
 interface Props {
-  enlaces: TextoResponsive;
+  legal: { aviso_legal_url: string; privacidad_url: string; cookies_url: string };
   aviso: TextoResponsive;
 }
 
-const { enlaces, aviso } = Astro.props;
+const { legal, aviso } = Astro.props;
+const enlaces = [
+  { texto: 'Aviso legal', url: legal.aviso_legal_url },
+  { texto: 'Privacidad', url: legal.privacidad_url },
+  { texto: 'Cookies', url: legal.cookies_url },
+];
 ---
 
 <footer class="site-footer">
@@ -25,8 +30,16 @@ const { enlaces, aviso } = Astro.props;
       loading="lazy"
     />
     <div class="site-footer__legal">
-      <!-- Enlaces legales pendientes de URL: se muestran como texto -->
-      <p class="t-legal site-footer__links"><ResponsiveText value={enlaces} /></p>
+      <p class="t-legal site-footer__links">
+        {
+          enlaces.map((e, i) => (
+            <>
+              {i > 0 && ' · '}
+              <a href={e.url}>{e.texto}</a>
+            </>
+          ))
+        }
+      </p>
       <p class="t-legal site-footer__aviso"><ResponsiveText value={aviso} /></p>
     </div>
   </div>
@@ -50,6 +63,14 @@ const { enlaces, aviso } = Astro.props;
   .site-footer__links {
     padding-top: 20px;
     color: var(--color-text-on-dark-muted);
+  }
+  .site-footer__links a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .site-footer__links a:hover,
+  .site-footer__links a:focus-visible {
+    text-decoration: underline;
   }
   .site-footer__aviso {
     padding-top: 6px;

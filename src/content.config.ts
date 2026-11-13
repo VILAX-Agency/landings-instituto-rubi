@@ -78,14 +78,27 @@ const organizacion = defineCollection({
         .array(z.object({ icono, texto: textoResponsive }))
         .min(1)
         .max(4),
-      formulario: z.object({
-        titulo: z.string(),
-        subtitulo: z.string(),
-        etiqueta_interes: z.string(),
-        consentimiento: z.string(),
-        cta_label: z.string(),
-        nota: z.string(),
+      /** Páginas legales del sitio principal (pie y casilla de privacidad). */
+      legal: z.object({
+        aviso_legal_url: z.url(),
+        privacidad_url: z.url(),
+        cookies_url: z.url(),
       }),
+      formulario: z
+        .object({
+          titulo: z.string(),
+          subtitulo: z.string(),
+          etiqueta_interes: z.string(),
+          consentimiento: z.string(),
+          /** Fragmento de `consentimiento` que enlaza a la política de privacidad. */
+          consentimiento_enlace: z.string().min(1),
+          cta_label: z.string(),
+          nota: z.string(),
+        })
+        .refine((f) => f.consentimiento.includes(f.consentimiento_enlace), {
+          message: '"consentimiento_enlace" debe aparecer literalmente dentro de "consentimiento".',
+          path: ['consentimiento_enlace'],
+        }),
       equipo: z.object({
         eyebrow: z.string(),
         /** El título lo aporta cada tratamiento (secciones.equipo.titulo). */
@@ -104,7 +117,6 @@ const organizacion = defineCollection({
         }),
       }),
       footer: z.object({
-        enlaces: textoResponsive,
         aviso: textoResponsive,
       }),
     }),
