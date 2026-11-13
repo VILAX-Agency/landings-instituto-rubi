@@ -18,7 +18,7 @@ interface Props {
   avatares: { imagen: ImageMetadata; alt: string }[];
   equipo_extra: string;
   equipo_texto: TextoResponsive;
-  sede: { imagen: ImageMetadata; imagen_alt: string; texto: string; detalle: string };
+  sede: { imagen: ImageMetadata; imagen_alt: string; texto: string; detalle?: string };
 }
 
 const { eyebrow, titulo, director, imagen, imagen_alt, credenciales, avatares, equipo_extra, equipo_texto, sede } =
@@ -70,7 +70,7 @@ const { tone = "tint" } = Astro.props;
         />
         <div>
           <p class="t-body-semibold team__sede-text">{sede.texto}</p>
-          <p class="t-small team__sede-detail">{sede.detalle}</p>
+          {sede.detalle && <p class="t-small team__sede-detail">{sede.detalle}</p>}
         </div>
       </div>
     </div>

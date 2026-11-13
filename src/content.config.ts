@@ -113,7 +113,8 @@ const organizacion = defineCollection({
           imagen: image(),
           imagen_alt: z.string(),
           texto: z.string(),
-          detalle: z.string(),
+          /** Línea secundaria opcional (p. ej. hospital donde se opera). */
+          detalle: z.string().optional(),
         }),
       }),
       footer: z.object({
@@ -264,7 +265,7 @@ const localidades = defineCollection({
       .optional(),
     whatsapp_url: urlOpcional,
     /** Sustituye la tarjeta de sedes del bloque de equipo. */
-    sede: z.object({ texto: z.string(), detalle: z.string() }).optional(),
+    sede: z.object({ texto: z.string(), detalle: z.string().optional() }).optional(),
   }),
 });
 
