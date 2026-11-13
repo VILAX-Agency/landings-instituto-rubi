@@ -52,8 +52,7 @@
     "sede": {
       "imagen": "../../assets/equipo/quirofano.jpg",
       "imagen_alt": "Equipo quirúrgico durante una intervención",
-      "texto": "Consultas en Mallorca, Madrid, Barcelona, Canarias, Almería y Alicante",
-      "detalle": "Cirugía en: [aclarar hospital / ciudad]"
+      "texto": "Consultas en Mallorca, Madrid, Barcelona, Canarias, Almería y Alicante"
     }
   },
   "footer": {
