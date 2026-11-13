@@ -2,8 +2,9 @@
   "nombre": "Aumento de pecho · Técnica ABA",
   "interes_opciones": [
     { "valor": "aumento-pecho", "label": "Aumento de pecho", "label_movil": "Aumento" },
-    { "valor": "elevacion", "label": "Elevación" },
-    { "valor": "no-lo-se", "label": "Aún no lo sé", "label_movil": "No lo sé" }
+    { "valor": "mastopexia", "label": "Mastopexia" },
+    { "valor": "recambio-protesis", "label": "Recambio de prótesis", "label_movil": "Recambio" },
+    { "valor": "otro", "label": "Otro" }
   ],
   "secciones": {
     "antes_despues": {
