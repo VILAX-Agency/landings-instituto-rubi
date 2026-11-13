@@ -91,7 +91,10 @@ export function initLeadForm(form: HTMLFormElement): void {
 
   async function ensureWidget(): Promise<void> {
     if (!siteKey || !turnstileBox || widgetId !== undefined) return;
-    const api = await loadTurnstile();
+    const api = await loadTurnstile().catch((err) => {
+      console.warn('[lead] No se pudo cargar Turnstile', err);
+      throw err;
+    });
     if (widgetId !== undefined) return;
     widgetId = api.render(turnstileBox, {
       sitekey: siteKey,
@@ -100,7 +103,12 @@ export function initLeadForm(form: HTMLFormElement): void {
       language: 'es',
       callback: (t: string) => settleToken(t),
       'expired-callback': () => (token = undefined),
-      'error-callback': () => settleToken(undefined),
+      'error-callback': (code: string) => {
+        // Diagnóstico en consola: p. ej. 110200 = dominio no autorizado para esa sitekey.
+        console.warn(`[lead] Turnstile error ${code}`);
+        settleToken(undefined);
+        return true;
+      },
     });
   }
 
