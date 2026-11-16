@@ -148,7 +148,8 @@ curl -s $D/api/cron/notificaciones/                                       # 401
 
 Prueba manual (checklist):
 
-- [ ] Enviar un lead real de prueba desde móvil y desde escritorio → página `/gracias/`.
+- [ ] Enviar un lead real de prueba desde móvil y desde escritorio → el formulario se sustituye por el mensaje
+      «Solicitud enviada con éxito» (`.lead-form__success`), sin cambiar de página.
 - [ ] La fila aparece en Supabase con `notification_status = sent`.
 - [ ] Llega el email al buzón de leads con los datos mínimos.
 - [ ] Fallo simulado de email (p. ej. `LEADS_EMAIL_TO` inválido en Preview) → fila `failed`; tras corregirlo,
@@ -206,4 +207,5 @@ El buzón de notificaciones conserva una copia de los datos de contacto de cada 
 - Abuso del formulario: limitado por Turnstile, honeypot y la regla de rate limit del WAF; no hay
   limitador propio en base de datos.
 - Sin JavaScript no se puede enviar el formulario (se muestra el teléfono).
-- Visitar `/gracias/` no prueba una conversión; la fuente de verdad es la tabla `leads`.
+- El mensaje `.lead-form__success` solo aparece tras `{ ok: true }` del servidor, pero es una señal de cliente
+  (bloqueadores, consentimiento de cookies): la fuente de verdad sigue siendo la tabla `leads`.

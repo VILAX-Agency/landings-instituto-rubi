@@ -11,8 +11,6 @@
 export interface LeadFormConfig {
   /** Ruta del endpoint de leads. undefined = formulario no operativo. */
   endpoint?: string;
-  /** Página de destino tras un envío confirmado. */
-  thanksPath: string;
   /** Clave pública de Cloudflare Turnstile (vacía en desarrollo local). */
   turnstileSiteKey?: string;
 }
@@ -38,7 +36,6 @@ export const ciudadesFormulario: CiudadFormulario[] = [
 ];
 export const leadFormConfig: LeadFormConfig = {
   endpoint: import.meta.env.PUBLIC_LEADS_ENABLED === 'true' ? '/api/lead/' : undefined,
-  thanksPath: '/gracias/',
   turnstileSiteKey: import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || undefined,
 };
 
