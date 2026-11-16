@@ -6,6 +6,7 @@ import '@fontsource/open-sans/400-italic.css';
 import '@fontsource/open-sans/600.css';
 import '../styles/global.css';
 import { CAMPAIGN_ROBOTS } from '../config/site';
+import GoogleTagManager from '../components/analytics/GoogleTagManager.astro';
 
 interface Props {
   title: string;
@@ -25,6 +26,7 @@ const { title, description, canonical, robots = CAMPAIGN_ROBOTS, ogImage } = Ast
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <GoogleTagManager position="head" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -38,6 +40,7 @@ const { title, description, canonical, robots = CAMPAIGN_ROBOTS, ogImage } = Ast
     <meta name="theme-color" content="#1b3a56" />
   </head>
   <body>
+    <GoogleTagManager position="body" />
     <slot />
   </body>
 </html>

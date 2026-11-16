@@ -94,6 +94,7 @@ Hacerlo también ante cualquier sospecha de filtración o cuando alguien con acc
 | `PUBLIC_INCLUDE_FIXTURES` | `false` | `true` |
 | `PUBLIC_LEADS_ENABLED` | `true` (cuando se apruebe) | `true` |
 | `PUBLIC_TURNSTILE_SITE_KEY` | clave real | clave de prueba |
+| `PUBLIC_GTM_ID` | `GTM-TK4ZZWL6` | vacío (GTM no se carga) |
 | `TURNSTILE_SECRET_KEY` | secreto real | secreto de prueba |
 | `SUPABASE_URL` / `SUPABASE_SECRET_KEY` | proyecto de **producción** | proyecto de **desarrollo** |
 | `RESEND_API_KEY` / `LEADS_EMAIL_FROM` | reales | reales o vacías* |

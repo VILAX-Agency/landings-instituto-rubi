@@ -1,0 +1,45 @@
+---
+/**
+ * Google Tag Manager (snippet oficial de Google).
+ *
+ * Solo se carga si PUBLIC_GTM_ID tiene un ID válido (GTM-XXXXXXX). Definirlo
+ * únicamente en el entorno Production de Vercel para que las previews y el
+ * desarrollo local no envíen datos al contenedor.
+ *
+ *  - slot "head": script del contenedor, lo más arriba posible del <head>.
+ *  - slot "body": <noscript> con el iframe, justo tras la apertura de <body>.
+ */
+interface Props {
+  position: 'head' | 'body';
+}
+
+const { position } = Astro.props;
+const raw = import.meta.env.PUBLIC_GTM_ID?.trim();
+const gtmId = raw && /^GTM-[A-Z0-9]+$/.test(raw) ? raw : undefined;
+
+if (raw && !gtmId) {
+  console.warn(`[gtm] PUBLIC_GTM_ID no válido ("${raw}"): GTM no se carga.`);
+}
+
+const headSnippet = gtmId
+  ? `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});` +
+    `var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';` +
+    `j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);` +
+    `})(window,document,'script','dataLayer',${JSON.stringify(gtmId)});`
+  : undefined;
+---
+
+{gtmId && position === 'head' && <script is:inline set:html={headSnippet} />}
+{
+  gtmId && position === 'body' && (
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+        title="Google Tag Manager"
+      />
+    </noscript>
+  )
+}
