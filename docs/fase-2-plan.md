@@ -194,14 +194,14 @@ A database failure returns 503, **never success**. Logs carry the `submission_id
 - While sending: the button is disabled with `aria-busy`.
 - Errors: field-level messages (`aria-invalid` and `aria-describedby`) and a summary in an `aria-live` region.
 - Network errors keep the same `submission_id` on retry.
-- After a confirmed save, the page navigates to `/gracias/`.
+- After a confirmed save (`{ ok: true }`), the form is replaced in place by a success message
+  (`.lead-form__success`, previously `hidden`); there is no navigation. *(Updated 16/11/2026: replaces the redirect
+  to `/gracias/` so the paid team can track conversions with an element-visibility trigger on `.lead-form__success`.)*
 
 ### C9. Thank-you page — `/gracias/`
 - `noindex`, with no personal data or identifiers in the URL.
-- It's reached only after a confirmed save, but a direct visit is always possible, so **visiting it is not proof of
-  conversion**. The source of truth is the `leads` table.
-- No client-side marker is added in this phase. Future tracking (out of scope) should rely on confirmed server-side records,
-  such as the `submission_id`.
+- The form no longer navigates here (see C8); the page is kept and the `gracias` segment stays reserved.
+- A direct visit is always possible, so **visiting it is not proof of conversion**. The source of truth is the `leads` table.
 
 ### C10. Tests (Vitest)
 - **Unit:**

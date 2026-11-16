@@ -9,7 +9,8 @@
  * FASE 2: operativo solo con PUBLIC_LEADS_ENABLED=true (ver ./formConfig.ts).
  * Envío por JavaScript (JSON a /api/lead/) con Cloudflare Turnstile: sin JS
  * no se puede enviar y <noscript> muestra el teléfono de contacto.
- * Solo se navega a /gracias/ cuando el servidor confirma que el lead se ha guardado.
+ * Cuando el servidor confirma que el lead se ha guardado, el formulario se
+ * sustituye por el mensaje `.lead-form__success` (sin cambiar de página).
  */
 import Icon from '../ui/Icon.astro';
 import { ciudadesFormulario, isLeadFormOperational, leadFormConfig } from './formConfig';
@@ -89,7 +90,6 @@ const campos = [
   class:list={['lead-form', `lead-form--${variant}`, { 'lead-form--no-header-mobile': hideHeaderMobile }]}
   data-form-status={operativo ? 'enabled' : 'disabled'}
   data-endpoint={operativo ? leadFormConfig.endpoint : undefined}
-  data-thanks={operativo ? leadFormConfig.thanksPath : undefined}
   data-turnstile-sitekey={operativo ? leadFormConfig.turnstileSiteKey : undefined}
   data-telefono={telefono?.display}
   data-landing={landingId}
@@ -275,6 +275,25 @@ const campos = [
     <Icon name="lock" />
     {textos.nota}
   </p>
+
+  {
+    operativo && (
+      /* Mensaje de éxito: solo se muestra tras `{ ok: true }` del servidor.
+         Selector estable para tracking de conversiones (paid): `.lead-form__success`. */
+      <div id={`${id}-success`} class="lead-form__success" data-success role="status" tabindex="-1" hidden>
+        <p class="t-h3 lead-form__success-title">Solicitud enviada con éxito</p>
+        <p class="lead-form__success-text">
+          Hemos recibido tu solicitud. Nuestro equipo se pondrá en contacto contigo.
+          {telefono && (
+            <>
+              {' '}
+              Si lo prefieres, puedes llamarnos al <a href={telefono.href}>{telefono.display}</a>.
+            </>
+          )}
+        </p>
+      </div>
+    )
+  }
 </form>
 
 <script>
@@ -589,5 +608,31 @@ const campos = [
   .lead-form[aria-busy='true'] .lead-form__submit {
     cursor: progress;
     opacity: 0.8;
+  }
+
+  /* Envío confirmado: el formulario se sustituye por el mensaje de éxito. */
+  .lead-form--sent > :not(.lead-form__success) {
+    display: none;
+  }
+  .lead-form__success {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    padding-block: var(--space-24);
+    color: var(--color-text-body);
+    text-align: center;
+  }
+  .lead-form__success[hidden] {
+    display: none;
+  }
+  .lead-form__success:focus {
+    outline: none;
+  }
+  .lead-form__success-title {
+    color: var(--color-text-primary);
+  }
+  .lead-form__success a {
+    text-decoration: underline;
+    white-space: nowrap;
   }
 </style>

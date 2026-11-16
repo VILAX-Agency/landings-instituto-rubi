@@ -4,7 +4,8 @@
  * - submission_id generado en el navegador al cargar; se conserva en los
  *   reintentos tras un error de red (el servidor no duplica el lead).
  * - Turnstile se carga de forma diferida al primer foco en el formulario.
- * - Solo se navega a la página de gracias tras `{ ok: true }` del servidor.
+ * - Solo tras `{ ok: true }` del servidor se oculta el formulario y se muestra
+ *   el mensaje de éxito `.lead-form__success` (selector de conversión para paid).
  */
 
 type Campo = 'nombre' | 'telefono' | 'email' | 'ciudad' | 'interes' | 'consentimiento';
@@ -67,16 +68,16 @@ function newSubmissionId(): string {
 
 export function initLeadForm(form: HTMLFormElement): void {
   const endpoint = form.dataset.endpoint;
-  const thanks = form.dataset.thanks ?? '/gracias/';
   const siteKey = form.dataset.turnstileSitekey;
   const telefono = form.dataset.telefono;
   const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
   const status = form.querySelector<HTMLElement>('[data-status]');
   const turnstileBox = form.querySelector<HTMLElement>('[data-turnstile]');
-  if (!endpoint || !button || !status) return;
+  const success = form.querySelector<HTMLElement>('[data-success]');
+  if (!endpoint || !button || !status || !success) return;
 
   const ctaLabel = button.textContent?.trim() ?? '';
-  let submissionId = newSubmissionId();
+  const submissionId = newSubmissionId();
   let sending = false;
 
   // --- Turnstile (diferido) ---
@@ -221,8 +222,13 @@ export function initLeadForm(form: HTMLFormElement): void {
       const body = (await res.json().catch(() => ({ ok: false }))) as LeadResponse;
 
       if (res.ok && body.ok) {
-        // Lead guardado: se mantiene el estado ocupado hasta navegar.
-        window.location.assign(thanks);
+        // Lead guardado: el formulario se sustituye por el mensaje de éxito.
+        // Se mantiene `sending` para impedir un segundo envío del mismo formulario.
+        form.removeAttribute('aria-busy');
+        form.classList.add('lead-form--sent');
+        success!.hidden = false;
+        success!.focus({ preventScroll: true });
+        success!.scrollIntoView({ block: 'center', behavior: 'smooth' });
         return;
       }
 
@@ -242,15 +248,6 @@ export function initLeadForm(form: HTMLFormElement): void {
       setBusy(false);
       status!.textContent = fallo;
     }
-  });
-
-  // Volver atrás desde /gracias/ (bfcache): formulario listo para un envío nuevo.
-  window.addEventListener('pageshow', (event) => {
-    if (!event.persisted) return;
-    submissionId = newSubmissionId();
-    clearErrors();
-    resetToken();
-    setBusy(false);
   });
 
   button.disabled = false;
