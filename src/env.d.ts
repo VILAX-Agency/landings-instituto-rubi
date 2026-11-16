@@ -5,6 +5,7 @@ interface ImportMetaEnv {
   readonly PUBLIC_INCLUDE_FIXTURES?: string;
   readonly PUBLIC_LEADS_ENABLED?: string;
   readonly PUBLIC_TURNSTILE_SITE_KEY?: string;
+  readonly PUBLIC_GTM_ID?: string;
 }
 
 interface ImportMeta {
