@@ -12,7 +12,7 @@
     { "icono": "shield", "texto": { "desktop": "Quirófano hospitalario acreditado", "movil": "Hospital acreditado" } },
     { "icono": "card", "texto": { "desktop": "Financiación hasta el 100%", "movil": "Financiación 100%" } },
     { "icono": "video", "texto": { "desktop": "Valoración por videollamada", "movil": "Videollamada" } },
-    { "icono": "pin", "texto": "6 sedes en España" }
+    { "icono": "pin", "texto": "5 sedes en España" }
   ],
   "legal": {
     "aviso_legal_url": "https://institutorubi.com/aviso-legal/",
@@ -52,7 +52,7 @@
     "sede": {
       "imagen": "../../assets/equipo/quirofano.jpg",
       "imagen_alt": "Equipo quirúrgico durante una intervención",
-      "texto": "Consultas en Mallorca, Madrid, Barcelona, Canarias, Almería y Alicante"
+      "texto": "Consultas en Mallorca, Madrid, Barcelona, Canarias y Almería"
     }
   },
   "footer": {
