@@ -26,7 +26,10 @@ const { eyebrow, titulo, intro, ventajas, comparativa } = Astro.props;
 const { tone = "tint" } = Astro.props;
 ---
 
-<section class:list={["section", "tech", { "section--tint": tone === "tint" }]} aria-labelledby="tech-title">
+<section
+  class:list={["section", "tech", { "section--tint": tone === "tint", "tech--sin-tabla": !comparativa }]}
+  aria-labelledby="tech-title"
+>
   <div class="container tech__layout">
     <div class="tech__main">
       <SectionHeading id="tech-title" eyebrow={eyebrow} title={titulo} intro={intro} />
@@ -206,6 +209,12 @@ const { tone = "tint" } = Astro.props;
     }
     .feature {
       flex-direction: column;
+    }
+    /* Sin comparativa (Figma Liposuccion_v1 136:1560): ventajas en una fila a todo el ancho. */
+    .tech--sin-tabla .tech__features {
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
     }
     .tech__table-wrap {
       flex: 0 1 520px;

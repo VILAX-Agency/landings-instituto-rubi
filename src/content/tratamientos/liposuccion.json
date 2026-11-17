@@ -1,0 +1,99 @@
+{
+  "nombre": "Liposucción · Lipoescultura",
+  "interes_opciones": [
+    { "valor": "liposuccion", "label": "Liposucción" },
+    { "valor": "lipoescultura", "label": "Lipoescultura" },
+    { "valor": "otro", "label": "Aún no lo sé", "label_movil": "No lo sé" }
+  ],
+  "secciones": {
+    "antes_despues": {
+      "eyebrow": "Antes y después",
+      "titulo": "Resultados reales, pacientes reales",
+      "intro": {
+        "desktop": "Pacientes operados de liposucción en Instituto Rubí. Cada caso es un paciente distinto.",
+        "movil": "Cada caso es un paciente distinto."
+      },
+      "cta_label": "Quiero valorar mi caso",
+      "casos": [
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-1.jpg", "alt": "Paciente 1, hombre, vista frontal antes y después de una liposucción de abdomen y flancos", "titulo": "Liposucción · abdomen y flancos", "detalle": "Paciente 1 · vista frontal" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-2.jpg", "alt": "Paciente 1, hombre, vista posterior antes y después de una liposucción de abdomen y flancos", "titulo": "Liposucción · abdomen y flancos", "detalle": "Paciente 1 · vista posterior" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-3.jpg", "alt": "Paciente 2, vista frontal del abdomen antes y después de la cirugía", "titulo": "Liposucción · [zona: validar]", "detalle": "Paciente 2 · vista frontal" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-4.png", "alt": "Paciente 3, vista frontal del abdomen antes y después de la cirugía", "titulo": "Liposucción · [zona: validar]", "detalle": "Paciente 3 · vista frontal" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-5.jpg", "alt": "Paciente 4, vista frontal del abdomen antes y después de la cirugía", "titulo": "Liposucción · [zona: validar]", "detalle": "Paciente 4 · vista frontal" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-6.jpg", "alt": "Paciente 4, vista de perfil del abdomen antes y después de la cirugía", "titulo": "Liposucción · [zona: validar]", "detalle": "Paciente 4 · vista de perfil" }
+      ],
+      "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
+    },
+    "tecnica": {
+      "eyebrow": "La intervención",
+      "titulo": "Liposucción y lipoescultura: cómo es tu intervención",
+      "intro": {
+        "desktop": "La liposucción elimina la grasa localizada; la lipoescultura, además, moldea y define el contorno. No es un método para perder peso.",
+        "movil": "Elimina la grasa localizada y, con lipoescultura, moldea el contorno. No sirve para perder peso."
+      },
+      "ventajas": [
+        { "icono": "ruler", "titulo": "Incisiones de pocos mm", "texto": "[2-4 / 4-6 mm: validar], en zonas poco visibles." },
+        { "icono": "drop", "titulo": "Cánulas finas", "texto": "Aspiran la grasa y modelan el contorno." },
+        { "icono": "clock", "titulo": "Anestesia general", "texto": "Con solución infiltrada para reducir el sangrado." },
+        { "icono": "heart", "titulo": "Prenda de compresión", "texto": "Reduce la inflamación en la recuperación." }
+      ]
+    },
+    "recuperacion": {
+      "eyebrow": "Tu recuperación",
+      "titulo": "Paso a paso, sin sorpresas",
+      "intro": {
+        "desktop": "Así son los días y las semanas después de tu liposucción. Tu cirujano adapta las pautas a tu caso.",
+        "movil": ""
+      },
+      "pasos": [
+        { "titulo": "Primeros días", "texto": "Actividad ligera. Prenda de compresión según indicación médica." },
+        { "titulo": "1-2 semanas", "texto": "Vuelta al trabajo sedentario, según la extensión de la cirugía." },
+        { "titulo": "4-6 semanas", "texto": "Vuelta al ejercicio intenso." },
+        { "titulo": "6-12 meses", "texto": "Resultado definitivo, cuando baja la inflamación." }
+      ]
+    },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestros pacientes",
+      "video": {
+        "imagen": "../../assets/landings/liposuccion/testimonio-video.jpg",
+        "alt": "Judith Arias, paciente de lipoescultura, en su casa",
+        "nombre": "Judith Arias",
+        "detalle": "@judiitharias_ · Lipoescultura"
+      },
+      "resenas": [
+        { "cita": "“[Reseña real de liposucción pendiente]”", "autor": "[Nombre] · [Ciudad] · Liposucción" },
+        { "cita": "“[Reseña real de liposucción pendiente]”", "autor": "[Nombre] · [Ciudad] · Lipoescultura" },
+        { "cita": "“[Reseña real de liposucción pendiente]”", "autor": "[Nombre] · [Ciudad] · Liposucción", "ocultar_movil": true }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "titulo": "Resolvemos tus dudas",
+      "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
+      "cta_label": "Preguntar por WhatsApp",
+      "preguntas": [
+        { "pregunta": "¿Quién es buen candidato para una liposucción?", "respuesta": "Personas con un peso cercano al ideal, buena salud, piel con buena elasticidad y expectativas realistas. La liposucción elimina grasa localizada: no es un método para perder peso." },
+        { "pregunta": "¿Qué diferencia hay entre liposucción y lipoescultura?", "respuesta": "Las dos eliminan grasa localizada mediante aspiración con cánulas finas. La liposucción se centra en reducir el volumen de grasa de una zona concreta; la lipoescultura, además, moldea y define el contorno trabajando varias zonas de forma armónica. En la valoración, tu cirujano te indica cuál se adapta mejor a tu caso." },
+        { "pregunta": "¿Deja cicatriz la liposucción?", "respuesta": "Las incisiones miden pocos milímetros [2-4 / 4-6 mm: validar] y se colocan en zonas poco visibles. Con el tiempo quedan muy discretas; podemos tratarlas con láser CO₂ y parches cicatrizantes." },
+        { "pregunta": "¿Cuándo podré volver a mi vida normal?", "respuesta": "Actividad ligera en pocos días, trabajo sedentario en 1-2 semanas y ejercicio intenso a partir de las 4-6 semanas, según la extensión de la cirugía." },
+        { "pregunta": "¿Los resultados son inmediatos?", "respuesta": "Notarás un cambio en el contorno desde el principio, pero la inflamación tarda en bajar. El resultado definitivo se aprecia entre los 6 y los 12 meses." },
+        { "pregunta": "¿Duele el postoperatorio?", "respuesta": "Las molestias varían en cada persona y se controlan con la medicación pautada por el equipo médico. Es habitual notar rigidez, inflamación y hematomas temporales." },
+        { "pregunta": "¿Cuánto cuesta una liposucción?", "respuesta": "Depende de las zonas a tratar y de la extensión de la cirugía. Tras la valoración te entregamos un presupuesto cerrado, con financiación de hasta el 100%." }
+      ]
+    },
+    "equipo": {
+      "titulo": "Te opera un equipo de cirujanos plásticos"
+    },
+    "cta_final": {
+      "eyebrow": "Da el primer paso",
+      "titulo": "Tu figura, a tu medida",
+      "intro": "Valoración gratuita, presencial o por videollamada. Sin compromiso.",
+      "puntos": [
+        "Consulta con cirujano plástico",
+        "Valoración personalizada de tu caso",
+        "Presupuesto cerrado y financiación hasta el 100%"
+      ]
+    }
+  }
+}
