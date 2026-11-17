@@ -1,6 +1,6 @@
 {
   "tratamiento_slug": "liposuccion",
-  "estado": "borrador",
+  "estado": "aprobado",
   "fixture": false,
   "seo_title": "Liposucción y lipoescultura | Instituto Rubí",
   "meta_description": "Liposucción y lipoescultura para eliminar la grasa localizada de abdomen, caderas, muslos o brazos. Pide tu valoración gratuita en Instituto Rubí.",
@@ -29,6 +29,7 @@
     "Antes/después: zona tratada sin confirmar en pacientes 2-4; los pacientes 2 y 4 muestran cicatriz periumbilical/suprapúbica (posible abdominoplastia). Confirmar técnica y consentimiento para anuncios.",
     "Testimonio en vídeo de Judith Arias (lipoescultura): confirmar consentimiento para esta landing.",
     "Reseñas: faltan 3 reseñas reales de liposucción/lipoescultura (ahora marcadores).",
-    "Imagen del hero tomada de la web actual (parece de banco de imágenes, 1600×1067): confirmar licencia y, si es posible, un original de más resolución."
+    "Imagen del hero tomada de la web actual (parece de banco de imágenes, 1600×1067): confirmar licencia y, si es posible, un original de más resolución.",
+    "17/11/2026: marcada como aprobada para publicación por decisión del responsable del proyecto, para verla en producción (URL aún no usada en anuncios). Las revisiones anteriores siguen abiertas y deben cerrarse antes de lanzar campañas."
   ]
 }
