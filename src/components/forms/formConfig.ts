@@ -32,7 +32,6 @@ export const ciudadesFormulario: CiudadFormulario[] = [
   { valor: "barcelona", label: "Barcelona" },
   { valor: "canarias", label: "Canarias" },
   { valor: "almeria", label: "Almería" },
-  { valor: "alicante", label: "Alicante" },
 ];
 export const leadFormConfig: LeadFormConfig = {
   endpoint: import.meta.env.PUBLIC_LEADS_ENABLED === 'true' ? '/api/lead/' : undefined,
