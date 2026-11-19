@@ -44,10 +44,9 @@
     "avatares": [
       { "imagen": "../../assets/equipo/avatar-1.jpg", "alt": "" },
       { "imagen": "../../assets/equipo/avatar-2.jpg", "alt": "" },
-      { "imagen": "../../assets/equipo/avatar-3.jpg", "alt": "" },
       { "imagen": "../../assets/equipo/avatar-4.jpg", "alt": "" }
     ],
-    "equipo_extra": "+6",
+    "equipo_extra": "+7",
     "equipo_texto": { "desktop": "Equipo de 10 cirujanos plásticos", "movil": "10 cirujanos plásticos" },
     "sede": {
       "imagen": "../../assets/equipo/quirofano.jpg",
