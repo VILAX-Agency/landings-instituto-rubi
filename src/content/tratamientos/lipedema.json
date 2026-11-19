@@ -1,0 +1,118 @@
+{
+  "nombre": "Cirugía de lipedema",
+  "interes_opciones": [
+    { "valor": "lipedema", "label": "Lipedema" },
+    { "valor": "liposuccion", "label": "Liposucción" },
+    { "valor": "otro", "label": "Aún no lo sé", "label_movil": "No lo sé" }
+  ],
+  "secciones": {
+    "antes_despues": {
+      "eyebrow": "Antes y después",
+      "titulo": "Resultados reales, pacientes reales",
+      "intro": {
+        "desktop": "Pacientes operadas de lipedema en Instituto Rubí. Cada caso es una paciente distinta.",
+        "movil": "Cada caso es una paciente distinta."
+      },
+      "cta_label": "Quiero valorar mi caso",
+      "casos": [
+        { "imagen": "../../assets/landings/lipedema/casos/caso-1.jpg", "alt": "Paciente 1, vista frontal de las piernas antes y después de la cirugía de lipedema", "titulo": "Cirugía de lipedema", "detalle": "Paciente 1 · vista frontal" },
+        { "imagen": "../../assets/landings/lipedema/casos/caso-2.jpg", "alt": "Paciente 1, vista posterior de las piernas antes y después de la cirugía de lipedema", "titulo": "Cirugía de lipedema", "detalle": "Paciente 1 · vista posterior" },
+        { "imagen": "../../assets/landings/lipedema/casos/caso-3.jpg", "alt": "Paciente 2, vista lateral de las piernas antes y después de la cirugía de lipedema", "titulo": "Cirugía de lipedema", "detalle": "Paciente 2 · vista lateral" },
+        { "imagen": "../../assets/landings/lipedema/casos/caso-4.jpg", "alt": "Paciente 3, vista frontal antes y después de la cirugía de lipedema", "titulo": "Cirugía de lipedema", "detalle": "Paciente 3 · vista frontal" },
+        { "imagen": "../../assets/landings/lipedema/casos/caso-5.jpg", "alt": "Paciente 4, vista frontal antes y después de la cirugía de lipedema", "titulo": "Cirugía de lipedema", "detalle": "Paciente 4 · vista frontal" },
+        { "imagen": "../../assets/landings/lipedema/casos/caso-6.jpg", "alt": "Paciente 5, vista frontal de las piernas antes y después de la cirugía de lipedema", "titulo": "Cirugía de lipedema", "detalle": "Paciente 5 · vista frontal" }
+      ],
+      "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
+    },
+    "tecnica": {
+      "eyebrow": "La cirugía",
+      "titulo": "Cómo es tu cirugía de lipedema",
+      "intro": {
+        "desktop": "Liposucción asistida por agua (WAL) que elimina de forma selectiva la grasa del lipedema, combinada con tratamiento conservador.",
+        "movil": "Liposucción asistida por agua (WAL), combinada con tratamiento conservador."
+      },
+      "ventajas": [
+        { "icono": "drop", "titulo": "Liposucción WAL", "texto": "Asistida por agua, con incisiones milimétricas." },
+        { "icono": "clock", "titulo": "Ingreso de 1 a 2 días", "texto": "Según la extensión de la cirugía y el criterio del cirujano." },
+        { "icono": "heart", "titulo": "Compresión y drenaje", "texto": "Leggings o manguitos compresivos y drenaje linfático." },
+        { "icono": "shield", "titulo": "Fisioterapia especializada", "texto": "Fisioterapeutas especializados en lipedema en tu postoperatorio." }
+      ]
+    },
+    "simulacion": {
+      "eyebrow": "Test de lipedema",
+      "titulo": "¿Crees que puedes tener lipedema?",
+      "intro": {
+        "desktop": "¿Notas pesadez, dolor, inflamación o hematomas sin motivo en piernas o brazos? Haz nuestro test y coméntalo con un especialista.",
+        "movil": "¿Pesadez, dolor o hematomas sin motivo en piernas o brazos? Haz nuestro test."
+      },
+      "imagen": "../../assets/landings/lipedema/test.jpg",
+      "imagen_alt": "Glúteos y muslos de una mujer de espaldas, con piel irregular",
+      "etiqueta": "Test de lipedema",
+      "pasos": [
+        { "titulo": "Responde el test", "texto": "Unas preguntas sobre tus síntomas." },
+        { "titulo": "Pide tu valoración", "texto": "Un cirujano plástico revisa tu caso." },
+        { "titulo": "Tu plan personalizado", "texto": "Adaptado a tu grado de lipedema." }
+      ],
+      "cta_label": "Hacer el test de lipedema",
+      "cta_url": "https://institutorubi.com/test-lipedema/"
+    },
+    "recuperacion": {
+      "eyebrow": "Grados del lipedema",
+      "titulo": "Cuatro grados, un plan para cada caso",
+      "intro": {
+        "desktop": "Un diagnóstico temprano ayuda a elegir el tratamiento adecuado para tu grado.",
+        "movil": ""
+      },
+      "pasos": [
+        { "titulo": "Grado 1", "texto": "La grasa se acumula justo debajo de la piel." },
+        { "titulo": "Grado 2", "texto": "También alrededor de las articulaciones, con más dolor y molestias." },
+        { "titulo": "Grado 3", "texto": "Aumento de grasa más notable y síntomas más intensos." },
+        { "titulo": "Grado 4", "texto": "Gran aumento de grasa que puede limitar la movilidad." }
+      ]
+    },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestras pacientes",
+      "video": {
+        "imagen": "../../assets/landings/liposuccion/testimonio-video.jpg",
+        "alt": "Judith Arias, paciente de lipoescultura, en su casa",
+        "nombre": "Judith Arias",
+        "detalle": "@judiitharias_ · Lipoescultura"
+      },
+      "resenas": [
+        { "cita": "“Me derivaron al Dr Carlos Rubí por ser el mejor en tratar el Lipedema. Desde el principio hasta en el post operatorio me he sentido segura y atendida por todo su equipo de profesionales. Agradecida de cómo me va a cambiar la vida.”", "autor": "Laura Garde · Lipedema" },
+        { "cita": "“Mi experiencia con Instituto Rubí, en este caso el Dr. Rubí ha sido excelente, me operé de lipedema hace un mes y los resultados ya son increíbles... Sin duda un cambio de vida en todos los aspectos. Además de todo el equipo, siempre con un muy buen trato y cercanía.”", "autor": "Melissa Martins · Lipedema" },
+        { "cita": "“Las 5 estrellas se quedan cortas, encantada con el trato tanto del Dr. Rubí, como Diana la enfermera y de todo el equipo. Han sabido cuidar cada mínimo detalle…”", "autor": "Monica Mendez · Lipedema", "ocultar_movil": true }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "titulo": "Resolvemos tus dudas",
+      "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
+      "cta_label": "Preguntar por WhatsApp",
+      "preguntas": [
+        { "pregunta": "¿Cómo saber si tengo lipedema?", "respuesta": "Las señales más habituales son: volumen desproporcionado de la zona afectada respecto al resto del cuerpo, pesadez y dolor continuos, episodios de inflamación, grasa acumulada justo encima de los tobillos (copa de Cuff o signo del pijama), más sensibilidad al tacto y hematomas espontáneos. El diagnóstico lo confirma un especialista en consulta." },
+        { "pregunta": "¿Quién es buena candidata para la cirugía de lipedema?", "respuesta": "Personas con un diagnóstico confirmado de lipedema y síntomas como dolor, inflamación o problemas de movilidad, que no han mejorado lo suficiente con tratamientos conservadores (compresión, control del peso) y tienen expectativas realistas." },
+        { "pregunta": "¿Deja cicatrices la cirugía de lipedema?", "respuesta": "Las incisiones suelen medir pocos milímetros y se colocan en zonas discretas. Tardan varios meses en madurar y pueden necesitar un año o más para alcanzar su aspecto final." },
+        { "pregunta": "¿Cuántos días tendré que estar ingresada?", "respuesta": "Normalmente entre 1 y 2 días, según la extensión de la cirugía y el criterio del cirujano. Lo concretamos en la consulta preoperatoria." },
+        { "pregunta": "¿Es doloroso el postoperatorio?", "respuesta": "Depende de cada persona y de la extensión de la cirugía. Las molestias se controlan con la medicación pautada por el equipo médico y disminuyen de forma gradual en los días y semanas siguientes." },
+        { "pregunta": "¿Cuándo podré volver a mi vida cotidiana?", "respuesta": "La recuperación inicial suele ser de unos 7 días, según cada paciente, y en pocas semanas podrás retomar tu vida cotidiana. Al principio son habituales la hinchazón y los hematomas, que desaparecen con el tiempo." },
+        { "pregunta": "¿Los resultados son inmediatos?", "respuesta": "Notarás la reducción de volumen desde el principio, pero la hinchazón tarda semanas o meses en bajar. Los leggings o manguitos compresivos, el drenaje linfático y la fisioterapia ayudan en la recuperación." },
+        { "pregunta": "¿Mejorará mi movilidad?", "respuesta": "Al reducir la grasa acumulada, la cirugía suele mejorar la movilidad y aliviar el dolor y la pesadez. Puede complementarse con fisioterapia y ejercicios específicos." }
+      ]
+    },
+    "equipo": {
+      "titulo": "Te atiende un equipo médico multidisciplinar"
+    },
+    "cta_final": {
+      "eyebrow": "Da el primer paso",
+      "titulo": "Empieza por una valoración",
+      "intro": "Valoración gratuita, presencial o por videollamada. Sin compromiso.",
+      "puntos": [
+        "Consulta con cirujano plástico",
+        "Valoración de tu grado de lipedema",
+        "Presupuesto cerrado y financiación hasta el 100%"
+      ]
+    }
+  }
+}
