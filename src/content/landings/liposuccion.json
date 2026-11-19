@@ -2,11 +2,11 @@
   "tratamiento_slug": "liposuccion",
   "estado": "borrador",
   "fixture": false,
-  "seo_title": "Liposucción y lipoescultura | Instituto Rubí",
-  "meta_description": "Liposucción y lipoescultura para eliminar la grasa localizada de abdomen, caderas, muslos o brazos. Pide tu valoración gratuita en Instituto Rubí.",
-  "eyebrow": "Liposucción · Lipoescultura",
-  "h1": "Liposucción para moldear tu figura, con incisiones de pocos milímetros",
-  "intro": "Con liposucción o lipoescultura eliminamos la grasa localizada de abdomen, caderas, muslos o brazos. Un cirujano plástico valora tu caso.",
+  "seo_title": "Liposucción y lipoescultura VASER | Instituto Rubí",
+  "meta_description": "Liposucción y lipoescultura VASER HD para eliminar la grasa localizada de abdomen, caderas, muslos o brazos. Pide tu valoración gratuita en Instituto Rubí.",
+  "eyebrow": "Liposucción · Lipoescultura VASER",
+  "h1": "Liposucción y lipoescultura VASER para moldear tu figura",
+  "intro": "Con liposucción o lipoescultura VASER HD eliminamos la grasa localizada de abdomen, caderas, muslos o brazos. Un cirujano plástico valora tu caso.",
   "imagen_principal": "../../assets/landings/liposuccion/hero.jpg",
   "imagen_principal_alt": "Cirujana marcando con rotulador las zonas de abdomen y muslos de una paciente antes de una liposucción",
   "interes_preseleccionado": "liposuccion",
@@ -24,11 +24,12 @@
   "notas_revision": [
     "17/11/2026: maquetada desde el diseño de Figma Liposuccion_v1 (desktop 136:1476 / móvil 136:1219). Contenido combinado de institutorubi.com/liposuccion y /lipoescultura.",
     "seo_title, meta_description, H1 e intro propuestos por desarrollo: pendientes de aprobación SEO.",
-    "Tamaño de las incisiones contradictorio entre las webs (2-4 mm en liposucción, 4-6 mm en lipoescultura): marcado [validar] en ventajas y FAQ.",
+    "19/11/2026: incisiones de 3 mm confirmadas por el equipo.",
     "Validación médica pendiente de todo el contenido clínico: recuperación, resultados, dolor, anestesia, láser CO₂ y diferencia liposucción/lipoescultura.",
-    "Antes/después: zona tratada sin confirmar en pacientes 2-4; los pacientes 2 y 4 muestran cicatriz periumbilical/suprapúbica (posible abdominoplastia). Confirmar técnica y consentimiento para anuncios.",
+    "VASER HD (contenido de institutorubi.com/lipoescultura-barcelona): confirmar que se ofrece en todas las sedes, la descripción de la técnica y el uso de la marca VASER en anuncios. No se usan «Nº1», «resultados inmediatos» ni «definitiva».",
+    "Antes/después: técnicas indicadas por el equipo (19/11/2026): paciente 1 lipoescultura con abdominoplastia y ginecomastia; pacientes 2-4 lipoescultura 360 con abdominoplastia. Confirmar consentimiento para anuncios.",
     "Testimonio en vídeo de Judith Arias (lipoescultura): confirmar consentimiento para esta landing.",
-    "Reseñas: faltan 3 reseñas reales de liposucción/lipoescultura (ahora marcadores).",
+    "Reseñas de Google aportadas por el equipo (Rubi Torres, Carmen Cosano Lopez, Maria Arribas), textos literales; las dos últimas recortadas con «…». Confirmar permiso de uso y de los nombres del personal que aparecen (enfermeras Diana y Natalia, doctora López). Erratas del original sin corregir.",
     "Imagen del hero tomada de la web actual (parece de banco de imágenes, 1600×1067): confirmar licencia y, si es posible, un original de más resolución."
   ]
 }

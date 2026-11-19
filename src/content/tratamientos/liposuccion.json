@@ -15,12 +15,12 @@
       },
       "cta_label": "Quiero valorar mi caso",
       "casos": [
-        { "imagen": "../../assets/landings/liposuccion/casos/caso-1.jpg", "alt": "Paciente 1, hombre, vista frontal antes y después de una liposucción de abdomen y flancos", "titulo": "Liposucción · abdomen y flancos", "detalle": "Paciente 1 · vista frontal" },
-        { "imagen": "../../assets/landings/liposuccion/casos/caso-2.jpg", "alt": "Paciente 1, hombre, vista posterior antes y después de una liposucción de abdomen y flancos", "titulo": "Liposucción · abdomen y flancos", "detalle": "Paciente 1 · vista posterior" },
-        { "imagen": "../../assets/landings/liposuccion/casos/caso-3.jpg", "alt": "Paciente 2, vista frontal del abdomen antes y después de la cirugía", "titulo": "Liposucción · [zona: validar]", "detalle": "Paciente 2 · vista frontal" },
-        { "imagen": "../../assets/landings/liposuccion/casos/caso-4.png", "alt": "Paciente 3, vista frontal del abdomen antes y después de la cirugía", "titulo": "Liposucción · [zona: validar]", "detalle": "Paciente 3 · vista frontal" },
-        { "imagen": "../../assets/landings/liposuccion/casos/caso-5.jpg", "alt": "Paciente 4, vista frontal del abdomen antes y después de la cirugía", "titulo": "Liposucción · [zona: validar]", "detalle": "Paciente 4 · vista frontal" },
-        { "imagen": "../../assets/landings/liposuccion/casos/caso-6.jpg", "alt": "Paciente 4, vista de perfil del abdomen antes y después de la cirugía", "titulo": "Liposucción · [zona: validar]", "detalle": "Paciente 4 · vista de perfil" }
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-1.jpg", "alt": "Paciente 1, hombre, vista frontal antes y después de una lipoescultura con abdominoplastia y ginecomastia", "titulo": "Lipoescultura con abdominoplastia y ginecomastia", "detalle": "Paciente 1 · vista frontal" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-2.jpg", "alt": "Paciente 1, hombre, vista posterior antes y después de una lipoescultura con abdominoplastia y ginecomastia", "titulo": "Lipoescultura con abdominoplastia y ginecomastia", "detalle": "Paciente 1 · vista posterior" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-3.jpg", "alt": "Paciente 2, vista frontal antes y después de una lipoescultura 360 con abdominoplastia", "titulo": "Lipoescultura 360 con abdominoplastia", "detalle": "Paciente 2 · vista frontal" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-4.png", "alt": "Paciente 3, vista frontal antes y después de una lipoescultura 360 con abdominoplastia", "titulo": "Lipoescultura 360 con abdominoplastia", "detalle": "Paciente 3 · vista frontal" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-5.jpg", "alt": "Paciente 4, vista frontal antes y después de una lipoescultura 360 con abdominoplastia", "titulo": "Lipoescultura 360 con abdominoplastia", "detalle": "Paciente 4 · vista frontal" },
+        { "imagen": "../../assets/landings/liposuccion/casos/caso-6.jpg", "alt": "Paciente 4, vista de perfil antes y después de una lipoescultura 360 con abdominoplastia", "titulo": "Lipoescultura 360 con abdominoplastia", "detalle": "Paciente 4 · vista de perfil" }
       ],
       "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
     },
@@ -28,12 +28,12 @@
       "eyebrow": "La intervención",
       "titulo": "Liposucción y lipoescultura: cómo es tu intervención",
       "intro": {
-        "desktop": "La liposucción elimina la grasa localizada; la lipoescultura, además, moldea y define el contorno. No es un método para perder peso.",
-        "movil": "Elimina la grasa localizada y, con lipoescultura, moldea el contorno. No sirve para perder peso."
+        "desktop": "La liposucción elimina la grasa localizada; la lipoescultura VASER HD, además, moldea y define el contorno en 360º. No es un método para perder peso.",
+        "movil": "Elimina la grasa localizada y, con lipoescultura VASER HD, define el contorno en 360º. No sirve para perder peso."
       },
       "ventajas": [
-        { "icono": "ruler", "titulo": "Incisiones de pocos mm", "texto": "[2-4 / 4-6 mm: validar], en zonas poco visibles." },
-        { "icono": "drop", "titulo": "Cánulas finas", "texto": "Aspiran la grasa y modelan el contorno." },
+        { "icono": "ruler", "titulo": "Incisiones de 3 mm", "texto": "Situadas en zonas poco visibles." },
+        { "icono": "drop", "titulo": "Tecnología VASER HD", "texto": "Lipoescultura de alta definición que define el contorno en 360º." },
         { "icono": "clock", "titulo": "Anestesia general", "texto": "Con solución infiltrada para reducir el sangrado." },
         { "icono": "heart", "titulo": "Prenda de compresión", "texto": "Reduce la inflamación en la recuperación." }
       ]
@@ -62,9 +62,9 @@
         "detalle": "@judiitharias_ · Lipoescultura"
       },
       "resenas": [
-        { "cita": "“[Reseña real de liposucción pendiente]”", "autor": "[Nombre] · [Ciudad] · Liposucción" },
-        { "cita": "“[Reseña real de liposucción pendiente]”", "autor": "[Nombre] · [Ciudad] · Lipoescultura" },
-        { "cita": "“[Reseña real de liposucción pendiente]”", "autor": "[Nombre] · [Ciudad] · Liposucción", "ocultar_movil": true }
+        { "cita": "“La experiencia ha sido muy gratificante, Me realice Lipo vaser, He recibido una atención muy buena por parte del centro y del personal.Las manos de las enfermeras Diana y Natalia me anda ido bastante bien en mis masajes. Muchas gracias.”", "autor": "Rubi Torres · Lipo VASER" },
+        { "cita": "“El dia 21 de Enero, entre a quirofano para hacerme una abdominoplastia con maxtopexia, lipoescultura y aumento de gluteos con mi propia grasa. Hasta el momento todo ha sido increíble, el Dr. Carlos Rubí, es increíble tanto como profesional como persona…”", "autor": "Carmen Cosano Lopez · Lipoescultura y abdominoplastia" },
+        { "cita": "“Fui operada el día 5 de julio por la doctora López de liposucción por lipedema en piernas completas y no puedo estar más contenta…”", "autor": "Maria Arribas · Liposucción", "ocultar_movil": true }
       ]
     },
     "faq": {
@@ -75,7 +75,8 @@
       "preguntas": [
         { "pregunta": "¿Quién es buen candidato para una liposucción?", "respuesta": "Personas con un peso cercano al ideal, buena salud, piel con buena elasticidad y expectativas realistas. La liposucción elimina grasa localizada: no es un método para perder peso." },
         { "pregunta": "¿Qué diferencia hay entre liposucción y lipoescultura?", "respuesta": "Las dos eliminan grasa localizada mediante aspiración con cánulas finas. La liposucción se centra en reducir el volumen de grasa de una zona concreta; la lipoescultura, además, moldea y define el contorno trabajando varias zonas de forma armónica. En la valoración, tu cirujano te indica cuál se adapta mejor a tu caso." },
-        { "pregunta": "¿Deja cicatriz la liposucción?", "respuesta": "Las incisiones miden pocos milímetros [2-4 / 4-6 mm: validar] y se colocan en zonas poco visibles. Con el tiempo quedan muy discretas; podemos tratarlas con láser CO₂ y parches cicatrizantes." },
+        { "pregunta": "¿Qué es la lipoescultura VASER HD?", "respuesta": "Es la técnica de lipoescultura de alta definición que utilizamos en Instituto Rubí: redefine la silueta en 360º y permite reubicar la propia grasa (lipotransferencia) en glúteos, cara o pecho. También puede combinarse con marcación abdominal. En la valoración, tu cirujano te indica si es adecuada para tu caso." },
+        { "pregunta": "¿Deja cicatriz la liposucción?", "respuesta": "Las incisiones miden unos 3 mm y se colocan en zonas poco visibles. Con el tiempo quedan muy discretas; podemos tratarlas con láser CO₂ y parches cicatrizantes." },
         { "pregunta": "¿Cuándo podré volver a mi vida normal?", "respuesta": "Actividad ligera en pocos días, trabajo sedentario en 1-2 semanas y ejercicio intenso a partir de las 4-6 semanas, según la extensión de la cirugía." },
         { "pregunta": "¿Los resultados son inmediatos?", "respuesta": "Notarás un cambio en el contorno desde el principio, pero la inflamación tarda en bajar. El resultado definitivo se aprecia entre los 6 y los 12 meses." },
         { "pregunta": "¿Duele el postoperatorio?", "respuesta": "Las molestias varían en cada persona y se controlan con la medicación pautada por el equipo médico. Es habitual notar rigidez, inflamación y hematomas temporales." },
