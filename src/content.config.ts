@@ -193,6 +193,8 @@ const tratamientos = defineCollection({
             video_url: urlOpcional,
             pasos: z.array(z.object({ titulo: z.string(), texto: z.string() })).min(1),
             cta_label: z.string(),
+            /** Destino del botón; si falta, baja al formulario final (p. ej. el test de lipedema). */
+            cta_url: urlOpcional,
           })
           .optional(),
         recuperacion: z

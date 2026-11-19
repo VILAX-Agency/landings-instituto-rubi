@@ -120,7 +120,11 @@ const og =
             return T.secciones.tecnica && <Technique {...conOverrides(T.secciones.tecnica, tipo)} tone={tonos.get(tipo)} />;
           case 'simulacion':
             return T.secciones.simulacion && (
-              <Simulation3D {...conOverrides(T.secciones.simulacion, tipo)} ctaHref={ctaFinalHref} tone={tonos.get(tipo)} />
+              <Simulation3D
+                {...conOverrides(T.secciones.simulacion, tipo)}
+                ctaHref={T.secciones.simulacion.cta_url ?? ctaFinalHref}
+                tone={tonos.get(tipo)}
+              />
             );
           case 'recuperacion':
             return T.secciones.recuperacion && <RecoveryTimeline {...conOverrides(T.secciones.recuperacion, tipo)} tone={tonos.get(tipo)} />;
