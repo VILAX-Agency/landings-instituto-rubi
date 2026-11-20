@@ -1,8 +1,9 @@
 {
   "nombre": "Blefaroplastia",
   "interes_opciones": [
-    { "valor": "blefaroplastia", "label": "Blefaroplastia" },
-    { "valor": "otro", "label": "Aún no lo sé" }
+    { "valor": "blefaroplastia-superior", "label": "Blefaroplastia superior", "label_movil": "Superior" },
+    { "valor": "blefaroplastia-inferior", "label": "Blefaroplastia inferior", "label_movil": "Inferior" },
+    { "valor": "blefaroplastia-completa", "label": "Blefaroplastia completa", "label_movil": "Completa" }
   ],
   "secciones": {
     "antes_despues": {
