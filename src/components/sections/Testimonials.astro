@@ -11,7 +11,7 @@ interface Props {
   tone?: "light" | "tint";
   eyebrow: string;
   titulo: string;
-  video: { imagen: ImageMetadata; alt: string; nombre: string; detalle: string; video_url?: string };
+  video: { imagen: ImageMetadata; alt: string; nombre?: string; detalle?: string; video_url?: string };
   resenas: { cita: string; autor: string; ocultar_movil?: boolean }[];
 }
 
@@ -26,11 +26,19 @@ const { tone = "light" } = Astro.props;
     <div class="testi__layout">
       <figure class="testi__video">
         <Image src={video.imagen} alt={video.alt} widths={[335, 400, 800]} sizes="(min-width: 1024px) 400px, 100vw" loading="lazy" />
-        <MediaPlay href={video.video_url} label={`Ver el testimonio de ${video.nombre}`} variant="testimonial" />
-        <figcaption class="testi__caption">
-          <span class="testi__name">{video.nombre}</span>
-          <span class="testi__detail">{video.detalle}</span>
-        </figcaption>
+        <MediaPlay
+          href={video.video_url}
+          label={video.nombre ? `Ver el testimonio de ${video.nombre}` : 'Ver el testimonio'}
+          variant="testimonial"
+        />
+        {
+          video.nombre && (
+            <figcaption class="testi__caption">
+              <span class="testi__name">{video.nombre}</span>
+              {video.detalle && <span class="testi__detail">{video.detalle}</span>}
+            </figcaption>
+          )
+        }
       </figure>
 
       <div class="testi__reviews">

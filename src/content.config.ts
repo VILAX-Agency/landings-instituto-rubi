@@ -212,8 +212,9 @@ const tratamientos = defineCollection({
             video: z.object({
               imagen: image(),
               alt: z.string(),
-              nombre: z.string(),
-              detalle: z.string(),
+              /** Sin nombre no se pinta el recuadro con nombre/detalle (solo la foto). */
+              nombre: z.string().optional(),
+              detalle: z.string().optional(),
               video_url: urlOpcional,
             }),
             resenas: z
