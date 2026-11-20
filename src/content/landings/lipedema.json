@@ -1,6 +1,6 @@
 {
   "tratamiento_slug": "lipedema",
-  "estado": "borrador",
+  "estado": "aprobado",
   "fixture": false,
   "seo_title": "Cirugía de lipedema | Instituto Rubí",
   "meta_description": "Cirugía de lipedema con liposucción asistida por agua (WAL), adaptada a tu grado y a tus síntomas. Pide tu valoración gratuita en Instituto Rubí.",
@@ -15,7 +15,6 @@
     { "tipo": "confianza" },
     { "tipo": "antes_despues" },
     { "tipo": "tecnica" },
-    { "tipo": "simulacion" },
     { "tipo": "recuperacion" },
     { "tipo": "testimonios" },
     { "tipo": "equipo" },
@@ -28,9 +27,10 @@
     "Validación médica pendiente: técnica (WAL según la página de Barcelona; la general menciona tumescente/VASER), ingreso de 1-2 días, recuperación (7 días vs «pocas semanas»), fisioterapeutas en todas las sedes, descripción de los 4 grados y respuestas de las FAQ (sobre todo movilidad y dolor).",
     "No se usan «Nº1 especialistas», «única solución definitiva» ni «enorme diferencia» de la web actual.",
     "Antes/después: fotos de la web actual recompuestas sobre el fondo de marca (sin retocar a las pacientes). Confirmar que antes y después de la paciente 1 son la misma persona, que la vista lateral no es también la paciente 1, el consentimiento para anuncios y que se acepta la recomposición.",
-    "Sección de test: reutiliza el bloque de simulación con enlace a https://institutorubi.com/test-lipedema/ (sale de la landing).",
-    "Imágenes del hero y del test tomadas de la web actual (parecen de banco; la del test es de 1024×626): confirmar licencia.",
+    "20/11/2026: quitada la sección de test de lipedema por decisión del equipo.",
+    "Imagen del hero tomada de la web actual (parece de banco): confirmar licencia.",
     "Testimonio en vídeo de Judith Arias, paciente de lipoescultura (no de lipedema): confirmar si encaja y su consentimiento para esta landing.",
-    "Reseñas de Google aportadas por el equipo (Laura Garde, Melissa Martins, Monica Mendez), textos literales; la última recortada con «…». Revisar «el mejor en tratar el Lipedema» (Laura) y el nombre de la enfermera Diana; confirmar permiso de uso."
+    "Reseñas de Google aportadas por el equipo (Laura Garde, Melissa Martins, Monica Mendez), textos literales; la última recortada con «…». Revisar «el mejor en tratar el Lipedema» (Laura) y el nombre de la enfermera Diana; confirmar permiso de uso.",
+    "20/11/2026: marcada como aprobada para publicación por decisión del responsable del proyecto. Las revisiones anteriores siguen abiertas y deben cerrarse antes de lanzar campañas."
   ]
 }
