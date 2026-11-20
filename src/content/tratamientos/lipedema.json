@@ -38,24 +38,6 @@
         { "icono": "shield", "titulo": "Fisioterapia especializada", "texto": "Fisioterapeutas especializados en lipedema en tu postoperatorio." }
       ]
     },
-    "simulacion": {
-      "eyebrow": "Test de lipedema",
-      "titulo": "¿Crees que puedes tener lipedema?",
-      "intro": {
-        "desktop": "¿Notas pesadez, dolor, inflamación o hematomas sin motivo en piernas o brazos? Haz nuestro test y coméntalo con un especialista.",
-        "movil": "¿Pesadez, dolor o hematomas sin motivo en piernas o brazos? Haz nuestro test."
-      },
-      "imagen": "../../assets/landings/lipedema/test.jpg",
-      "imagen_alt": "Glúteos y muslos de una mujer de espaldas, con piel irregular",
-      "etiqueta": "Test de lipedema",
-      "pasos": [
-        { "titulo": "Responde el test", "texto": "Unas preguntas sobre tus síntomas." },
-        { "titulo": "Pide tu valoración", "texto": "Un cirujano plástico revisa tu caso." },
-        { "titulo": "Tu plan personalizado", "texto": "Adaptado a tu grado de lipedema." }
-      ],
-      "cta_label": "Hacer el test de lipedema",
-      "cta_url": "https://institutorubi.com/test-lipedema/"
-    },
     "recuperacion": {
       "eyebrow": "Grados del lipedema",
       "titulo": "Cuatro grados, un plan para cada caso",
