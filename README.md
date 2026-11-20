@@ -76,7 +76,7 @@ docs/                         plan de Fase 2, despliegue, importador
 4. `npm run check && npm run build`.
 
 No hace falta tocar componentes, CSS ni el formulario. Solo las landings `aprobado` (y no ficticias) se publican
-en producción. Ejemplo de prueba: `rinoplastia-ciudad-demo.json` (ficticio, `fixture: true`, nunca publicable).
+en producción. Ejemplo de prueba: `demo-ciudad-demo.json` (ficticio, `fixture: true`, nunca publicable).
 
 ## Figma
 

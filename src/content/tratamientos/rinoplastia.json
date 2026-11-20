@@ -1,63 +1,117 @@
 {
-  "nombre": "[FICTICIO] Rinoplastia — tratamiento de prueba",
-  "fixture": true,
+  "nombre": "Rinoplastia ultrasónica",
   "interes_opciones": [
     { "valor": "rinoplastia", "label": "Rinoplastia" },
-    { "valor": "otra-opcion", "label": "Otra opción de prueba", "label_movil": "Otra" },
-    { "valor": "no-lo-se", "label": "Aún no lo sé", "label_movil": "No lo sé" }
+    { "valor": "cirugia-facial", "label": "Cirugía facial" },
+    { "valor": "otro", "label": "Aún no lo sé", "label_movil": "No lo sé" }
   ],
   "secciones": {
-    "tecnica": {
-      "eyebrow": "[Ficticio] Técnica",
-      "titulo": "Bloque de técnica de prueba",
+    "antes_despues": {
+      "eyebrow": "Antes y después",
+      "titulo": "Resultados reales, pacientes reales",
       "intro": {
-        "desktop": "Texto de ejemplo para comprobar que la plantilla admite otro tratamiento. No describe ninguna técnica real.",
-        "movil": "Texto de ejemplo. No describe ninguna técnica real."
+        "desktop": "Resultados naturales que respetan tu identidad. Cada caso es un paciente distinto.",
+        "movil": "Cada caso es un paciente distinto."
+      },
+      "cta_label": "Quiero valorar mi caso",
+      "casos": [
+        { "imagen": "../../assets/landings/rinoplastia/casos/caso-1.jpg", "alt": "Paciente 1, vista frontal antes y después de una rinoplastia ultrasónica", "titulo": "Rinoplastia ultrasónica", "detalle": "Paciente 1 · vista frontal" },
+        { "imagen": "../../assets/landings/rinoplastia/casos/caso-2.jpg", "alt": "Paciente 1, vista de perfil antes y después de una rinoplastia ultrasónica", "titulo": "Rinoplastia ultrasónica", "detalle": "Paciente 1 · vista de perfil" },
+        { "imagen": "../../assets/landings/rinoplastia/casos/caso-3.jpg", "alt": "Paciente 2, vista de perfil antes y después de una rinoplastia", "titulo": "Rinoplastia", "detalle": "Paciente 2 · vista de perfil" },
+        { "imagen": "../../assets/landings/rinoplastia/casos/caso-4.jpg", "alt": "Paciente 3, hombre, vista de perfil antes y después de una rinoplastia", "titulo": "Rinoplastia masculina", "detalle": "Paciente 3 · vista de perfil" },
+        { "imagen": "../../assets/landings/rinoplastia/casos/caso-5.jpg", "alt": "Paciente 4, vista de perfil antes y después de un refinamiento de dorso nasal", "titulo": "Refinamiento de dorso", "detalle": "Paciente 4 · vista de perfil" },
+        { "imagen": "../../assets/landings/rinoplastia/casos/caso-6.jpg", "alt": "Paciente 5, vista de perfil antes y después de una rinoplastia", "titulo": "Rinoplastia femenina", "detalle": "Paciente 5 · vista de perfil" }
+      ],
+      "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
+    },
+    "tecnica": {
+      "eyebrow": "La técnica",
+      "titulo": "¿Qué es la rinoplastia ultrasónica?",
+      "intro": {
+        "desktop": "Remodela los huesos nasales con precisión milimétrica, actuando sobre el hueso sin dañar tejidos blandos, vasos ni mucosa.",
+        "movil": "Remodela el hueso nasal con precisión milimétrica, sin dañar tejidos blandos ni mucosa."
       },
       "ventajas": [
-        { "icono": "shield", "titulo": "Ventaja de ejemplo 1", "texto": "Descripción ficticia de prueba." },
-        { "icono": "clock", "titulo": "Ventaja de ejemplo 2", "texto": "Descripción ficticia de prueba." },
-        { "icono": "heart", "titulo": "Ventaja de ejemplo 3", "texto": "Descripción ficticia de prueba." }
+        { "icono": "ruler", "titulo": "Precisión milimétrica", "texto": "Tecnología ultrasónica para remodelar el hueso nasal." },
+        { "icono": "drop", "titulo": "Sin tapones nasales", "texto": "En la mayoría de casos, para respirar mejor desde el principio." },
+        { "icono": "clock", "titulo": "A casa el mismo día", "texto": "Sin ingreso hospitalario en la mayoría de casos." },
+        { "icono": "heart", "titulo": "Incisiones discretas", "texto": "Abordajes con cicatrices ocultas o muy discretas." }
+      ]
+    },
+    "simulacion": {
+      "eyebrow": "Simulación facial",
+      "titulo": "Ve tu nueva nariz antes de decidir",
+      "intro": {
+        "desktop": "Una simulación personalizada te muestra una propuesta realista del resultado antes de entrar en quirófano.",
+        "movil": "Una propuesta realista del resultado antes de entrar en quirófano."
+      },
+      "imagen": "../../assets/landings/rinoplastia/simulacion.jpg",
+      "imagen_alt": "Mujer con los ojos cerrados tocándose suavemente la nariz",
+      "etiqueta": "Simulación facial",
+      "pasos": [
+        { "titulo": "Entiende qué es posible", "texto": "Ves una propuesta realista sobre tu propio rostro." },
+        { "titulo": "Participa en el diseño", "texto": "Decides con tu cirujano cómo quieres tu nariz." },
+        { "titulo": "Decide con tranquilidad", "texto": "Con toda la información antes de operarte." }
       ],
-      "comparativa": {
-        "columna_propia": { "desktop": "Opción A", "movil": "A" },
-        "columna_alternativa": { "desktop": "Opción B", "movil": "B" },
-        "filas": [
-          { "concepto": "Dato de ejemplo 1", "propia": "[dato]", "alternativa": "[dato]" },
-          { "concepto": "Dato de ejemplo 2", "propia": "[dato]", "alternativa": "[dato]" },
-          { "concepto": "Dato de ejemplo 3", "propia": "[dato]", "alternativa": "[dato]" }
-        ]
-      }
+      "cta_label": "Quiero mi simulación"
     },
     "recuperacion": {
-      "eyebrow": "[Ficticio] Recuperación",
-      "titulo": "Fases de ejemplo",
-      "intro": "Tres pasos ficticios para comprobar una línea de tiempo con otro número de pasos.",
+      "eyebrow": "Tu recuperación",
+      "titulo": "¿Cuándo veré el resultado?",
+      "intro": {
+        "desktop": "Así son las semanas y los meses después de tu rinoplastia.",
+        "movil": ""
+      },
       "pasos": [
-        { "titulo": "Fase 1", "texto": "Texto de ejemplo, sin valor clínico." },
-        { "titulo": "Fase 2", "texto": "Texto de ejemplo, sin valor clínico." },
-        { "titulo": "Fase 3", "texto": "Texto de ejemplo, sin valor clínico." }
+        { "titulo": "Día 1", "texto": "Recuperación inicial en casa, el mismo día de la cirugía." },
+        { "titulo": "7-10 días", "texto": "Retirada de la férula." },
+        { "titulo": "1 mes", "texto": "Desaparece gran parte de la inflamación." },
+        { "titulo": "3-12 meses", "texto": "Forma definitiva, que termina de asentarse al año." }
+      ]
+    },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestros pacientes",
+      "video": {
+        "imagen": "../../assets/landings/rinoplastia/testimonio-video.jpg",
+        "alt": "Miguel Servera, paciente de rinoplastia, de perfil",
+        "nombre": "Miguel Servera",
+        "detalle": "Rinoplastia"
+      },
+      "resenas": [
+        { "cita": "“La semana pasada me realicé una rinoplastia en Instituto Rubí y he quedado súper contento con el resultado. Desde la primera toma de contacto con la clínica, el trato y disposición de Anna, la encargada del seguimiento de los pacientes ha sido increíble…”", "autor": "Daniel Luna · Rinoplastia" },
+        { "cita": "“Solo hace un mes y medio de la mejor decisión de mi vida y que pena no haberlos conocido antes!! Un trato de 10 en todo momento y resultado increíble. Gracias al Dr Rubi y el Dr Perez Gonzalez por todo…”", "autor": "Belen Guasch torres · Rinoplastia" },
+        { "cita": "“Encantado con el trato recibido por parte de todos los integrantes de la clínica, así como con el resultado de la rinoplastia que llevo a cabo el Dr. Rubí, encantado con la cirugía.”", "autor": "Adrian Rojas · Rinoplastia", "ocultar_movil": true }
       ]
     },
     "faq": {
       "eyebrow": "Preguntas frecuentes",
-      "titulo": "Preguntas de prueba",
-      "intro": "Bloque ficticio para validar la plantilla.",
+      "titulo": "Resolvemos tus dudas",
+      "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
       "cta_label": "Preguntar por WhatsApp",
       "preguntas": [
-        { "pregunta": "¿Pregunta de ejemplo 1?", "respuesta": "Respuesta ficticia de prueba." },
-        { "pregunta": "¿Pregunta de ejemplo 2?", "respuesta": "Respuesta ficticia de prueba." },
-        { "pregunta": "¿Pregunta de ejemplo 3?", "respuesta": "Respuesta ficticia de prueba." }
+        { "pregunta": "¿Duele la rinoplastia?", "respuesta": "Las molestias suelen ser leves y se controlan con la medicación pautada por el equipo médico." },
+        { "pregunta": "¿Tendré tapones nasales?", "respuesta": "En la mayoría de casos no son necesarios gracias a la técnica que utilizamos. Tu cirujano te lo confirma en la valoración." },
+        { "pregunta": "¿Podré respirar bien?", "respuesta": "Si tienes problemas respiratorios, como una desviación de tabique, se pueden corregir en la misma cirugía. La respiración mejora de forma progresiva durante las primeras semanas." },
+        { "pregunta": "¿Me quedarán cicatrices?", "respuesta": "Utilizamos abordajes con cicatrices ocultas o muy discretas, para que se note el cambio y no la cirugía." },
+        { "pregunta": "¿Tendré que quedarme ingresado?", "respuesta": "En la mayoría de casos vuelves a casa el mismo día de la cirugía, sin ingreso hospitalario." },
+        { "pregunta": "¿El resultado quedará natural?", "respuesta": "Nuestro objetivo es que la nariz parezca tuya, solo mejor: conservamos tus rasgos y evitamos el aspecto operado." },
+        { "pregunta": "¿Puedo ver el resultado antes de operarme?", "respuesta": "Sí. Realizamos una simulación facial personalizada antes de la cirugía para que veas una propuesta realista del resultado." },
+        { "pregunta": "¿Cuánto cuesta una rinoplastia ultrasónica?", "respuesta": "El precio depende de la complejidad del caso y se determina tras la valoración médica. Te entregamos un presupuesto cerrado, con financiación de hasta el 100%." }
       ]
     },
     "equipo": {
-      "titulo": "[Ficticio] Título del bloque de equipo para este tratamiento"
+      "titulo": "Expertos en rinoplastia y cirugía facial"
     },
     "cta_final": {
       "eyebrow": "Da el primer paso",
-      "titulo": "Título de cierre de prueba",
-      "intro": "Texto ficticio del bloque final.",
-      "puntos": ["Punto de ejemplo 1", "Punto de ejemplo 2"]
+      "titulo": "Descubre tu nueva nariz",
+      "intro": "Valoración gratuita, presencial o por videollamada. Sin compromiso.",
+      "puntos": [
+        "Consulta con cirujano plástico",
+        "Estudio facial y simulación personalizada",
+        "Presupuesto cerrado y financiación hasta el 100%"
+      ]
     }
   }
 }
