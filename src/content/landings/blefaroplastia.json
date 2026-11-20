@@ -9,7 +9,7 @@
   "intro": "Eliminamos el exceso de piel y las bolsas de los párpados para una mirada más fresca y descansada. Un cirujano plástico valora tu caso.",
   "imagen_principal": "../../assets/landings/blefaroplastia/hero.jpg",
   "imagen_principal_alt": "Medio rostro de un hombre joven con barba, en primer plano de la mirada",
-  "interes_preseleccionado": "blefaroplastia",
+  "interes_preseleccionado": "blefaroplastia-superior",
   "secciones": [
     { "tipo": "hero" },
     { "tipo": "confianza" },
