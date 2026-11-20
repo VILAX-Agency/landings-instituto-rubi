@@ -2,8 +2,7 @@
   "nombre": "Rinoplastia ultrasónica",
   "interes_opciones": [
     { "valor": "rinoplastia", "label": "Rinoplastia" },
-    { "valor": "cirugia-facial", "label": "Cirugía facial" },
-    { "valor": "otro", "label": "Aún no lo sé", "label_movil": "No lo sé" }
+    { "valor": "otro", "label": "Aún no lo sé" }
   ],
   "secciones": {
     "antes_despues": {
