@@ -1,0 +1,34 @@
+{
+  "tratamiento_slug": "blefaroplastia",
+  "estado": "aprobado",
+  "fixture": false,
+  "seo_title": "Blefaroplastia: cirugía de párpados | Instituto Rubí",
+  "meta_description": "Blefaroplastia para eliminar el exceso de piel y las bolsas de los párpados, con un resultado natural. Pide tu valoración gratuita en Instituto Rubí.",
+  "eyebrow": "Blefaroplastia",
+  "h1": "Blefaroplastia: rejuvenece tu mirada con un resultado natural",
+  "intro": "Eliminamos el exceso de piel y las bolsas de los párpados para una mirada más fresca y descansada. Un cirujano plástico valora tu caso.",
+  "imagen_principal": "../../assets/landings/blefaroplastia/hero.jpg",
+  "imagen_principal_alt": "Medio rostro de un hombre joven con barba, en primer plano de la mirada",
+  "interes_preseleccionado": "blefaroplastia",
+  "secciones": [
+    { "tipo": "hero" },
+    { "tipo": "confianza" },
+    { "tipo": "antes_despues" },
+    { "tipo": "tecnica" },
+    { "tipo": "recuperacion" },
+    { "tipo": "testimonios" },
+    { "tipo": "equipo" },
+    { "tipo": "faq" },
+    { "tipo": "cta_final" }
+  ],
+  "notas_revision": [
+    "20/11/2026: maquetada desde el diseño de Figma Blefaroplastia_v1 (desktop 218:2495 / móvil 218:2239). Contenido de institutorubi.com/blefaroplastia y /blefaroplastia-barcelona.",
+    "seo_title, meta_description, H1 e intro propuestos por desarrollo: pendientes de aprobación SEO.",
+    "Validación médica pendiente: técnica «propia mínimamente invasiva», anestesia local, alta el mismo día, plazos de recuperación y respuestas de las FAQ.",
+    "No se usan de la web actual «Nº1 especialistas», «sin cicatriz visible», «recuperación en tiempo récord» ni «vida normal el mismo día».",
+    "Antes/después: 6 casos de la web actual, ya con fondo de marca. Confirmar tipo de blefaroplastia de cada uno (superior/inferior/completa) y consentimiento para anuncios.",
+    "Imágenes del hero y de la tarjeta de testimonios (modelos) tomadas de la web actual: confirmar licencia.",
+    "Reseñas de Google aportadas por el equipo (Ana Rando, Elena G.M., ana Quintero), textos literales; la de Ana Rando recortada con «…» y corresponde a una paciente de lipedema. Confirmar permiso de uso y el nombre de Natalie y del Dr. García; confirmar que la de ana Quintero es de blefaroplastia.",
+    "20/11/2026: marcada como aprobada para publicación por decisión del responsable del proyecto. Las revisiones anteriores siguen abiertas y deben cerrarse antes de lanzar campañas."
+  ]
+}

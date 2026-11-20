@@ -1,0 +1,97 @@
+{
+  "nombre": "Blefaroplastia",
+  "interes_opciones": [
+    { "valor": "blefaroplastia", "label": "Blefaroplastia" },
+    { "valor": "otro", "label": "Aún no lo sé" }
+  ],
+  "secciones": {
+    "antes_despues": {
+      "eyebrow": "Antes y después",
+      "titulo": "Resultados reales, pacientes reales",
+      "intro": {
+        "desktop": "Pacientes operados de blefaroplastia en Instituto Rubí. Cada caso es un paciente distinto.",
+        "movil": "Cada caso es un paciente distinto."
+      },
+      "cta_label": "Quiero valorar mi caso",
+      "casos": [
+        { "imagen": "../../assets/landings/blefaroplastia/casos/caso-1.jpg", "alt": "Paciente 1, hombre, vista frontal antes y después de una blefaroplastia", "titulo": "Blefaroplastia", "detalle": "Paciente 1 · vista frontal" },
+        { "imagen": "../../assets/landings/blefaroplastia/casos/caso-2.jpg", "alt": "Paciente 2, mujer, vista frontal antes y después de una blefaroplastia", "titulo": "Blefaroplastia", "detalle": "Paciente 2 · vista frontal" },
+        { "imagen": "../../assets/landings/blefaroplastia/casos/caso-3.jpg", "alt": "Paciente 3, hombre, vista frontal antes y después de una blefaroplastia", "titulo": "Blefaroplastia", "detalle": "Paciente 3 · vista frontal" },
+        { "imagen": "../../assets/landings/blefaroplastia/casos/caso-4.jpg", "alt": "Paciente 4, mujer, vista frontal antes y después de una blefaroplastia", "titulo": "Blefaroplastia", "detalle": "Paciente 4 · vista frontal" },
+        { "imagen": "../../assets/landings/blefaroplastia/casos/caso-5.jpg", "alt": "Paciente 5, mujer, vista frontal antes y después de una blefaroplastia", "titulo": "Blefaroplastia", "detalle": "Paciente 5 · vista frontal" },
+        { "imagen": "../../assets/landings/blefaroplastia/casos/caso-6.jpg", "alt": "Paciente 6, mujer, vista frontal antes y después de una blefaroplastia", "titulo": "Blefaroplastia", "detalle": "Paciente 6 · vista frontal" }
+      ],
+      "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
+    },
+    "tecnica": {
+      "eyebrow": "La cirugía",
+      "titulo": "Cómo es tu blefaroplastia",
+      "intro": {
+        "desktop": "Retiramos el exceso de piel y las bolsas de grasa de los párpados superiores, inferiores o ambos, con incisiones en los pliegues naturales.",
+        "movil": "Retiramos el exceso de piel y las bolsas de los párpados, con incisiones en los pliegues naturales."
+      },
+      "ventajas": [
+        { "icono": "ruler", "titulo": "Párpado superior", "texto": "Incisión en el pliegue natural para retirar el exceso de piel." },
+        { "icono": "drop", "titulo": "Párpado inferior", "texto": "Bajo las pestañas o por dentro del párpado, para tratar las bolsas." },
+        { "icono": "clock", "titulo": "A casa el mismo día", "texto": "Cirugía ambulatoria, sin ingreso hospitalario." },
+        { "icono": "shield", "titulo": "Posible con anestesia local", "texto": "Según tu caso, tu cirujano te indica la mejor opción." }
+      ]
+    },
+    "recuperacion": {
+      "eyebrow": "Tu recuperación",
+      "titulo": "Paso a paso, sin sorpresas",
+      "intro": {
+        "desktop": "Así son los días y las semanas después de tu blefaroplastia.",
+        "movil": ""
+      },
+      "pasos": [
+        { "titulo": "Primeros días", "texto": "Descanso. Es normal notar hinchazón y algún hematoma." },
+        { "titulo": "1-2 semanas", "texto": "La mayoría vuelve a su rutina; las gafas de sol ayudan a disimular." },
+        { "titulo": "2-4 semanas", "texto": "La hinchazón y los hematomas disminuyen claramente." },
+        { "titulo": "Meses siguientes", "texto": "Las cicatrices se difuminan y el resultado se estabiliza." }
+      ]
+    },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestros pacientes",
+      "video": {
+        "imagen": "../../assets/landings/blefaroplastia/testimonio-foto.jpg",
+        "alt": "Hombre al que marcan con rotulador la zona del párpado inferior"
+      },
+      "resenas": [
+        { "cita": "“Mi experiencia con Instituto Rubí está siendo fantástica, aún estoy en tratamiento postoperatorio (hace algo más de un mes)… Todo el proceso de diagnóstico y preparación para la intervención fue muy sencillo y me sentí muy tranquila y acompañada…”", "autor": "Ana Rando" },
+        { "cita": "“Mi experiencia en Instituto Rubí ha sido muy satisfactoria. El Dr. García es profesional, cercano, cuidadoso; sientes que estás en buenas manos. Un agradecimiento especial a Natalie, que se adapta a cada paciente facilitando que todo lo demás vaya perfecto. ¡Gracias!”", "autor": "Elena G.M." },
+        { "cita": "“El acompañamiento del grupo y el Doctor fue muy bueno, y estoy muy feliz con el resultado”", "autor": "ana Quintero", "ocultar_movil": true }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "titulo": "Resolvemos tus dudas",
+      "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
+      "cta_label": "Preguntar por WhatsApp",
+      "preguntas": [
+        { "pregunta": "¿Quién es buen candidato para una blefaroplastia?", "respuesta": "Personas con piel sobrante, pliegues o bolsas en los párpados, buena salud general y expectativas realistas. El tabaco empeora la cicatrización, por lo que conviene dejarlo antes de la cirugía." },
+        { "pregunta": "¿Deja cicatrices la blefaroplastia?", "respuesta": "Las incisiones se colocan en el pliegue del párpado superior y justo debajo de las pestañas o por dentro del párpado inferior, por lo que quedan muy discretas. Se difuminan en unos meses y pueden seguir mejorando hasta un año; podemos tratarlas con parches cicatrizantes y láser CO₂." },
+        { "pregunta": "¿Tendré que quedarme ingresado?", "respuesta": "No. Es una cirugía ambulatoria: vuelves a casa el mismo día. Conviene que alguien te acompañe." },
+        { "pregunta": "¿Es doloroso el postoperatorio?", "respuesta": "La mayoría de pacientes notan molestias más que dolor: tirantez e hinchazón los primeros días, que se controlan con la medicación pautada por el equipo médico." },
+        { "pregunta": "¿Cuándo podré volver a mi vida cotidiana?", "respuesta": "La mayoría de pacientes retoma sus actividades diarias en 1-2 semanas, y entre las 2 y las 4 semanas la hinchazón y los hematomas han disminuido mucho. Tu cirujano te da un plan personalizado." },
+        { "pregunta": "¿Los resultados son inmediatos?", "respuesta": "No del todo: la hinchazón oculta el resultado los primeros días. La mejora se aprecia en las primeras semanas y se estabiliza en los meses siguientes." },
+        { "pregunta": "¿Afecta a la visión o al movimiento de los ojos?", "respuesta": "No. La cirugía actúa sobre los párpados y la zona que los rodea, no sobre la función ocular. Los primeros días es normal notar cierta tirantez." },
+        { "pregunta": "¿Cuánto cuesta una blefaroplastia?", "respuesta": "Depende de si se tratan los párpados superiores, los inferiores o ambos. Tras la valoración te entregamos un presupuesto cerrado, con financiación de hasta el 100%." }
+      ]
+    },
+    "equipo": {
+      "titulo": "Te opera un equipo de cirujanos plásticos"
+    },
+    "cta_final": {
+      "eyebrow": "Da el primer paso",
+      "titulo": "Rejuvenece tu mirada",
+      "intro": "Valoración gratuita, presencial o por videollamada. Sin compromiso.",
+      "puntos": [
+        "Consulta con cirujano plástico",
+        "Plan adaptado a tus párpados",
+        "Presupuesto cerrado y financiación hasta el 100%"
+      ]
+    }
+  }
+}
