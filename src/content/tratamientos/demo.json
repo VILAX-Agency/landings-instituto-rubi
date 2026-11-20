@@ -1,0 +1,63 @@
+{
+  "nombre": "[FICTICIO] Rinoplastia — tratamiento de prueba",
+  "fixture": true,
+  "interes_opciones": [
+    { "valor": "rinoplastia", "label": "Rinoplastia" },
+    { "valor": "otra-opcion", "label": "Otra opción de prueba", "label_movil": "Otra" },
+    { "valor": "no-lo-se", "label": "Aún no lo sé", "label_movil": "No lo sé" }
+  ],
+  "secciones": {
+    "tecnica": {
+      "eyebrow": "[Ficticio] Técnica",
+      "titulo": "Bloque de técnica de prueba",
+      "intro": {
+        "desktop": "Texto de ejemplo para comprobar que la plantilla admite otro tratamiento. No describe ninguna técnica real.",
+        "movil": "Texto de ejemplo. No describe ninguna técnica real."
+      },
+      "ventajas": [
+        { "icono": "shield", "titulo": "Ventaja de ejemplo 1", "texto": "Descripción ficticia de prueba." },
+        { "icono": "clock", "titulo": "Ventaja de ejemplo 2", "texto": "Descripción ficticia de prueba." },
+        { "icono": "heart", "titulo": "Ventaja de ejemplo 3", "texto": "Descripción ficticia de prueba." }
+      ],
+      "comparativa": {
+        "columna_propia": { "desktop": "Opción A", "movil": "A" },
+        "columna_alternativa": { "desktop": "Opción B", "movil": "B" },
+        "filas": [
+          { "concepto": "Dato de ejemplo 1", "propia": "[dato]", "alternativa": "[dato]" },
+          { "concepto": "Dato de ejemplo 2", "propia": "[dato]", "alternativa": "[dato]" },
+          { "concepto": "Dato de ejemplo 3", "propia": "[dato]", "alternativa": "[dato]" }
+        ]
+      }
+    },
+    "recuperacion": {
+      "eyebrow": "[Ficticio] Recuperación",
+      "titulo": "Fases de ejemplo",
+      "intro": "Tres pasos ficticios para comprobar una línea de tiempo con otro número de pasos.",
+      "pasos": [
+        { "titulo": "Fase 1", "texto": "Texto de ejemplo, sin valor clínico." },
+        { "titulo": "Fase 2", "texto": "Texto de ejemplo, sin valor clínico." },
+        { "titulo": "Fase 3", "texto": "Texto de ejemplo, sin valor clínico." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "titulo": "Preguntas de prueba",
+      "intro": "Bloque ficticio para validar la plantilla.",
+      "cta_label": "Preguntar por WhatsApp",
+      "preguntas": [
+        { "pregunta": "¿Pregunta de ejemplo 1?", "respuesta": "Respuesta ficticia de prueba." },
+        { "pregunta": "¿Pregunta de ejemplo 2?", "respuesta": "Respuesta ficticia de prueba." },
+        { "pregunta": "¿Pregunta de ejemplo 3?", "respuesta": "Respuesta ficticia de prueba." }
+      ]
+    },
+    "equipo": {
+      "titulo": "[Ficticio] Título del bloque de equipo para este tratamiento"
+    },
+    "cta_final": {
+      "eyebrow": "Da el primer paso",
+      "titulo": "Título de cierre de prueba",
+      "intro": "Texto ficticio del bloque final.",
+      "puntos": ["Punto de ejemplo 1", "Punto de ejemplo 2"]
+    }
+  }
+}

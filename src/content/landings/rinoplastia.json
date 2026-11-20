@@ -1,0 +1,35 @@
+{
+  "tratamiento_slug": "rinoplastia",
+  "estado": "borrador",
+  "fixture": false,
+  "seo_title": "Rinoplastia ultrasónica | Instituto Rubí",
+  "meta_description": "Rinoplastia ultrasónica con simulación facial personalizada antes de operarte. Pide tu valoración gratuita con un cirujano plástico en Instituto Rubí.",
+  "eyebrow": "Rinoplastia ultrasónica",
+  "h1": "Rinoplastia ultrasónica: descubre tu nueva nariz antes de operarte",
+  "intro": "Simulación facial personalizada y técnica ultrasónica de alta precisión, para un resultado natural. Un cirujano plástico valora tu caso.",
+  "imagen_principal": "../../assets/landings/rinoplastia/hero.jpg",
+  "imagen_principal_alt": "Perfil de una mujer con la nariz de líneas suaves, en tono sepia",
+  "interes_preseleccionado": "rinoplastia",
+  "secciones": [
+    { "tipo": "hero" },
+    { "tipo": "confianza" },
+    { "tipo": "antes_despues" },
+    { "tipo": "tecnica" },
+    { "tipo": "simulacion" },
+    { "tipo": "recuperacion" },
+    { "tipo": "testimonios" },
+    { "tipo": "equipo" },
+    { "tipo": "faq" },
+    { "tipo": "cta_final" }
+  ],
+  "notas_revision": [
+    "20/11/2026: maquetada desde el diseño de Figma Rinoplastia_v1 (desktop 199:1954 / móvil 199:1697). Contenido de rinoplastia.institutorubi.com.",
+    "seo_title, meta_description, H1 e intro propuestos por desarrollo: pendientes de aprobación SEO.",
+    "Validación médica pendiente: «sin tapones en la mayoría de casos», alta el mismo día, plazos de recuperación (férula 7-10 días, 1 mes, 3-12 meses), descripción de la técnica ultrasónica («sin dañar tejidos blandos, vasos ni mucosa»), cicatrices «ocultas o muy discretas», corrección del tabique, dolor y en qué consiste la simulación facial.",
+    "No se usan de la web actual «sin cicatrices visibles», «recuperación más rápida», «resultado predecible» ni «dedicación exclusiva a cirugía facial».",
+    "Antes/después: casos 1-5 de la web actual (el 1 ya con fondo de marca; 2-5 sobre su fondo azul original, sin retocar). Confirmar tipo de intervención y consentimiento para anuncios. Excluidos el caso 7 (foto intraoperatoria) y los 6, 8 y 9 (fondos distintos).",
+    "Imágenes de modelo del hero (volteada en horizontal) y de la simulación tomadas de la web actual: confirmar origen y licencia, y si son generadas con IA.",
+    "Testimonio en vídeo: foto de Miguel Servera aportada por el equipo; no hay vídeo enlazado. Confirmar consentimiento para usar su imagen y nombre.",
+    "Reseñas de Google aportadas por el equipo (Daniel Luna, Belen Guasch torres, Adrian Rojas), textos literales; las dos primeras recortadas con «…» (en la de Belen se omite el cambio de prótesis de otra clínica). Confirmar permiso de uso y de los nombres que aparecen (Anna, Dr. Pérez González)."
+  ]
+}
