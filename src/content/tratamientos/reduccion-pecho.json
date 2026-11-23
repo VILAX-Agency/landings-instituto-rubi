@@ -1,0 +1,97 @@
+{
+  "nombre": "Reducción de pecho",
+  "interes_opciones": [
+    { "valor": "reduccion-pecho", "label": "Reducción de pecho" },
+    { "valor": "otro", "label": "Aún no lo sé" }
+  ],
+  "secciones": {
+    "antes_despues": {
+      "eyebrow": "Antes y después",
+      "titulo": "Resultados reales, pacientes reales",
+      "intro": {
+        "desktop": "Pacientes operadas de reducción de pecho en Instituto Rubí. Cada caso es una paciente distinta.",
+        "movil": "Cada caso es una paciente distinta."
+      },
+      "cta_label": "Quiero valorar mi caso",
+      "casos": [
+        { "imagen": "../../assets/landings/reduccion-pecho/casos/caso-1.jpg", "alt": "Paciente 1, vista frontal antes y después de una reducción de pecho", "titulo": "Reducción de pecho", "detalle": "Paciente 1 · vista frontal" },
+        { "imagen": "../../assets/landings/reduccion-pecho/casos/caso-2.jpg", "alt": "Paciente 1, vista lateral antes y después de una reducción de pecho", "titulo": "Reducción de pecho", "detalle": "Paciente 1 · vista lateral" },
+        { "imagen": "../../assets/landings/reduccion-pecho/casos/caso-3.jpg", "alt": "Paciente 2, vista frontal antes y después de una reducción de pecho", "titulo": "Reducción de pecho", "detalle": "Paciente 2 · vista frontal" },
+        { "imagen": "../../assets/landings/reduccion-pecho/casos/caso-4.jpg", "alt": "Paciente 2, vista de perfil antes y después de una reducción de pecho", "titulo": "Reducción de pecho", "detalle": "Paciente 2 · vista de perfil" },
+        { "imagen": "../../assets/landings/reduccion-pecho/casos/caso-5.jpg", "alt": "Paciente 3, vista frontal antes y después de una reducción de pecho", "titulo": "Reducción de pecho", "detalle": "Paciente 3 · vista frontal" },
+        { "imagen": "../../assets/landings/reduccion-pecho/casos/caso-6.jpg", "alt": "Paciente 3, vista lateral antes y después de una reducción de pecho", "titulo": "Reducción de pecho", "detalle": "Paciente 3 · vista lateral" }
+      ],
+      "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
+    },
+    "tecnica": {
+      "eyebrow": "La cirugía",
+      "titulo": "Cómo es tu reducción de pecho",
+      "intro": {
+        "desktop": "Retiramos el exceso de tejido mamario, grasa y piel para conseguir un pecho más ligero y proporcionado, que puede aliviar molestias de espalda, cuello y hombros.",
+        "movil": "Retiramos el tejido sobrante y remodelamos el pecho para que sea más ligero y proporcionado."
+      },
+      "ventajas": [
+        { "icono": "ruler", "titulo": "Menos volumen y peso", "texto": "Retiramos grasa, piel y tejido mamario sobrante." },
+        { "icono": "heart", "titulo": "Forma y elevación", "texto": "Remodelamos el pecho y, si hace falta, recolocamos areola y pezón." },
+        { "icono": "shield", "titulo": "Cicatrices cuidadas", "texto": "Cierre minucioso; las cicatrices se aclaran con los meses." },
+        { "icono": "clock", "titulo": "Ingreso corto", "texto": "Anestesia general; alta el mismo día o al día siguiente." }
+      ]
+    },
+    "recuperacion": {
+      "eyebrow": "Tu recuperación",
+      "titulo": "Paso a paso, sin sorpresas",
+      "intro": {
+        "desktop": "Así son las semanas y los meses después de tu reducción de pecho.",
+        "movil": ""
+      },
+      "pasos": [
+        { "titulo": "Primera semana", "texto": "Descanso y paseos cortos para mantener la circulación." },
+        { "titulo": "1-2 semanas", "texto": "Vuelta al trabajo de oficina, sin esfuerzos." },
+        { "titulo": "4-6 semanas", "texto": "Ejercicio intenso y cargas, cuando lo indique tu cirujano." },
+        { "titulo": "Meses siguientes", "texto": "La forma se asienta y las cicatrices se aclaran." }
+      ]
+    },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestras pacientes",
+      "video": {
+        "imagen": "../../assets/landings/reduccion-pecho/testimonio-foto.jpg",
+        "alt": "Recepción de la clínica Instituto Rubí"
+      },
+      "resenas": [
+        { "cita": "“Me operó de reducción de pecho la Doctora López Munné del instituto Rubí, en la clínica Tres Torres. No tuve ningún problema, en la clínica fué perfecto todo. Y en el instituto Rubí, el trato fué estupendo, todas muy atentas y encantadoras…”", "autor": "elena estivill" },
+        { "cita": "“Muy contenta!! Me hizo la intervención el Dr Óscar García de reducción y elevación de pecho y lipedema en piernas y lifting es el mejor cirujano que he conocido, el resultado está siendo espectacular…”", "autor": "ana maria oliva" },
+        { "cita": "“Me hice una reducción de pecho y quedé muy contenta con el resultado”", "autor": "Juani Martinez", "ocultar_movil": true }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "titulo": "Resolvemos tus dudas",
+      "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
+      "cta_label": "Preguntar por WhatsApp",
+      "preguntas": [
+        { "pregunta": "¿Quién es buena candidata para una reducción de pecho?", "respuesta": "Mujeres con un pecho grande que les causa molestias de espalda, cuello u hombros o que buscan una figura más proporcionada, con buena salud general y expectativas realistas. El tabaco empeora la cicatrización, por lo que conviene dejarlo antes de la cirugía." },
+        { "pregunta": "¿Deja cicatrices la reducción de pecho?", "respuesta": "Sí. Lo habitual es una cicatriz en forma de ancla o T invertida: alrededor de la areola, vertical hasta el surco y a lo largo del surco mamario. Maduran y se aclaran durante varios meses, hasta un año; podemos tratarlas con parches cicatrizantes y láser CO₂." },
+        { "pregunta": "¿Tendré que quedarme ingresada?", "respuesta": "El ingreso es corto: la cirugía se hace con anestesia general y vuelves a casa el mismo día o, en algunos casos, al día siguiente. Conviene que alguien te acompañe las primeras horas." },
+        { "pregunta": "¿Es doloroso el postoperatorio?", "respuesta": "Lo habitual son molestias los primeros días, que se controlan con la medicación pautada por el equipo médico y disminuyen de forma progresiva. Llevarás una prenda de compresión." },
+        { "pregunta": "¿Cuándo podré volver a mi vida cotidiana?", "respuesta": "Podrás caminar desde los primeros días y volver al trabajo de oficina en 1-2 semanas. Para el ejercicio intenso y levantar peso hay que esperar al menos 4-6 semanas. Tu cirujano te da un plan personalizado." },
+        { "pregunta": "¿Los resultados son inmediatos?", "respuesta": "Notarás menos volumen y peso desde el primer momento, pero la inflamación oculta el resultado final, que tarda varias semanas o meses en asentarse." },
+        { "pregunta": "¿A partir de qué edad se puede hacer?", "respuesta": "No hay una edad fija: suele hacerse cuando el pecho ha terminado de desarrollarse. Lo valora el cirujano en cada caso; en menores se necesita el consentimiento de padres o tutores." },
+        { "pregunta": "¿Cuánto cuesta una reducción de pecho?", "respuesta": "Depende de cada caso y se determina tras la valoración médica. Te entregamos un presupuesto cerrado, con financiación de hasta el 100%." }
+      ]
+    },
+    "equipo": {
+      "titulo": "Te opera un equipo de cirujanos plásticos"
+    },
+    "cta_final": {
+      "eyebrow": "Da el primer paso",
+      "titulo": "Recupera tu comodidad",
+      "intro": "Valoración gratuita, presencial o por videollamada. Sin compromiso.",
+      "puntos": [
+        "Consulta con cirujano plástico",
+        "Plan adaptado a tu cuerpo",
+        "Presupuesto cerrado y financiación hasta el 100%"
+      ]
+    }
+  }
+}

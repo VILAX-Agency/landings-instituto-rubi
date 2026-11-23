@@ -1,0 +1,33 @@
+{
+  "tratamiento_slug": "reduccion-pecho",
+  "estado": "borrador",
+  "fixture": false,
+  "seo_title": "Reducción de pecho: pecho más ligero | Instituto Rubí",
+  "meta_description": "Reducción de pecho para disminuir el volumen y el peso del pecho y remodelar su forma. Pide tu valoración gratuita con un cirujano plástico en Instituto Rubí.",
+  "eyebrow": "Reducción de pecho",
+  "h1": "Reducción de pecho: un pecho más ligero y proporcionado",
+  "intro": "Reducimos el volumen y el peso del pecho y remodelamos su forma para que ganes comodidad. Un cirujano plástico valora tu caso.",
+  "imagen_principal": "../../assets/landings/reduccion-pecho/hero.jpg",
+  "imagen_principal_alt": "Mujer con camiseta blanca midiéndose el pecho con una cinta métrica",
+  "interes_preseleccionado": "reduccion-pecho",
+  "secciones": [
+    { "tipo": "hero" },
+    { "tipo": "confianza" },
+    { "tipo": "antes_despues" },
+    { "tipo": "tecnica" },
+    { "tipo": "recuperacion" },
+    { "tipo": "testimonios" },
+    { "tipo": "equipo" },
+    { "tipo": "faq" },
+    { "tipo": "cta_final" }
+  ],
+  "notas_revision": [
+    "23/11/2026: maquetada desde el diseño de Figma Reducción_v1 (desktop 232:3032 / móvil 232:2776). Contenido de institutorubi.com/reduccion-de-pecho.",
+    "seo_title, meta_description, H1 e intro propuestos por desarrollo: pendientes de aprobación SEO.",
+    "Validación médica pendiente: anestesia general, alta el mismo día o al día siguiente, cicatriz en ancla / T invertida, plazos de recuperación y respuestas de las FAQ (resumidas de la web actual).",
+    "Antes/después: 3 pacientes con 2 vistas cada una (galería de la web actual, ya con fondo de marca). Agrupadas por ropa y fondo: confirmar que corresponden a la misma paciente y consentimiento para anuncios.",
+    "Imagen del hero (cinta métrica) tomada de la web actual: confirmar licencia.",
+    "Testimonios: reseñas de Google aportadas por el equipo (elena estivill, ana maria oliva, Juani Martinez), textos literales; las dos primeras recortadas con «…». Mencionan a la Dra. López Munné, la clínica Tres Torres y al Dr. Óscar García: confirmar permiso de uso y esos nombres. La de ana maria oliva incluye también elevación de pecho, lipedema y lifting.",
+    "Foto de la tarjeta de testimonios: recepción de la clínica (imagen-segunda-capa.jpg de la web actual). Confirmar que es la clínica real o su licencia."
+  ]
+}
