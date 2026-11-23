@@ -45,7 +45,7 @@ const ctaFinalHref = `#${CTA_ID}`;
 
 const formBase = {
   textos: O.formulario,
-  opciones: T.interes_opciones,
+  opciones: L.mostrar_interes ? T.interes_opciones : [],
   seleccionado: L.interes_preseleccionado,
   landingId: landing.id,
   tratamiento: tratamiento.id,

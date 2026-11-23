@@ -298,6 +298,8 @@ const landings = defineCollection({
       imagen_principal_alt: z.string().optional(),
       /** Opción preseleccionada en "¿Qué te interesa?". */
       interes_preseleccionado: z.string().optional(),
+      /** false oculta el bloque "¿Qué te interesa?" del formulario en esta landing. */
+      mostrar_interes: z.boolean().default(true),
       /** Orden y selección de bloques. Permite omitir/reordenar sin tocar componentes. */
       secciones: z.array(overrideSeccion).min(1),
       /** Notas editoriales internas (no se renderizan). */
