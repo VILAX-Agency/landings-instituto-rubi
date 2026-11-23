@@ -10,6 +10,7 @@
   "imagen_principal": "../../assets/landings/reduccion-pecho/hero.jpg",
   "imagen_principal_alt": "Mujer con camiseta blanca midiéndose el pecho con una cinta métrica",
   "interes_preseleccionado": "reduccion-pecho",
+  "mostrar_interes": false,
   "secciones": [
     { "tipo": "hero" },
     { "tipo": "confianza" },

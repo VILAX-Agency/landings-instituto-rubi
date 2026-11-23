@@ -176,6 +176,7 @@ const campos = [
     </div>
   </div>
 
+  {opciones.length > 0 && (
   <fieldset class="lead-form__interest">
     <legend class="t-tag lead-form__legend">{textos.etiqueta_interes}</legend>
     <div class="chips">
@@ -205,6 +206,7 @@ const campos = [
     </div>
     <p class="field__error t-legal" id={errorId('interes')} data-error-for="interes" hidden></p>
   </fieldset>
+  )}
 
   <div class="consent-field">
     <label class="consent">
