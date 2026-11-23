@@ -51,6 +51,19 @@
         { "titulo": "Meses siguientes", "texto": "La forma se asienta y las cicatrices se aclaran." }
       ]
     },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestras pacientes",
+      "video": {
+        "imagen": "../../assets/landings/reduccion-pecho/testimonio-foto.jpg",
+        "alt": "Recepción de la clínica Instituto Rubí"
+      },
+      "resenas": [
+        { "cita": "“Me operó de reducción de pecho la Doctora López Munné del instituto Rubí, en la clínica Tres Torres. No tuve ningún problema, en la clínica fué perfecto todo. Y en el instituto Rubí, el trato fué estupendo, todas muy atentas y encantadoras…”", "autor": "elena estivill" },
+        { "cita": "“Muy contenta!! Me hizo la intervención el Dr Óscar García de reducción y elevación de pecho y lipedema en piernas y lifting es el mejor cirujano que he conocido, el resultado está siendo espectacular…”", "autor": "ana maria oliva" },
+        { "cita": "“Me hice una reducción de pecho y quedé muy contenta con el resultado”", "autor": "Juani Martinez", "ocultar_movil": true }
+      ]
+    },
     "faq": {
       "eyebrow": "Preguntas frecuentes",
       "titulo": "Resolvemos tus dudas",

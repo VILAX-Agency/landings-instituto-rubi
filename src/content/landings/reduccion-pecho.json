@@ -16,6 +16,7 @@
     { "tipo": "antes_despues" },
     { "tipo": "tecnica" },
     { "tipo": "recuperacion" },
+    { "tipo": "testimonios" },
     { "tipo": "equipo" },
     { "tipo": "faq" },
     { "tipo": "cta_final" }
@@ -26,6 +27,7 @@
     "Validación médica pendiente: anestesia general, alta el mismo día o al día siguiente, cicatriz en ancla / T invertida, plazos de recuperación y respuestas de las FAQ (resumidas de la web actual).",
     "Antes/después: 3 pacientes con 2 vistas cada una (galería de la web actual, ya con fondo de marca). Agrupadas por ropa y fondo: confirmar que corresponden a la misma paciente y consentimiento para anuncios.",
     "Imagen del hero (cinta métrica) tomada de la web actual: confirmar licencia.",
-    "Sección de testimonios omitida: la web actual no tiene reseñas. Pendiente de recibir reseñas reales de pacientes de reducción de pecho; la foto prevista es la recepción de la clínica (assets/landings/reduccion-pecho/testimonio-foto.jpg)."
+    "Testimonios: reseñas de Google aportadas por el equipo (elena estivill, ana maria oliva, Juani Martinez), textos literales; las dos primeras recortadas con «…». Mencionan a la Dra. López Munné, la clínica Tres Torres y al Dr. Óscar García: confirmar permiso de uso y esos nombres. La de ana maria oliva incluye también elevación de pecho, lipedema y lifting.",
+    "Foto de la tarjeta de testimonios: recepción de la clínica (imagen-segunda-capa.jpg de la web actual). Confirmar que es la clínica real o su licencia."
   ]
 }
