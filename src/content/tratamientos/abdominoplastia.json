@@ -3,7 +3,8 @@
   "interes_opciones": [
     { "valor": "abdominoplastia", "label": "Abdominoplastia" },
     { "valor": "lipoescultura", "label": "Lipoescultura" },
-    { "valor": "marcacion-abdominal", "label": "Marcación abdominal" }
+    { "valor": "marcacion-abdominal", "label": "Marcación abdominal" },
+    { "valor": "otro", "label": "Aún no lo sé", "label_movil": "No lo sé" }
   ],
   "secciones": {
     "antes_despues": {
