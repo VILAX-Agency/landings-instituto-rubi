@@ -1,0 +1,98 @@
+{
+  "nombre": "Abdominoplastia",
+  "interes_opciones": [
+    { "valor": "abdominoplastia", "label": "Abdominoplastia" },
+    { "valor": "lipoescultura", "label": "Lipoescultura" },
+    { "valor": "marcacion-abdominal", "label": "Marcación abdominal" }
+  ],
+  "secciones": {
+    "antes_despues": {
+      "eyebrow": "Antes y después",
+      "titulo": "Resultados reales, pacientes reales",
+      "intro": {
+        "desktop": "Pacientes operadas de abdominoplastia en Instituto Rubí. Cada caso es una paciente distinta.",
+        "movil": "Cada caso es una paciente distinta."
+      },
+      "cta_label": "Quiero valorar mi caso",
+      "casos": [
+        { "imagen": "../../assets/landings/abdominoplastia/casos/caso-1.jpg", "alt": "Paciente 1, vista frontal antes y después de una abdominoplastia", "titulo": "Abdominoplastia", "detalle": "Paciente 1 · vista frontal" },
+        { "imagen": "../../assets/landings/abdominoplastia/casos/caso-2.jpg", "alt": "Paciente 1, vista lateral antes y después de una abdominoplastia", "titulo": "Abdominoplastia", "detalle": "Paciente 1 · vista lateral" },
+        { "imagen": "../../assets/landings/abdominoplastia/casos/caso-3.jpg", "alt": "Paciente 2, vista frontal antes y después de una abdominoplastia", "titulo": "Abdominoplastia", "detalle": "Paciente 2 · vista frontal" },
+        { "imagen": "../../assets/landings/abdominoplastia/casos/caso-4.jpg", "alt": "Paciente 2, vista lateral antes y después de una abdominoplastia", "titulo": "Abdominoplastia", "detalle": "Paciente 2 · vista lateral" },
+        { "imagen": "../../assets/landings/abdominoplastia/casos/caso-5.jpg", "alt": "Paciente 3, vista frontal antes y después de una abdominoplastia", "titulo": "Abdominoplastia", "detalle": "Paciente 3 · vista frontal" },
+        { "imagen": "../../assets/landings/abdominoplastia/casos/caso-6.jpg", "alt": "Paciente 4, vista frontal antes y después de una abdominoplastia", "titulo": "Abdominoplastia", "detalle": "Paciente 4 · vista frontal" }
+      ],
+      "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
+    },
+    "tecnica": {
+      "eyebrow": "La cirugía",
+      "titulo": "Cómo es tu abdominoplastia",
+      "intro": {
+        "desktop": "Retiramos la piel y la grasa sobrantes del abdomen y tensamos la musculatura para conseguir un abdomen más plano y una cintura más definida.",
+        "movil": "Retiramos la piel y la grasa sobrantes y tensamos la musculatura del abdomen."
+      },
+      "ventajas": [
+        { "icono": "ruler", "titulo": "Piel y grasa sobrantes", "texto": "Eliminamos el exceso que no mejora con dieta ni ejercicio." },
+        { "icono": "heart", "titulo": "Músculos reforzados", "texto": "Si hay diástasis de rectos, se repara en la misma cirugía." },
+        { "icono": "shield", "titulo": "Cicatriz baja", "texto": "Línea horizontal bajo el ombligo, oculta por la ropa interior." },
+        { "icono": "clock", "titulo": "Ingreso breve", "texto": "Según tu caso, una o dos noches en el hospital." }
+      ]
+    },
+    "recuperacion": {
+      "eyebrow": "Tu recuperación",
+      "titulo": "Paso a paso, sin sorpresas",
+      "intro": {
+        "desktop": "Así son las semanas y los meses después de tu abdominoplastia.",
+        "movil": ""
+      },
+      "pasos": [
+        { "titulo": "Primera semana", "texto": "Descanso y paseos suaves; la hinchazón y los hematomas son normales." },
+        { "titulo": "7-10 días", "texto": "Vuelta al trabajo y a actividades ligeras, según tu cirugía." },
+        { "titulo": "4-6 semanas", "texto": "Retomas el ejercicio intenso, cuando lo indique tu cirujano." },
+        { "titulo": "6 meses", "texto": "Se aprecia el resultado final y la cicatriz se aclara." }
+      ]
+    },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestros pacientes",
+      "video": {
+        "imagen": "../../assets/landings/abdominoplastia/testimonio-foto.jpg",
+        "alt": "Recepción de la clínica Instituto Rubí"
+      },
+      "resenas": [
+        { "cita": "“Hace tres meses que me hice una abdominoplastia y reparación de hernia y diastasis, con la Dra. Dolça y, estoy super contenta con el resultado. La doctora Dolça, es una pasada, super cercana y profesional…”", "autor": "Susana Garcia" },
+        { "cita": "“Hace un mes y una semana que me decidí a dar el paso para mi abdominoplastia. Estuve más de año y medio buscando y evaluando la mejor opción. Y sin duda no me equivoqué, los resultados de mano del Dr. Kening han sido excelentes…”", "autor": "Silvana Rubina" },
+        { "cita": "“Me hice una abdominoplastia, con diastasis de recto y aproveche para rellenar un poco el glúteo con mi propia grasa. A cierta edad, por mucha dieta que hagas es más difícil que el contorno y la barriga desaparezcan y a mi eso me tenía muy acomplejada y sinceramente, a mi me ha cambiado la vida, me ha subido la autoestima y me veo genial…”", "autor": "Clara R.", "ocultar_movil": true }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "titulo": "Resolvemos tus dudas",
+      "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
+      "cta_label": "Preguntar por WhatsApp",
+      "preguntas": [
+        { "pregunta": "¿Quién es buen candidato para una abdominoplastia?", "respuesta": "Personas con buena salud y un peso cercano al ideal que tienen exceso de piel y grasa en el abdomen que no mejora con dieta ni ejercicio: tras una gran pérdida de peso, después de embarazos o por la edad. No es un tratamiento para perder peso." },
+        { "pregunta": "¿Se puede reparar la diástasis de rectos?", "respuesta": "Sí. La abdominoplastia se combina con frecuencia con la reparación de la diástasis de rectos. Un abultamiento sobre el ombligo suele deberse a la diástasis y no a una hernia; tu cirujano lo valora en consulta." },
+        { "pregunta": "¿Deja cicatriz la abdominoplastia?", "respuesta": "Sí: una línea horizontal de cadera a cadera, por debajo del ombligo, cuya longitud depende de la piel que haya que retirar. Al principio es rojiza y con el tiempo se aclara; queda oculta con la ropa interior o el bañador. Podemos tratarla con parches cicatrizantes y láser CO₂." },
+        { "pregunta": "¿Tendré que quedarme ingresado?", "respuesta": "Depende de tu caso y de la extensión de la cirugía: algunos pacientes pasan una o dos noches en el hospital. Tu cirujano te lo indica en la valoración." },
+        { "pregunta": "¿Es doloroso el postoperatorio?", "respuesta": "Varía en cada persona. Las molestias se controlan con la medicación pautada por el equipo médico y disminuyen en los primeros días y semanas. Es normal notar hinchazón, tirantez y algo de entumecimiento; la prenda de compresión ayuda." },
+        { "pregunta": "¿Cuándo podré volver a mi vida cotidiana?", "respuesta": "Puedes volver al trabajo y a actividades ligeras tras 7-10 días, según la extensión de la cirugía, y a la mayoría de actividades en 2-3 semanas. El ejercicio intenso se retoma a las 4-6 semanas. Tu cirujano te da un plan personalizado." },
+        { "pregunta": "¿Los resultados son inmediatos?", "respuesta": "El abdomen se ve más plano desde el principio, pero la hinchazón y los hematomas tardan de 1 a 3 meses en desaparecer. El resultado final se aprecia hacia los 6 meses." },
+        { "pregunta": "¿Cuánto cuesta una abdominoplastia?", "respuesta": "Depende de cada caso y se determina tras la valoración médica. Te entregamos un presupuesto cerrado, con financiación de hasta el 100%." }
+      ]
+    },
+    "equipo": {
+      "titulo": "Te opera un equipo de cirujanos plásticos"
+    },
+    "cta_final": {
+      "eyebrow": "Da el primer paso",
+      "titulo": "Da forma a tu abdomen",
+      "intro": "Valoración gratuita, presencial o por videollamada. Sin compromiso.",
+      "puntos": [
+        "Consulta con cirujano plástico",
+        "Plan adaptado a tu abdomen",
+        "Presupuesto cerrado y financiación hasta el 100%"
+      ]
+    }
+  }
+}

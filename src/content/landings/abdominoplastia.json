@@ -1,0 +1,35 @@
+{
+  "tratamiento_slug": "abdominoplastia",
+  "estado": "aprobado",
+  "fixture": false,
+  "seo_title": "Abdominoplastia: abdomen más plano y firme | Instituto Rubí",
+  "meta_description": "Abdominoplastia para retirar el exceso de piel y grasa del abdomen y reparar la diástasis de rectos. Pide tu valoración gratuita en Instituto Rubí.",
+  "eyebrow": "Abdominoplastia",
+  "h1": "Abdominoplastia: un abdomen más plano y firme",
+  "intro": "Retiramos el exceso de piel y grasa del abdomen y reforzamos la musculatura para un contorno más plano y definido. Un cirujano plástico valora tu caso.",
+  "imagen_principal": "../../assets/landings/abdominoplastia/hero.jpg",
+  "imagen_principal_alt": "Abdomen de una mujer con marcas de planificación quirúrgica dibujadas con rotulador",
+  "interes_preseleccionado": "abdominoplastia",
+  "secciones": [
+    { "tipo": "hero" },
+    { "tipo": "confianza" },
+    { "tipo": "antes_despues" },
+    { "tipo": "tecnica" },
+    { "tipo": "recuperacion" },
+    { "tipo": "testimonios" },
+    { "tipo": "equipo" },
+    { "tipo": "faq" },
+    { "tipo": "cta_final" }
+  ],
+  "notas_revision": [
+    "24/11/2026: maquetada desde el diseño de Figma Abdominoplastia_v1 (desktop 245:3541 / móvil 245:3285). Contenido de institutorubi.com/abdominoplastia.",
+    "seo_title, meta_description, H1 e intro propuestos por desarrollo: pendientes de aprobación SEO.",
+    "Validación médica pendiente: reparación de diástasis, cicatriz, ingreso de una o dos noches, plazos de recuperación y respuestas de las FAQ (resumidas de la web actual, que no indica anestesia, duración, drenajes ni precio).",
+    "Formulario con opciones Abdominoplastia / Lipoescultura / Marcación abdominal, a petición del responsable del proyecto.",
+    "Antes/después: 4 pacientes (6 imágenes) de la galería de la web actual, ya con fondo de marca. La galería mezcla otros tratamientos (marcación abdominal, aumento de pecho) y varias imágenes tienen alt de lipoescultura: confirmar que las 6 son de abdominoplastia, la agrupación por paciente y el consentimiento para anuncios.",
+    "Imagen del hero (marcas de rotulador) tomada de la web actual: confirmar licencia y que es adecuada para abdominoplastia.",
+    "Testimonios: reseñas de Google aportadas por el equipo (Susana Garcia, Silvana Rubina, Clara R.), textos literales recortados con «…». Mencionan a la Dra. Dolça y al Dr. Kening (nombre tal cual en la reseña): confirmar permiso de uso y esos nombres. La de Susana Garcia incluye reparación de hernia; la de Clara R., relleno de glúteo con grasa propia.",
+    "Foto de la tarjeta de testimonios: recepción de la clínica (imagen-segunda-capa.jpg de la web actual). Confirmar que es la clínica real o su licencia.",
+    "24/11/2026: marcada como aprobada para publicación por decisión del responsable del proyecto. Las revisiones anteriores siguen abiertas y deben cerrarse antes de lanzar campañas."
+  ]
+}
