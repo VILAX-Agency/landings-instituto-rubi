@@ -1,0 +1,34 @@
+{
+  "tratamiento_slug": "mommy-makeover",
+  "estado": "borrador",
+  "fixture": false,
+  "seo_title": "Mommy Makeover: tu figura tras la maternidad | Instituto Rubí",
+  "meta_description": "Mommy Makeover: abdomen, pecho y silueta en una sola cirugía, con reparación de la diástasis de rectos. Pide tu valoración gratuita en Instituto Rubí.",
+  "eyebrow": "Mommy Makeover",
+  "h1": "Mommy Makeover: recupera tu figura tras la maternidad",
+  "intro": "Abdomen, pecho y silueta en un único plan a medida, con reparación de la diástasis de rectos. Un cirujano plástico valora tu caso.",
+  "imagen_principal": "../../assets/landings/mommy-makeover/hero.jpg",
+  "imagen_principal_alt": "Mujer sonriente con bata blanca, sentada en un sofá",
+  "interes_preseleccionado": "mommy-makeover",
+  "secciones": [
+    { "tipo": "hero" },
+    { "tipo": "confianza" },
+    { "tipo": "antes_despues" },
+    { "tipo": "tecnica" },
+    { "tipo": "recuperacion" },
+    { "tipo": "testimonios" },
+    { "tipo": "equipo" },
+    { "tipo": "faq" },
+    { "tipo": "cta_final" }
+  ],
+  "notas_revision": [
+    "24/11/2026: maquetada desde el diseño de Figma Mommymakeover_v1 (desktop 255:4657 / móvil 255:4401). Contenido de mommy-makeover.drcarlosrubi.com.",
+    "seo_title, meta_description, H1 e intro propuestos por desarrollo: pendientes de aprobación SEO.",
+    "Validación médica pendiente: procedimientos incluidos, duración de 4-6 horas, plazos de recuperación y respuestas de las FAQ (tomadas de la landing actual).",
+    "No se usan de la landing actual: simulador 3D «más avanzado del mundo», láser «más potente de Europa», oxígeno «hasta 20 veces», «miles de pacientes», ni las secciones de hiperbárica, láser, fisioterapia y técnica ABA.",
+    "Antes/después: 6 casos de la landing actual (antes y después montados en pareja). Los casos 1-3 parecen la misma paciente; el caso 10 de la web se ha descartado por ser casi idéntico al 9. Títulos tomados de la web. Confirmar procedimiento de cada caso y consentimiento para anuncios.",
+    "Imagen del hero (modelo) tomada de la landing actual, resolución baja (662 px de ancho): confirmar licencia y, si es posible, obtener una versión mayor.",
+    "Testimonios: Judith Arias (influencer, @judiitharias_) con foto y cita de la landing actual. Solo la primera frase de la cita está verificada literalmente; confirmar el texto exacto y el permiso para usar su imagen y su cita en anuncios.",
+    "Reseñas de Google aportadas por el equipo (Carmen Cosano Lopez, Silvana Rubina), textos literales recortados con «…». La de Silvana Rubina también se usa en /abdominoplastia/. Mencionan al Dr. Carlos Rubí y al Dr. Kening: confirmar permiso de uso."
+  ]
+}
