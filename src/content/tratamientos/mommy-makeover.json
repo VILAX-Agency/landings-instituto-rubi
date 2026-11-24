@@ -1,0 +1,100 @@
+{
+  "nombre": "Mommy Makeover",
+  "interes_opciones": [
+    { "valor": "mommy-makeover", "label": "Mommy Makeover" },
+    { "valor": "lipoescultura", "label": "Lipoescultura" },
+    { "valor": "otro", "label": "Aún no lo sé" }
+  ],
+  "secciones": {
+    "antes_despues": {
+      "eyebrow": "Antes y después",
+      "titulo": "Resultados reales, pacientes reales",
+      "intro": {
+        "desktop": "Resultados de pacientes operadas en Instituto Rubí. Cada plan se adapta a la paciente.",
+        "movil": "Cada plan se adapta a la paciente."
+      },
+      "cta_label": "Quiero valorar mi caso",
+      "casos": [
+        { "imagen": "../../assets/landings/mommy-makeover/casos/caso-1.jpg", "alt": "Caso 1, vista frontal antes y después de un Mommy Makeover completo", "titulo": "Mommy Makeover completo", "detalle": "Caso 1 · vista frontal" },
+        { "imagen": "../../assets/landings/mommy-makeover/casos/caso-2.jpg", "alt": "Caso 2, vista lateral antes y después de una mastopexia con liposucción", "titulo": "Mastopexia + liposucción", "detalle": "Caso 2 · vista lateral" },
+        { "imagen": "../../assets/landings/mommy-makeover/casos/caso-3.jpg", "alt": "Caso 3, vista posterior antes y después de una lipoescultura 360º", "titulo": "Lipoescultura 360º", "detalle": "Caso 3 · vista posterior" },
+        { "imagen": "../../assets/landings/mommy-makeover/casos/caso-4.jpg", "alt": "Caso 4, vista frontal antes y después de un Mommy Makeover", "titulo": "Mommy Makeover", "detalle": "Caso 4 · vista frontal" },
+        { "imagen": "../../assets/landings/mommy-makeover/casos/caso-5.jpg", "alt": "Caso 5, vista lateral antes y después de una abdominoplastia con liposucción", "titulo": "Abdominoplastia + liposucción", "detalle": "Caso 5 · vista lateral" },
+        { "imagen": "../../assets/landings/mommy-makeover/casos/caso-6.jpg", "alt": "Caso 6, vista posterior antes y después de un Mommy Makeover", "titulo": "Mommy Makeover", "detalle": "Caso 6 · vista posterior" }
+      ],
+      "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
+    },
+    "tecnica": {
+      "eyebrow": "La cirugía",
+      "titulo": "Qué incluye tu Mommy Makeover",
+      "intro": {
+        "desktop": "Combinamos en una sola cirugía y una sola anestesia los procedimientos que necesitas para recuperar tu abdomen, tu pecho y tu silueta.",
+        "movil": "Una sola cirugía y una sola anestesia para abdomen, pecho y silueta."
+      },
+      "ventajas": [
+        { "icono": "ruler", "titulo": "Abdominoplastia", "texto": "Retiramos la piel sobrante y reparamos la diástasis de rectos." },
+        { "icono": "heart", "titulo": "Cirugía de pecho", "texto": "Aumento, elevación o reducción, según tu caso." },
+        { "icono": "drop", "titulo": "Liposucción", "texto": "Definimos cintura, flancos y caderas." },
+        { "icono": "clock", "titulo": "Una sola cirugía", "texto": "Entre 4 y 6 horas, en quirófano hospitalario." }
+      ]
+    },
+    "recuperacion": {
+      "eyebrow": "Tu recuperación",
+      "titulo": "Paso a paso, sin sorpresas",
+      "intro": {
+        "desktop": "Así son las semanas y los meses después de tu Mommy Makeover.",
+        "movil": ""
+      },
+      "pasos": [
+        { "titulo": "Días 1-3", "texto": "Reposo en la clínica y primeras curas." },
+        { "titulo": "1 semana", "texto": "Vuelta a casa con faja de compresión." },
+        { "titulo": "2-3 semanas", "texto": "Vuelta progresiva al trabajo de oficina." },
+        { "titulo": "3-6 meses", "texto": "Resultado prácticamente definitivo." }
+      ]
+    },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestras pacientes",
+      "video": {
+        "imagen": "../../assets/landings/mommy-makeover/testimonio-foto.jpg",
+        "alt": "Judith Arias tras su Mommy Makeover en Instituto Rubí",
+        "nombre": "Judith Arias",
+        "detalle": "Mommy Makeover"
+      },
+      "resenas": [
+        { "cita": "“El Dr. Rubí y todo su equipo me han cuidado en cada detalle. El resultado de mi Mommy Makeover ha superado mis expectativas: me siento yo, pero la mejor versión.”", "autor": "Judith Arias · Mommy Makeover" },
+        { "cita": "“El dia 21 de Enero, entre a quirofano para hacerme una abdominoplastia con maxtopexia, lipoescultura y aumento de gluteos con mi propia grasa. Hasta el momento todo ha sido increíble, el Dr. Carlos Rubí, es increíble tanto como profesional como persona…”", "autor": "Carmen Cosano Lopez" },
+        { "cita": "“Hace un mes y una semana que me decidí a dar el paso para mi abdominoplastia. Estuve más de año y medio buscando y evaluando la mejor opción. Y sin duda no me equivoqué, los resultados de mano del Dr. Kening han sido excelentes…”", "autor": "Silvana Rubina", "ocultar_movil": true }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "titulo": "Resolvemos tus dudas",
+      "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
+      "cta_label": "Preguntar por WhatsApp",
+      "preguntas": [
+        { "pregunta": "¿Qué incluye un Mommy Makeover?", "respuesta": "Normalmente combina abdominoplastia con reparación de la diástasis de rectos, cirugía de pecho (aumento, elevación o reducción) y, si hace falta, liposucción de cintura o flancos. El plan se adapta a cada paciente." },
+        { "pregunta": "¿Qué es la diástasis de rectos y cómo se corrige?", "respuesta": "Es la separación de los músculos rectos del abdomen tras el embarazo. No se corrige con dieta ni ejercicio: durante la abdominoplastia se suturan los músculos en su posición original." },
+        { "pregunta": "¿Se puede operar solo la diástasis?", "respuesta": "Puede tratarse de forma aislada, pero lo habitual es combinar su reparación con una abdominoplastia y, si lo necesitas, con cirugía de pecho o liposucción." },
+        { "pregunta": "¿Cuánto dura la cirugía?", "respuesta": "Entre 4 y 6 horas, según los procedimientos que se combinen. Se realiza en quirófano hospitalario, con nuestro propio equipo de anestesia." },
+        { "pregunta": "¿Cuándo veré el resultado final?", "respuesta": "Notarás un gran cambio desde el primer mes, aunque el resultado definitivo se aprecia entre los 3 y los 6 meses." },
+        { "pregunta": "¿Quedarán cicatrices visibles?", "respuesta": "Las cicatrices se planifican para quedar ocultas bajo la ropa interior o el bikini, y se aclaran con el tiempo." },
+        { "pregunta": "¿Puedo hacerlo si quiero tener más hijos?", "respuesta": "Es recomendable haber terminado los embarazos antes de la cirugía. Tu cirujano lo valora contigo en la consulta." },
+        { "pregunta": "¿Cuánto cuesta un Mommy Makeover?", "respuesta": "Depende de las técnicas que se combinen. Tras la valoración te entregamos un presupuesto cerrado, con financiación de hasta el 100%." }
+      ]
+    },
+    "equipo": {
+      "titulo": "Te opera un equipo de cirujanos plásticos"
+    },
+    "cta_final": {
+      "eyebrow": "Da el primer paso",
+      "titulo": "Vuelve a sentirte tú",
+      "intro": "Valoración gratuita, presencial o por videollamada. Sin compromiso.",
+      "puntos": [
+        "Consulta con cirujano plástico",
+        "Plan quirúrgico a tu medida",
+        "Presupuesto cerrado y financiación hasta el 100%"
+      ]
+    }
+  }
+}
