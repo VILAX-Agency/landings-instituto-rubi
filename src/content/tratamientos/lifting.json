@@ -1,0 +1,97 @@
+{
+  "nombre": "Lifting facial",
+  "interes_opciones": [
+    { "valor": "lifting", "label": "Lifting facial" },
+    { "valor": "otro", "label": "Aún no lo sé" }
+  ],
+  "secciones": {
+    "antes_despues": {
+      "eyebrow": "Antes y después",
+      "titulo": "Resultados reales, pacientes reales",
+      "intro": {
+        "desktop": "Pacientes operadas de lifting facial en Instituto Rubí. Cada caso es una paciente distinta.",
+        "movil": "Cada caso es una paciente distinta."
+      },
+      "cta_label": "Quiero valorar mi caso",
+      "casos": [
+        { "imagen": "../../assets/landings/lifting/casos/caso-1.jpg", "alt": "Paciente 1, vista frontal antes y después de un lifting facial", "titulo": "Lifting facial", "detalle": "Paciente 1 · vista frontal" },
+        { "imagen": "../../assets/landings/lifting/casos/caso-2.jpg", "alt": "Paciente 1, vista lateral y de perfil antes y después de un lifting facial", "titulo": "Lifting facial", "detalle": "Paciente 1 · vista lateral" },
+        { "imagen": "../../assets/landings/lifting/casos/caso-3.jpg", "alt": "Paciente 2, vista frontal antes y después de un lifting facial", "titulo": "Lifting facial", "detalle": "Paciente 2 · vista frontal" },
+        { "imagen": "../../assets/landings/lifting/casos/caso-4.jpg", "alt": "Paciente 2, vista lateral y de perfil antes y después de un lifting facial", "titulo": "Lifting facial", "detalle": "Paciente 2 · vista lateral" },
+        { "imagen": "../../assets/landings/lifting/casos/caso-5.jpg", "alt": "Paciente 3, vista frontal antes y después de un lifting facial", "titulo": "Lifting facial", "detalle": "Paciente 3 · vista frontal" },
+        { "imagen": "../../assets/landings/lifting/casos/caso-6.jpg", "alt": "Paciente 3, vista lateral y de perfil antes y después de un lifting facial", "titulo": "Lifting facial", "detalle": "Paciente 3 · vista lateral" }
+      ],
+      "aviso": "Imágenes de pacientes reales cedidas con consentimiento. Los resultados pueden variar en cada persona."
+    },
+    "tecnica": {
+      "eyebrow": "La cirugía",
+      "titulo": "Cómo es tu lifting facial",
+      "intro": {
+        "desktop": "Mediante incisiones discretas, tensamos y recolocamos la musculatura de la cara y retiramos la piel sobrante para un rostro más firme y descansado.",
+        "movil": "Tensamos la musculatura de la cara y retiramos la piel sobrante."
+      },
+      "ventajas": [
+        { "icono": "ruler", "titulo": "Tejidos recolocados", "texto": "Tensamos y reposicionamos la musculatura facial." },
+        { "icono": "shield", "titulo": "Cicatrices ocultas", "texto": "En la línea del cabello y detrás de las orejas." },
+        { "icono": "clock", "titulo": "A casa el mismo día", "texto": "En la mayoría de casos, cirugía ambulatoria." },
+        { "icono": "heart", "titulo": "Se puede combinar", "texto": "Con blefaroplastia, lifting de cola de ceja o lipofilling facial." }
+      ]
+    },
+    "recuperacion": {
+      "eyebrow": "Tu recuperación",
+      "titulo": "Paso a paso, sin sorpresas",
+      "intro": {
+        "desktop": "Así son las semanas y los meses después de tu lifting.",
+        "movil": ""
+      },
+      "pasos": [
+        { "titulo": "Primeros días", "texto": "Reposo. Es normal notar hinchazón y algún hematoma." },
+        { "titulo": "Primeras semanas", "texto": "Actividades suaves; puedes disimular con maquillaje." },
+        { "titulo": "2-3 semanas", "texto": "La mayoría retoma su rutina, evitando el sol directo." },
+        { "titulo": "Hasta 6 meses", "texto": "El resultado se asienta y las cicatrices se difuminan." }
+      ]
+    },
+    "testimonios": {
+      "eyebrow": "Testimonios",
+      "titulo": "Lo que dicen nuestros pacientes",
+      "video": {
+        "imagen": "../../assets/landings/lifting/testimonio-foto.jpg",
+        "alt": "Recepción de la clínica Instituto Rubí"
+      },
+      "resenas": [
+        { "cita": "“Soy paciente del doctor García, me operé el 4/9/24 de un lifting cervicofacial, y estoy súper satisfecha y contenta. El post operatorio ha sido corto y sin dolor.”", "autor": "merce garcia" },
+        { "cita": "“Desde hace tiempo quería escribir esta reseña porque realmente vale la pena destacar el nivel de profesionalismo del equipo, comenzando por el Dr. Óscar García. Los resultados de mi cirugía fueron mucho mejores de lo esperado…”", "autor": "Marc Torreblanca" },
+        { "cita": "“El acompañamiento del grupo y el Doctor fue muy bueno, y estoy muy feliz con el resultado”", "autor": "ana Quintero", "ocultar_movil": true }
+      ]
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "titulo": "Resolvemos tus dudas",
+      "intro": "¿Tienes otra pregunta? Escríbenos y te responde el equipo médico.",
+      "cta_label": "Preguntar por WhatsApp",
+      "preguntas": [
+        { "pregunta": "¿Quién es buen candidato para un lifting?", "respuesta": "Personas con signos visibles de envejecimiento facial, como flacidez o arrugas marcadas, con buena salud y expectativas realistas. El tabaco empeora la cicatrización, por lo que conviene dejarlo antes de la cirugía." },
+        { "pregunta": "¿Deja cicatrices un lifting?", "respuesta": "Sí, pero las incisiones se sitúan en la línea del cabello y detrás de las orejas, por lo que quedan muy discretas y se difuminan con el tiempo. Podemos tratarlas con parches cicatrizantes y láser CO₂." },
+        { "pregunta": "¿Tendré que quedarme ingresado?", "respuesta": "En la mayoría de casos no: es una cirugía ambulatoria y vuelves a casa el mismo día. Conviene que alguien te acompañe las primeras horas." },
+        { "pregunta": "¿Es doloroso el postoperatorio?", "respuesta": "Varía en cada persona. Lo habitual es notar molestias leves, hinchazón y tirantez, que se controlan con la medicación pautada por el equipo médico." },
+        { "pregunta": "¿Cuándo podré volver a mi vida cotidiana?", "respuesta": "Los primeros días son de reposo. En las primeras semanas puedes hacer actividades suaves e incluso volver al trabajo, y a las 2-3 semanas la mayoría retoma su rutina, evitando el sol directo." },
+        { "pregunta": "¿Los resultados son inmediatos?", "respuesta": "No del todo: la hinchazón y los hematomas son normales al principio. Verás los primeros resultados en las primeras semanas, y el resultado completo puede tardar hasta 6 meses." },
+        { "pregunta": "¿Se puede combinar con otros tratamientos?", "respuesta": "Sí. El lifting puede incluir blefaroplastia superior o inferior, lifting de cola de ceja o lipofilling facial con grasa propia, según lo que necesites." },
+        { "pregunta": "¿Cuánto cuesta un lifting?", "respuesta": "Depende de cada caso y de si se combina con otros procedimientos. Tras la valoración te entregamos un presupuesto cerrado, con financiación de hasta el 100%." }
+      ]
+    },
+    "equipo": {
+      "titulo": "Te opera un equipo de cirujanos plásticos"
+    },
+    "cta_final": {
+      "eyebrow": "Da el primer paso",
+      "titulo": "Rejuvenece tu rostro",
+      "intro": "Valoración gratuita, presencial o por videollamada. Sin compromiso.",
+      "puntos": [
+        "Consulta con cirujano plástico",
+        "Plan adaptado a tu rostro",
+        "Presupuesto cerrado y financiación hasta el 100%"
+      ]
+    }
+  }
+}
