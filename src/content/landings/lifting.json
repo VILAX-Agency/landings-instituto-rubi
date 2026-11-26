@@ -10,6 +10,7 @@
   "imagen_principal": "../../assets/landings/lifting/hero.jpg",
   "imagen_principal_alt": "Mujer madura sonriente con las manos apoyadas en las mejillas",
   "interes_preseleccionado": "lifting",
+  "mostrar_interes": false,
   "secciones": [
     { "tipo": "hero" },
     { "tipo": "confianza" },
